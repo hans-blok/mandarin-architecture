@@ -1,0 +1,6 @@
+# Workspace generated files and logs
+logs/
+temp/
+
+# Fetched repository (cache for git pull efficiency)
+mandarin-agents/
