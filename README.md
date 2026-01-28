@@ -100,37 +100,20 @@ Gestructureerde templates met:
 4. **Traceability**: Alle beslissingen zijn herleidbaar naar governance
 5. **Modularity**: Agents zijn onafhankelijk en vervangbaar
 
-## Ontwikkeling
-
-### Nieuwe agent toevoegen
-1. Definieer charter in `charters-agents/`
-2. Schrijf prompts in `.github/prompts/`
-3. Implementeer runner (optioneel) in `scripts/`
-4. Publiceer via [mandarin-agents](https://github.com/hans-blok/mandarin-agents)
-5. Fetch in workspace met `fetch-agents`
-
-### Workspace ordenen
-```cmd
-# Analyseer structuur (geen wijzigingen)
-python scripts/moeder.py --check-only
-
-# Orden workspace
-python scripts/moeder.py --scope structure
-```
 
 ## Referenties
 
 - **Mandarin Agents Repository**: https://github.com/hans-blok/mandarin-agents
-- **Canon (grondslagen)**: https://github.com/hans-blok/canon.git
+- **Mandarin Canon (grondslagen)**: https://github.com/hans-blok/mandarin-canon.git
 - **Agent Charters**: Zie `charters-agents/` directory
 - **Prompts**: Zie `.github/prompts/` directory
 
 ## Licentie
 
-Zie individuele bestanden voor licentie-informatie.
+© 2026 Maxia Consultancy. Alle rechten voorbehouden.
 
 ---
 
-**Versie**: 1.0  
-**Laatst bijgewerkt**: 24 januari 2026  
-**Onderhoud**: Via [mandarin-agents](https://github.com/hans-blok/mandarin-agents) distribution
+**Laatst bijgewerkt**: 27 januari 2026  
+**Door**: Hans Blok
+
