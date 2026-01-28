@@ -1,6 +1,7 @@
 # Workspace generated files and logs
 logs/
 temp/
+# .vscode/
 
 # Fetched repository (cache for git pull efficiency)
 mandarin-agents/

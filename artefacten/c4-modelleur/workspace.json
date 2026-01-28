@@ -1,0 +1,540 @@
+{
+  "configuration" : { },
+  "description" : "Context- en containermodel van de ecosysteem-bouwketen (EBA) op basis van de canon.",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2026-01-12T21:08:21Z",
+  "model" : {
+    "people" : [ {
+      "description" : "Ontwerpt en evolueert het agentische ecosysteem; beheert agent-capabilities charters en stuurt de end-to-end bouw- en evolutiecyclus.",
+      "id" : "1",
+      "name" : "AI Agentic System Developer",
+      "properties" : {
+        "structurizr.dsl.identifier" : "aiAgenticSystemDeveloper"
+      },
+      "relationships" : [ {
+        "description" : "Initieert en stuurt de evolutie van het ecosysteem via issues en charters",
+        "destinationId" : "3",
+        "id" : "15",
+        "sourceId" : "1",
+        "tags" : "Relationship",
+        "technology" : "Issues, charters"
+      }, {
+        "description" : "Schrijft/actualiseert charters en templates",
+        "destinationId" : "9",
+        "id" : "17",
+        "sourceId" : "1",
+        "tags" : "Relationship",
+        "technology" : "Git"
+      }, {
+        "description" : "Start en configureert (re)builds",
+        "destinationId" : "4",
+        "id" : "23",
+        "sourceId" : "1",
+        "tags" : "Relationship",
+        "technology" : "CLI"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Bewaakt de canon en ontwerpt architectuurkaders voor de bouwketen.",
+      "id" : "2",
+      "name" : "Canon Architect",
+      "properties" : {
+        "structurizr.dsl.identifier" : "canonArchitect"
+      },
+      "relationships" : [ {
+        "description" : "Levert canon-documenten en architectuurkaders voor de bouwketen",
+        "destinationId" : "3",
+        "id" : "16",
+        "sourceId" : "2",
+        "tags" : "Relationship",
+        "technology" : "Canon, architectuur"
+      }, {
+        "description" : "Schrijft/actualiseert canon-documenten",
+        "destinationId" : "12",
+        "id" : "18",
+        "sourceId" : "2",
+        "tags" : "Relationship",
+        "technology" : "Git"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "description" : "Hoofdentrypoint dat charters ophaalt, buildplans aanmaakt, generators aanstuurt en resultaten wegschrijft in de juiste mappen.",
+        "documentation" : { },
+        "id" : "4",
+        "name" : "Orchestrator Script (make-agent.py)",
+        "properties" : {
+          "structurizr.dsl.identifier" : "orchestrator"
+        },
+        "relationships" : [ {
+          "description" : "Leest charters/templates",
+          "destinationId" : "9",
+          "id" : "24",
+          "sourceId" : "4",
+          "tags" : "Relationship",
+          "technology" : "Git"
+        }, {
+          "description" : "Leest standaarden/beleid",
+          "destinationId" : "10",
+          "id" : "25",
+          "sourceId" : "4",
+          "tags" : "Relationship",
+          "technology" : "Git"
+        }, {
+          "description" : "Leest/schrijft canon",
+          "destinationId" : "12",
+          "id" : "26",
+          "sourceId" : "4",
+          "tags" : "Relationship",
+          "technology" : "Git"
+        }, {
+          "description" : "Schrijft buildplans en traceability",
+          "destinationId" : "6",
+          "id" : "27",
+          "sourceId" : "4",
+          "tags" : "Relationship",
+          "technology" : "Files"
+        }, {
+          "description" : "Stuurt generators/runners aan",
+          "destinationId" : "5",
+          "id" : "28",
+          "sourceId" : "4",
+          "tags" : "Relationship",
+          "technology" : "Script-calls"
+        }, {
+          "description" : "Genereert/wijzigt workflows",
+          "destinationId" : "8",
+          "id" : "29",
+          "sourceId" : "4",
+          "tags" : "Relationship",
+          "technology" : "Files"
+        }, {
+          "description" : "Schrijft resultaten weg",
+          "destinationId" : "11",
+          "id" : "30",
+          "sourceId" : "4",
+          "tags" : "Relationship",
+          "technology" : "Files/Git"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Python"
+      }, {
+        "description" : "LLM-gestuurde generators en runners die rolbeschrijvingen, prompts, runners en workflow-definities produceren.",
+        "documentation" : { },
+        "id" : "5",
+        "name" : "Generators & Runners",
+        "properties" : {
+          "structurizr.dsl.identifier" : "generators"
+        },
+        "relationships" : [ {
+          "description" : "Verrijkt buildplans met LLM-details",
+          "destinationId" : "6",
+          "id" : "31",
+          "sourceId" : "5",
+          "tags" : "Relationship",
+          "technology" : "Files"
+        }, {
+          "description" : "Roept LLM's aan",
+          "destinationId" : "13",
+          "id" : "32",
+          "sourceId" : "5",
+          "tags" : "Relationship",
+          "technology" : "HTTPS/API"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Python, LLM API"
+      }, {
+        "description" : "Bestanden (bijv. JSON/YAML) waarin per agent wordt vastgelegd: bron-charter, LLM-calls/parameters en gegenereerde artefacten.",
+        "documentation" : { },
+        "id" : "6",
+        "name" : "Buildplan & Traceability Store",
+        "properties" : {
+          "structurizr.dsl.identifier" : "buildplanStore"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Files"
+      }, {
+        "description" : "Lokale governance-documenten en standaarden die de bouwketen kaderen (beleid, gedragscode, workspace-/agent-standaard).",
+        "documentation" : { },
+        "id" : "7",
+        "name" : "Governance & Standaarden (werkruimte)",
+        "properties" : {
+          "structurizr.dsl.identifier" : "governanceLayer"
+        },
+        "tags" : "Element,Container",
+        "technology" : "Markdown"
+      }, {
+        "description" : "Workflow-definities (bijv. GitHub Actions of GitLab CI) die de bouwketen automatisch uitvoeren.",
+        "documentation" : { },
+        "id" : "8",
+        "name" : "CI/CD Workflows",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ciCdWorkflows"
+        },
+        "relationships" : [ {
+          "description" : "Worden uitgevoerd door",
+          "destinationId" : "14",
+          "id" : "34",
+          "sourceId" : "8",
+          "tags" : "Relationship",
+          "technology" : "Pipelines"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "YAML"
+      } ],
+      "description" : "Bouwketen die met LLM's, charters, runners, workflows en governance het agentische ecosysteem ontwerpt, genereert en evolueert.",
+      "documentation" : { },
+      "id" : "3",
+      "name" : "Ecosysteem Bouwketen (EBA)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eba"
+      },
+      "relationships" : [ {
+        "description" : "Leest en schrijft canon-documenten",
+        "destinationId" : "12",
+        "id" : "19",
+        "sourceId" : "3",
+        "tags" : "Relationship",
+        "technology" : "Git"
+      }, {
+        "description" : "Leest charters, templates en generator-bronnen",
+        "destinationId" : "9",
+        "id" : "20",
+        "sourceId" : "3",
+        "tags" : "Relationship",
+        "technology" : "Git"
+      }, {
+        "description" : "Leest standaarden en beleid",
+        "destinationId" : "10",
+        "id" : "21",
+        "sourceId" : "3",
+        "tags" : "Relationship",
+        "technology" : "Git"
+      }, {
+        "description" : "Levert/actualiseert artefacten in werkruimtes",
+        "destinationId" : "11",
+        "id" : "22",
+        "sourceId" : "3",
+        "tags" : "Relationship",
+        "technology" : "Files/Git"
+      }, {
+        "description" : "Roept LLM's aan",
+        "destinationId" : "13",
+        "id" : "33",
+        "linkedRelationshipId" : "32",
+        "sourceId" : "3",
+        "technology" : "HTTPS/API"
+      }, {
+        "description" : "Worden uitgevoerd door",
+        "destinationId" : "14",
+        "id" : "35",
+        "linkedRelationshipId" : "34",
+        "sourceId" : "3",
+        "technology" : "Pipelines"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Repository met agent-charters, templates en generator-bronnen.",
+      "documentation" : { },
+      "id" : "9",
+      "name" : "Agent-capabilities repository",
+      "properties" : {
+        "structurizr.dsl.identifier" : "agentCapabilitiesRepo"
+      },
+      "tags" : "Element,Software System,Extern"
+    }, {
+      "description" : "Repository met standaarden, beleid en normerende kaders voor het ecosysteem.",
+      "documentation" : { },
+      "id" : "10",
+      "name" : "Standards repository",
+      "properties" : {
+        "structurizr.dsl.identifier" : "standardsRepo"
+      },
+      "tags" : "Element,Software System,Extern"
+    }, {
+      "description" : "Concrete werkruimtes waar het ecosysteem (of deel daarvan) wordt toegepast, opgebouwd en onderhouden.",
+      "documentation" : { },
+      "id" : "11",
+      "name" : "Project workspace(s)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "projectWorkspaces"
+      },
+      "tags" : "Element,Software System,Extern"
+    }, {
+      "description" : "Git-repository met canon-documenten en referentie-architecturen voor agentische systemen.",
+      "documentation" : { },
+      "id" : "12",
+      "name" : "Canon-repository",
+      "properties" : {
+        "structurizr.dsl.identifier" : "canonRepo"
+      },
+      "tags" : "Element,Software System,Extern"
+    }, {
+      "description" : "Meerdere LLM-diensten (bijv. Claude, Gemini, GPT) die via API's worden aangeroepen vanuit generators en runners.",
+      "documentation" : { },
+      "id" : "13",
+      "name" : "LLM-platform(en)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "llmPlatform"
+      },
+      "tags" : "Element,Software System,Extern"
+    }, {
+      "description" : "CI/CD-platform (bijv. GitHub Actions of GitLab CI) dat workflows van de bouwketen uitvoert.",
+      "documentation" : { },
+      "id" : "14",
+      "name" : "CI/CD-platform",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ciCdPlatform"
+      },
+      "relationships" : [ {
+        "description" : "Triggert runs",
+        "destinationId" : "4",
+        "id" : "36",
+        "sourceId" : "14",
+        "tags" : "Relationship",
+        "technology" : "Events"
+      }, {
+        "description" : "Triggert runs",
+        "destinationId" : "3",
+        "id" : "37",
+        "linkedRelationshipId" : "36",
+        "sourceId" : "14",
+        "technology" : "Events"
+      } ],
+      "tags" : "Element,Software System,Extern"
+    } ]
+  },
+  "name" : "Ecosysteem Bouwarchitectuur",
+  "properties" : {
+    "structurizr.inspection.info" : "0",
+    "structurizr.inspection.ignore" : "0",
+    "structurizr.inspection.error" : "4",
+    "structurizr.inspection.warning" : "0",
+    "structurizr.dsl" : "d29ya3NwYWNlICJFY29zeXN0ZWVtIEJvdXdhcmNoaXRlY3R1dXIiICJDb250ZXh0LSBlbiBjb250YWluZXJtb2RlbCB2YW4gZGUgZWNvc3lzdGVlbS1ib3V3a2V0ZW4gKEVCQSkgb3AgYmFzaXMgdmFuIGRlIGNhbm9uLiIgewoKICAgIG1vZGVsIHsKCiAgICAgICAgYWlBZ2VudGljU3lzdGVtRGV2ZWxvcGVyID0gcGVyc29uICJBSSBBZ2VudGljIFN5c3RlbSBEZXZlbG9wZXIiICJPbnR3ZXJwdCBlbiBldm9sdWVlcnQgaGV0IGFnZW50aXNjaGUgZWNvc3lzdGVlbTsgYmVoZWVydCBhZ2VudC1jYXBhYmlsaXRpZXMgY2hhcnRlcnMgZW4gc3R1dXJ0IGRlIGVuZC10by1lbmQgYm91dy0gZW4gZXZvbHV0aWVjeWNsdXMuIgogICAgICAgIGNhbm9uQXJjaGl0ZWN0ID0gcGVyc29uICJDYW5vbiBBcmNoaXRlY3QiICJCZXdhYWt0IGRlIGNhbm9uIGVuIG9udHdlcnB0IGFyY2hpdGVjdHV1cmthZGVycyB2b29yIGRlIGJvdXdrZXRlbi4iCgogICAgICAgIGViYSA9IHNvZnR3YXJlU3lzdGVtICJFY29zeXN0ZWVtIEJvdXdrZXRlbiAoRUJBKSIgIkJvdXdrZXRlbiBkaWUgbWV0IExMTSdzLCBjaGFydGVycywgcnVubmVycywgd29ya2Zsb3dzIGVuIGdvdmVybmFuY2UgaGV0IGFnZW50aXNjaGUgZWNvc3lzdGVlbSBvbnR3ZXJwdCwgZ2VuZXJlZXJ0IGVuIGV2b2x1ZWVydC4iIHsKCiAgICAgICAgICAgIG9yY2hlc3RyYXRvciA9IGNvbnRhaW5lciAiT3JjaGVzdHJhdG9yIFNjcmlwdCAobWFrZS1hZ2VudC5weSkiICJIb29mZGVudHJ5cG9pbnQgZGF0IGNoYXJ0ZXJzIG9waGFhbHQsIGJ1aWxkcGxhbnMgYWFubWFha3QsIGdlbmVyYXRvcnMgYWFuc3R1dXJ0IGVuIHJlc3VsdGF0ZW4gd2Vnc2NocmlqZnQgaW4gZGUganVpc3RlIG1hcHBlbi4iICJQeXRob24iCgogICAgICAgICAgICBnZW5lcmF0b3JzID0gY29udGFpbmVyICJHZW5lcmF0b3JzICYgUnVubmVycyIgIkxMTS1nZXN0dXVyZGUgZ2VuZXJhdG9ycyBlbiBydW5uZXJzIGRpZSByb2xiZXNjaHJpanZpbmdlbiwgcHJvbXB0cywgcnVubmVycyBlbiB3b3JrZmxvdy1kZWZpbml0aWVzIHByb2R1Y2VyZW4uIiAiUHl0aG9uLCBMTE0gQVBJIgoKICAgICAgICAgICAgYnVpbGRwbGFuU3RvcmUgPSBjb250YWluZXIgIkJ1aWxkcGxhbiAmIFRyYWNlYWJpbGl0eSBTdG9yZSIgIkJlc3RhbmRlbiAoYmlqdi4gSlNPTi9ZQU1MKSB3YWFyaW4gcGVyIGFnZW50IHdvcmR0IHZhc3RnZWxlZ2Q6IGJyb24tY2hhcnRlciwgTExNLWNhbGxzL3BhcmFtZXRlcnMgZW4gZ2VnZW5lcmVlcmRlIGFydGVmYWN0ZW4uIiAiRmlsZXMiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICB9CgogICAgICAgICAgICBnb3Zlcm5hbmNlTGF5ZXIgPSBjb250YWluZXIgIkdvdmVybmFuY2UgJiBTdGFuZGFhcmRlbiAod2Vya3J1aW10ZSkiICJMb2thbGUgZ292ZXJuYW5jZS1kb2N1bWVudGVuIGVuIHN0YW5kYWFyZGVuIGRpZSBkZSBib3V3a2V0ZW4ga2FkZXJlbiAoYmVsZWlkLCBnZWRyYWdzY29kZSwgd29ya3NwYWNlLS9hZ2VudC1zdGFuZGFhcmQpLiIgIk1hcmtkb3duIgoKICAgICAgICAgICAgY2lDZFdvcmtmbG93cyA9IGNvbnRhaW5lciAiQ0kvQ0QgV29ya2Zsb3dzIiAiV29ya2Zsb3ctZGVmaW5pdGllcyAoYmlqdi4gR2l0SHViIEFjdGlvbnMgb2YgR2l0TGFiIENJKSBkaWUgZGUgYm91d2tldGVuIGF1dG9tYXRpc2NoIHVpdHZvZXJlbi4iICJZQU1MIgogICAgICAgIH0KCiAgICAgICAgYWdlbnRDYXBhYmlsaXRpZXNSZXBvID0gc29mdHdhcmVTeXN0ZW0gIkFnZW50LWNhcGFiaWxpdGllcyByZXBvc2l0b3J5IiAiUmVwb3NpdG9yeSBtZXQgYWdlbnQtY2hhcnRlcnMsIHRlbXBsYXRlcyBlbiBnZW5lcmF0b3ItYnJvbm5lbi4iIHsKICAgICAgICAgICAgdGFncyAiRXh0ZXJuIgogICAgICAgIH0KCiAgICAgICAgc3RhbmRhcmRzUmVwbyA9IHNvZnR3YXJlU3lzdGVtICJTdGFuZGFyZHMgcmVwb3NpdG9yeSIgIlJlcG9zaXRvcnkgbWV0IHN0YW5kYWFyZGVuLCBiZWxlaWQgZW4gbm9ybWVyZW5kZSBrYWRlcnMgdm9vciBoZXQgZWNvc3lzdGVlbS4iIHsKICAgICAgICAgICAgdGFncyAiRXh0ZXJuIgogICAgICAgIH0KCiAgICAgICAgcHJvamVjdFdvcmtzcGFjZXMgPSBzb2Z0d2FyZVN5c3RlbSAiUHJvamVjdCB3b3Jrc3BhY2UocykiICJDb25jcmV0ZSB3ZXJrcnVpbXRlcyB3YWFyIGhldCBlY29zeXN0ZWVtIChvZiBkZWVsIGRhYXJ2YW4pIHdvcmR0IHRvZWdlcGFzdCwgb3BnZWJvdXdkIGVuIG9uZGVyaG91ZGVuLiIgewogICAgICAgICAgICB0YWdzICJFeHRlcm4iCiAgICAgICAgfQoKICAgICAgICBjYW5vblJlcG8gPSBzb2Z0d2FyZVN5c3RlbSAiQ2Fub24tcmVwb3NpdG9yeSIgIkdpdC1yZXBvc2l0b3J5IG1ldCBjYW5vbi1kb2N1bWVudGVuIGVuIHJlZmVyZW50aWUtYXJjaGl0ZWN0dXJlbiB2b29yIGFnZW50aXNjaGUgc3lzdGVtZW4uIiB7CiAgICAgICAgICAgIHRhZ3MgIkV4dGVybiIKICAgICAgICB9CgogICAgICAgIGxsbVBsYXRmb3JtID0gc29mdHdhcmVTeXN0ZW0gIkxMTS1wbGF0Zm9ybShlbikiICJNZWVyZGVyZSBMTE0tZGllbnN0ZW4gKGJpanYuIENsYXVkZSwgR2VtaW5pLCBHUFQpIGRpZSB2aWEgQVBJJ3Mgd29yZGVuIGFhbmdlcm9lcGVuIHZhbnVpdCBnZW5lcmF0b3JzIGVuIHJ1bm5lcnMuIiB7CiAgICAgICAgICAgIHRhZ3MgIkV4dGVybiIKICAgICAgICB9CgogICAgICAgIGNpQ2RQbGF0Zm9ybSA9IHNvZnR3YXJlU3lzdGVtICJDSS9DRC1wbGF0Zm9ybSIgIkNJL0NELXBsYXRmb3JtIChiaWp2LiBHaXRIdWIgQWN0aW9ucyBvZiBHaXRMYWIgQ0kpIGRhdCB3b3JrZmxvd3MgdmFuIGRlIGJvdXdrZXRlbiB1aXR2b2VydC4iIHsKICAgICAgICAgICAgdGFncyAiRXh0ZXJuIgogICAgICAgIH0KCiAgICAgICAgLy8gUmVsYXRpZXMgKG5hIGFsbGUgZWxlbWVudC1kZWZpbml0aWVzKQogICAgICAgIGFpQWdlbnRpY1N5c3RlbURldmVsb3BlciAtPiBlYmEgIkluaXRpZWVydCBlbiBzdHV1cnQgZGUgZXZvbHV0aWUgdmFuIGhldCBlY29zeXN0ZWVtIHZpYSBpc3N1ZXMgZW4gY2hhcnRlcnMiICJJc3N1ZXMsIGNoYXJ0ZXJzIgogICAgICAgIGNhbm9uQXJjaGl0ZWN0IC0+IGViYSAiTGV2ZXJ0IGNhbm9uLWRvY3VtZW50ZW4gZW4gYXJjaGl0ZWN0dXVya2FkZXJzIHZvb3IgZGUgYm91d2tldGVuIiAiQ2Fub24sIGFyY2hpdGVjdHV1ciIKCiAgICAgICAgYWlBZ2VudGljU3lzdGVtRGV2ZWxvcGVyIC0+IGFnZW50Q2FwYWJpbGl0aWVzUmVwbyAiU2NocmlqZnQvYWN0dWFsaXNlZXJ0IGNoYXJ0ZXJzIGVuIHRlbXBsYXRlcyIgIkdpdCIKICAgICAgICBjYW5vbkFyY2hpdGVjdCAtPiBjYW5vblJlcG8gIlNjaHJpamZ0L2FjdHVhbGlzZWVydCBjYW5vbi1kb2N1bWVudGVuIiAiR2l0IgoKICAgICAgICBlYmEgLT4gY2Fub25SZXBvICJMZWVzdCBlbiBzY2hyaWpmdCBjYW5vbi1kb2N1bWVudGVuIiAiR2l0IgogICAgICAgIGViYSAtPiBhZ2VudENhcGFiaWxpdGllc1JlcG8gIkxlZXN0IGNoYXJ0ZXJzLCB0ZW1wbGF0ZXMgZW4gZ2VuZXJhdG9yLWJyb25uZW4iICJHaXQiCiAgICAgICAgZWJhIC0+IHN0YW5kYXJkc1JlcG8gIkxlZXN0IHN0YW5kYWFyZGVuIGVuIGJlbGVpZCIgIkdpdCIKICAgICAgICBlYmEgLT4gcHJvamVjdFdvcmtzcGFjZXMgIkxldmVydC9hY3R1YWxpc2VlcnQgYXJ0ZWZhY3RlbiBpbiB3ZXJrcnVpbXRlcyIgIkZpbGVzL0dpdCIKCiAgICAgICAgYWlBZ2VudGljU3lzdGVtRGV2ZWxvcGVyIC0+IG9yY2hlc3RyYXRvciAiU3RhcnQgZW4gY29uZmlndXJlZXJ0IChyZSlidWlsZHMiICJDTEkiCgogICAgICAgIG9yY2hlc3RyYXRvciAtPiBhZ2VudENhcGFiaWxpdGllc1JlcG8gIkxlZXN0IGNoYXJ0ZXJzL3RlbXBsYXRlcyIgIkdpdCIKICAgICAgICBvcmNoZXN0cmF0b3IgLT4gc3RhbmRhcmRzUmVwbyAiTGVlc3Qgc3RhbmRhYXJkZW4vYmVsZWlkIiAiR2l0IgogICAgICAgIG9yY2hlc3RyYXRvciAtPiBjYW5vblJlcG8gIkxlZXN0L3NjaHJpamZ0IGNhbm9uIiAiR2l0IgogICAgICAgIG9yY2hlc3RyYXRvciAtPiBidWlsZHBsYW5TdG9yZSAiU2NocmlqZnQgYnVpbGRwbGFucyBlbiB0cmFjZWFiaWxpdHkiICJGaWxlcyIKICAgICAgICBvcmNoZXN0cmF0b3IgLT4gZ2VuZXJhdG9ycyAiU3R1dXJ0IGdlbmVyYXRvcnMvcnVubmVycyBhYW4iICJTY3JpcHQtY2FsbHMiCiAgICAgICAgb3JjaGVzdHJhdG9yIC0+IGNpQ2RXb3JrZmxvd3MgIkdlbmVyZWVydC93aWp6aWd0IHdvcmtmbG93cyIgIkZpbGVzIgogICAgICAgIG9yY2hlc3RyYXRvciAtPiBwcm9qZWN0V29ya3NwYWNlcyAiU2NocmlqZnQgcmVzdWx0YXRlbiB3ZWciICJGaWxlcy9HaXQiCgogICAgICAgIGdlbmVyYXRvcnMgLT4gYnVpbGRwbGFuU3RvcmUgIlZlcnJpamt0IGJ1aWxkcGxhbnMgbWV0IExMTS1kZXRhaWxzIiAiRmlsZXMiCiAgICAgICAgZ2VuZXJhdG9ycyAtPiBsbG1QbGF0Zm9ybSAiUm9lcHQgTExNJ3MgYWFuIiAiSFRUUFMvQVBJIgoKICAgICAgICBjaUNkV29ya2Zsb3dzIC0+IGNpQ2RQbGF0Zm9ybSAiV29yZGVuIHVpdGdldm9lcmQgZG9vciIgIlBpcGVsaW5lcyIKICAgICAgICBjaUNkUGxhdGZvcm0gLT4gb3JjaGVzdHJhdG9yICJUcmlnZ2VydCBydW5zIiAiRXZlbnRzIgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IGViYSAiRUJBLUNvbnRleHQiICJDb250ZXh0ZGlhZ3JhbSB2YW4gZGUgZWNvc3lzdGVlbS1ib3V3a2V0ZW4gKEVCQSkgYmlubmVuIGRlIGVjb3N5c3RlZW1jb250ZXh0LiIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIGViYSAiRUJBLUNvbnRhaW5lcnMiICJDb250YWluZXJtb2RlbCB2YW4gZGUgZWNvc3lzdGVlbS1ib3V3a2V0ZW4gKEVCQSkgbWV0IGZvY3VzIG9wIGhvb2Zkb25kZXJkZWxlbiB1aXQgZGUgY2Fub24uIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvTGF5b3V0IGxyCiAgICAgICAgfQoKICAgICAgICBzdHlsZXMgewogICAgICAgICAgICBlbGVtZW50ICJQZXJzb24iIHsKICAgICAgICAgICAgICAgIHNoYXBlIFBlcnNvbgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlNvZnR3YXJlIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzExNjhiZCIKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkV4dGVybiIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzk5OTk5OSIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJDb250YWluZXIiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIiM0MzhkZDUiCiAgICAgICAgICAgICAgICBjb2xvciAiI2ZmZmZmZiIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgc2hhcGUgQ3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQ=="
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "EBA-Context",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#438dd5",
+          "color" : "#ffffff",
+          "tag" : "Container"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        }, {
+          "background" : "#999999",
+          "tag" : "Extern"
+        }, {
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "background" : "#1168bd",
+          "color" : "#ffffff",
+          "tag" : "Software System"
+        } ]
+      },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "Containermodel van de ecosysteem-bouwketen (EBA) met focus op hoofdonderdelen uit de canon.",
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "EBA-Containers",
+      "name" : "Container View: Ecosysteem Bouwketen (EBA)",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "17"
+      }, {
+        "id" : "23"
+      }, {
+        "id" : "24"
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "26"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "30"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "32"
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "36"
+      } ],
+      "softwareSystemId" : "3"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "Contextdiagram van de ecosysteem-bouwketen (EBA) binnen de ecosysteemcontext.",
+      "dimensions" : {
+        "height" : 3700,
+        "width" : 2300
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 200,
+        "y" : 1246
+      }, {
+        "id" : "2",
+        "x" : 200,
+        "y" : 2234
+      }, {
+        "id" : "3",
+        "x" : 900,
+        "y" : 1342
+      }, {
+        "id" : "9",
+        "x" : 1650,
+        "y" : 142
+      }, {
+        "id" : "10",
+        "x" : 1650,
+        "y" : 1942
+      }, {
+        "id" : "11",
+        "x" : 1650,
+        "y" : 2542
+      }, {
+        "id" : "12",
+        "x" : 1650,
+        "y" : 3142
+      }, {
+        "id" : "13",
+        "x" : 1650,
+        "y" : 742
+      }, {
+        "id" : "14",
+        "x" : 1650,
+        "y" : 1342
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "EBA-Context",
+      "name" : "System Context View: Ecosysteem Bouwketen (EBA)",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "15"
+      }, {
+        "id" : "16"
+      }, {
+        "id" : "17"
+      }, {
+        "id" : "18"
+      }, {
+        "id" : "19",
+        "vertices" : [ {
+          "x" : 1650,
+          "y" : 2992
+        } ]
+      }, {
+        "id" : "20",
+        "vertices" : [ {
+          "x" : 1650,
+          "y" : 592
+        } ]
+      }, {
+        "id" : "21"
+      }, {
+        "id" : "22",
+        "vertices" : [ {
+          "x" : 1650,
+          "y" : 2392
+        } ]
+      }, {
+        "id" : "33"
+      }, {
+        "id" : "35",
+        "vertices" : [ {
+          "x" : 1500,
+          "y" : 1642
+        } ]
+      }, {
+        "id" : "37",
+        "vertices" : [ {
+          "x" : 1500,
+          "y" : 1342
+        } ]
+      } ],
+      "softwareSystemId" : "3"
+    } ]
+  }
+}

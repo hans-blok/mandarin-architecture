@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organisatie-Principes — Ondernemingsvorming (Mandarin)">
+    <title>Organisatie-Principes — Ondernemingsvorming</title>
+    
+    <!-- Google Fonts - IBM Plex -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet (consume design asset) -->
+    <link rel="stylesheet" href="../../presentatie-architect/mandarin-toelichting-2026/mandarin-toelichting.css">
+</head>
+<body>
+    <!-- Skip to content voor toegankelijkheid -->
+    <a href="#main-content" class="skip-to-content">Spring naar inhoud</a>
+    
+    <!-- Mobile menu toggle button -->
+    <button class="menu-toggle" aria-label="Menu openen" aria-controls="sidebar" aria-expanded="false">☰</button>
+    
+    <!-- Sidebar overlay voor mobile -->
+    <div class="sidebar-overlay" aria-hidden="true"></div>
+    
+    <!-- Page container -->
+    <div class="page-container">
+        
+        <!-- Sidebar Navigation -->
+        <nav id="sidebar" class="sidebar" role="navigation" aria-label="Hoofdnavigatie">
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <a href="../../../index.html" aria-label="Ga naar home">
+                    <img src="../logo/Manarin%20logo%20M.png" alt="Mandarin logo - gestileerde mandarijn met oranje en blauwe partjes">
+                </a>
+            </div>
+            
+            <!-- Navigation menu -->
+            <ul class="sidebar-nav">
+                <li><a href="#inleiding">Inleiding</a></li>
+                <li>
+                    <a href="#principe-1">Principe 1 — Soevereiniteit</a>
+                    <ul>
+                        <li><a href="#p1-rationale">Rationale</a></li>
+                        <li><a href="#p1-implicaties">Implicaties</a></li>
+                        <li><a href="#p1-voorbeelden">Voorbeelden</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#principe-2">Principe 2 — Continuïteit van Architectuurdenken</a>
+                    <ul>
+                        <li><a href="#p2-rationale">Rationale</a></li>
+                        <li><a href="#p2-implicaties">Implicaties</a></li>
+                        <li><a href="#p2-voorbeelden">Voorbeelden</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#principe-3">Principe 3 — Waarde vóór Schaal</a>
+                    <ul>
+                        <li><a href="#p3-rationale">Rationale</a></li>
+                        <li><a href="#p3-implicaties">Implicaties</a></li>
+                        <li><a href="#p3-voorbeelden">Voorbeelden</a></li>
+                    </ul>
+                </li>
+                <li><a href="#samenhang">Samenhang en Implementatie</a></li>
+                <li><a href="#aanbevelingen">Aanbevelingen</a></li>
+                <li><a href="#metadata">Metadata</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <article class="content-wrapper">
+                
+                <!-- Document header -->
+                <header>
+                    <h1>Organisatie-Principes — Ondernemingsvorming</h1>
+                    
+                    <div class="document-meta">
+                        <p><strong>Versie:</strong> 1.0</p>
+                        <p><strong>Datum:</strong> 18 januari 2026</p>
+                        <p><strong>Eigenaar:</strong> Mandarin-EA</p>
+                        <p><strong>Review-cyclus:</strong> Nog vast te stellen</p>
+                        <p><strong>Scope:</strong> Ondernemingsvorming (Mandarin ontwikkeling)</p>
+                    </div>
+                </header>
+                
+                <hr>
+                
+                <section id="inleiding">
+                    <h2>Inleiding</h2>
+                    <p>Dit document definieert de organisatie-principes voor de ondernemingsvorming waarin Mandarin wordt ontwikkeld. Deze principes vormen de fundamentele grondslagen voor hoe we als organisatie opereren, beslissingen nemen en waarde creëren.</p>
+                    <p>Ze zijn bedoeld als strategische richtlijnen die de lange termijn koers bewaken en operationele besluiten sturen.</p>
+                </section>
+                
+                <hr>
+                
+                <section id="principe-1">
+                    <h2>Principe 1 — Soevereiniteit</h2>
+                    <p><strong>Korte beschrijving</strong><br>Wij zijn soeverein: we nemen onze eigen besluiten en maken ons niet structureel afhankelijk van externe partijen, leveranciers of gesloten ecosystemen.</p>
+                    
+                    <section id="p1-rationale">
+                        <h3>Rationale</h3>
+                        <p>Robert is uitgesproken voorstander van Linux en open source. Dit principe borgt die overtuiging op organisatieniveau en bewaakt onze onafhankelijkheid en autonomie. Door soevereiniteit te kiezen, behouden we controle over onze eigen richting, kennis en ontwikkeling.</p>
+                        <p>In een wereld waarin vendor lock-in en afhankelijkheid van grote platforms steeds groter worden, beschermt dit principe onze vrijheid om te kiezen wat het beste is voor onze eigen situatie.</p>
+                    </section>
+                    
+                    <section id="p1-implicaties">
+                        <h3>Implicaties</h3>
+                        <p><strong>Voor besluitvorming</strong>:</p>
+                        <ul>
+                            <li>We kiezen bewust voor open standaarden en open source tools</li>
+                            <li>Bij leverancierskeuzes weegt lange termijn autonomie zwaarder dan korte termijn gemak</li>
+                            <li>We bouwen en beheren kernkennis zelf in plaats van volledig uit te besteden</li>
+                        </ul>
+                        <p><strong>Voor architectuur en technologie</strong>:</p>
+                        <ul>
+                            <li>Vendor lock-in wordt actief vermeden</li>
+                            <li>We prefereren oplossingen waarbij we data en logica volledig beheren</li>
+                            <li>We blijven zelf ontwikkelen en innoveren, ook als dat meer inspanning vraagt</li>
+                            <li>We onderzoeken de mogelijkheid om een eigen LLM te ontwikkelen om volledige controle te behouden over onze AI-capabilities</li>
+                        </ul>
+                        <p><strong>Voor organisatie en cultuur</strong>:</p>
+                        <ul>
+                            <li>We investeren in eigen kennis en vaardigheden</li>
+                            <li>We documenteren en delen kennis intern zodat we niet afhankelijk zijn van individuele personen of externe partijen</li>
+                            <li>We nemen verantwoordelijkheid voor onze eigen koers</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="p1-voorbeelden">
+                        <h3>Voorbeelden</h3>
+                        <p><strong>Goed</strong> ✓</p>
+                        <ul>
+                            <li>Gebruik van Linux als besturingssysteem in plaats van proprietary alternatieven</li>
+                            <li>Kiezen voor open source databases met sterke community en standaarden</li>
+                            <li>Zelf agents ontwikkelen en beheren binnen Mandarin in plaats van afhankelijk zijn van closed source AI platforms</li>
+                            <li>Gebruik van Git met eigen repository-beheer in plaats van volledige afhankelijkheid van één cloud provider</li>
+                        </ul>
+                        <p><strong>Slecht</strong> ✗</p>
+                        <ul>
+                            <li>All-in gaan op één cloud provider zonder exit-strategie</li>
+                            <li>Kritieke bedrijfslogica volledig outsourcen zonder kennis intern te houden</li>
+                            <li>Proprietary formats gebruiken zonder conversie-mogelijkheid naar open standaarden</li>
+                            <li>Afhankelijk worden van één leverancier voor alle tooling zonder alternatieven</li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <hr>
+                
+                <section id="principe-2">
+                    <h2>Principe 2 — Continuïteit van Architectuurdenken</h2>
+                    <p><strong>Korte beschrijving</strong><br>Hoewel AI disruptief is voor de IT-markt, blijven wij werken volgens bestaande architectuurprincipes.</p>
+                    
+                    <section id="p2-rationale">
+                        <h3>Rationale</h3>
+                        <p>Net als eerdere technologische sprongen (bijvoorbeeld van machinetaal naar hogere programmeertalen) maakt AI IT niet eenvoudiger, maar complexer. De fundamentele uitdagingen van software-ontwikkeling—scheiding van verantwoordelijkheden, onderhoudbaarheid, testbaarheid—blijven bestaan en worden zelfs belangrijker.</p>
+                        <p>Dit principe bewaakt dat we niet in de valkuil stappen van "magische" oplossingen waarbij architectuur wordt vergeten. AI is een krachtige tool, maar geen vervanging voor structureel denken.</p>
+                    </section>
+                    
+                    <section id="p2-implicaties">
+                        <h3>Implicaties</h3>
+                        <p><strong>Voor systeem-ontwerp</strong>:</p>
+                        <ul>
+                            <li>We blijven denken in concerns en verantwoordelijkheden</li>
+                            <li>Scheiding van verantwoordelijkheden blijft leidend (ook bij AI-componenten)</li>
+                            <li>Nieuwe technologie verandert tooling en implementatie, niet het architecturele denkraam</li>
+                        </ul>
+                        <p><strong>Voor ontwikkeling</strong>:</p>
+                        <ul>
+                            <li>We vermijden "magische" oplossingen zonder duidelijke architectuur</li>
+                            <li>Complexiteit wordt beheerst door structuur en helderheid, niet door slimheid</li>
+                            <li>We documenteren beslissingen en trade-offs expliciet</li>
+                        </ul>
+                        <p><strong>Voor governance</strong>:</p>
+                        <ul>
+                            <li>Architectuurreviews blijven verplicht, ook voor AI-componenten</li>
+                            <li>Bestaande quality gates en kwaliteitseisen blijven van kracht</li>
+                            <li>We passen beproefde patronen toe voordat we nieuwe patronen introduceren</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="p2-voorbeelden">
+                        <h3>Voorbeelden</h3>
+                        <p><strong>Goed</strong> ✓</p>
+                        <ul>
+                            <li>Agent capabilities expliciet begrenzen en documenteren in charters</li>
+                            <li>Prompts scheiden van business logica en data</li>
+                            <li>State management en side effects duidelijk isoleren</li>
+                            <li>Agents ontwerpen volgens single responsibility principle</li>
+                        </ul>
+                        <p><strong>Slecht</strong> ✗</p>
+                        <ul>
+                            <li>Een groot AI-model inzetten zonder duidelijke capability boundary</li>
+                            <li>Prompts mengen met configuratie, data en business rules in één bestand</li>
+                            <li>"De AI lost het wel op" zonder architecturele afwegingen</li>
+                            <li>Agents met vage, overlappende verantwoordelijkheden en onduidelijke grenzen</li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <hr>
+                
+                <section id="principe-3">
+                    <h2>Principe 3 — Waarde vóór Schaal</h2>
+                    <p><strong>Korte beschrijving</strong><br>We bewijzen eerst dat iets waarde heeft, voordat we proberen het groot te maken.</p>
+                    
+                    <section id="p3-rationale">
+                        <h3>Rationale</h3>
+                        <p>In een vroege fase is schaal vaak een afleiding. Het echte risico is niet dat iets niet schaalt, maar dat het geen betekenisvolle waarde heeft. Door eerst te focussen op waarde, leren we wat echt belangrijk is en voorkomen we verspilling van energie aan schaalbaarheidsproblemen die misschien nooit relevant worden.</p>
+                        <p>Dit principe bewaakt onze focus en voorkomt over-engineering en premature optimization. Het dwingt ons om met kleine, echte signalen te werken in plaats van met grote aannames.</p>
+                    </section>
+                    
+                    <section id="p3-implicaties">
+                        <h3>Implicaties</h3>
+                        <p><strong>Voor product-ontwikkeling</strong>:</p>
+                        <ul>
+                            <li>Ideeën worden eerst inhoudelijk getoetst met een klein, concreet publiek</li>
+                            <li>We bouwen voor een concrete use case, niet voor "de markt" in het algemeen</li>
+                            <li>Kleine, echte signalen (gebruik, feedback) wegen zwaarder dan grote aannames</li>
+                        </ul>
+                        <p><strong>Voor architectuur</strong>:</p>
+                        <ul>
+                            <li>Schaalbaarheid volgt uit waarde, niet andersom</li>
+                            <li>We bouwen simpel en uitbreidbaar, niet complex en "klaar voor de toekomst"</li>
+                            <li>We refactoren naar schaal als dat nodig blijkt, niet bij voorbaat</li>
+                        </ul>
+                        <p><strong>Voor besluitvorming</strong>:</p>
+                        <ul>
+                            <li>Beslissingen worden genomen op basis van leren en feedback, niet op basis van ambitie of aannames</li>
+                            <li>We investeren in experimenten en prototypes voordat we grote commitments maken</li>
+                            <li>We accepteren dat niet elk idee schaalt, en dat is oké</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="p3-voorbeelden">
+                        <h3>Voorbeelden</h3>
+                        <p><strong>Goed</strong> ✓</p>
+                        <ul>
+                            <li>Een nieuwe agent eerst testen met één concrete use case en iteratief verbeteren</li>
+                            <li>Een workflow handmatig doorlopen voordat we automation bouwen</li>
+                            <li>Een kennisartikel publiceren en feedback verzamelen voordat we een hele serie maken</li>
+                            <li>Een simple file-based implementation voordat we een database introduceren</li>
+                        </ul>
+                        <p><strong>Slecht</strong> ✗</p>
+                        <ul>
+                            <li>Meteen een complexe microservices architectuur opzetten voor een eerste prototype</li>
+                            <li>Een schaalbare database-oplossing bouwen voordat we weten of iemand het product gebruikt</li>
+                            <li>Een algemeen framework ontwikkelen zonder concrete use case</li>
+                            <li>Investeren in performance optimization voordat we weten of de feature waarde heeft</li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <hr>
+                
+                <section id="samenhang">
+                    <h2>Samenhang en Implementatie</h2>
+                    <p>Deze drie principes versterken elkaar:</p>
+                    <p><strong>Soevereiniteit</strong> bewaakt onze onafhankelijkheid en autonomie.<br><strong>Architectuurdenken</strong> bewaakt onze samenhang en structuur.<br><strong>Waarde vóór schaal</strong> bewaakt onze focus en leren.</p>
+                    <p>Samen vormen ze een fundament voor hoe we werken: onafhankelijk, gestructureerd en gericht op echte waarde.</p>
+                    <h3>Conflicten tussen principes</h3>
+                    <p>In de praktijk kunnen principes soms botsen:</p>
+                    <ul>
+                        <li>Soevereiniteit kan leiden tot meer complexiteit (alles zelf doen vs. kopen)</li>
+                        <li>Architectuurdenken kan vertragen (structuur kost tijd)</li>
+                        <li>Waarde vóór schaal kan leiden tot technische schuld (snel leren vs. robuust bouwen)</li>
+                    </ul>
+                    <p>Bij dergelijke dilemma's:</p>
+                    <ol>
+                        <li>Maak de trade-off expliciet</li>
+                        <li>Kies bewust welk principe voorrang heeft in deze specifieke situatie</li>
+                        <li>Documenteer de keuze en de rationale</li>
+                        <li>Evalueer achteraf of de keuze juist was</li>
+                    </ol>
+                </section>
+                
+                <hr>
+                
+                <section id="aanbevelingen">
+                    <h2>Aanbevelingen</h2>
+                    <h3>Voor stakeholders</h3>
+                    <ul>
+                        <li><strong>Architecten en developers</strong>: Gebruik deze principes als toetssteen bij design reviews en technische beslissingen</li>
+                        <li><strong>Governance</strong>: Controleer of nieuwe initiatieven en artefacten consistent zijn met deze principes</li>
+                        <li><strong>Agent Curator</strong>: Zorg dat nieuwe agents en charters deze principes reflecteren in capability boundaries en werkwijze</li>
+                    </ul>
+                    <h3>Vervolgstappen</h3>
+                    <ol>
+                        <li><strong>Systeem-principes definiëren</strong>: De Mandarin-EA moet nu systeem-principes voor Mandarin platform opstellen die aligned zijn met deze organisatie-principes</li>
+                        <li><strong>Value stream definitie</strong>: Definieer de ondernemingsvorming value stream expliciet met stakeholders, in/out criteria en agents</li>
+                        <li><strong>Gap-analyse</strong>: Voer een gap-analyse uit tussen huidige staat en gewenste staat conform deze principes</li>
+                        <li><strong>Communicatie</strong>: Deel deze principes met alle betrokkenen en organiseer een review-sessie</li>
+                    </ol>
+                    <h3>Review en onderhoud</h3>
+                    <ul>
+                        <li><strong>Jaarlijkse review</strong>: Evalueer of deze principes nog steeds relevant zijn</li>
+                        <li><strong>Bij grote wijzigingen</strong>: Als er fundamentele veranderingen zijn in context of richting, herzie dan deze principes</li>
+                        <li><strong>Versioning</strong>: Nieuwe versies krijgen een nieuw versienummer en worden gedocumenteerd in <code>docs/resultaten/mandarin-ea/</code></li>
+                    </ul>
+                </section>
+                
+                <hr>
+                
+                <section id="metadata">
+                    <h2>Metadata</h2>
+                    <ul>
+                        <li><strong>Bestandsnaam</strong>: <code>principes-organisatie-ondernemingsvorming-v1.0.md</code></li>
+                        <li><strong>Locatie</strong>: <code>docs/resultaten/mandarin-ea/</code></li>
+                        <li><strong>Gerelateerde documenten</strong>:
+                            <ul>
+                                <li>Input: <code>temp/org-principe.md</code></li>
+                                <li>Governance: <code>governance/gedragscode.md</code>, <code>governance/workspace-doctrine.md</code></li>
+                                <li>Canon: <a href="https://github.com/hans-blok/canon.git">github.com/hans-blok/canon.git</a></li>
+                                <li>Charter: <code>charters-agents/charter.mandarin-ea.md</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>Volgende artefacten</strong>:
+                            <ul>
+                                <li><code>principes-systeem-mandarin-v1.0.md</code> (systeem-principes aligned met organisatie-principes)</li>
+                                <li><code>value-stream-definitie-ondernemingsvorming-v1.0.md</code> (value stream definitie)</li>
+                                <li><code>gap-analyse-ondernemingsvorming-2026-01.md</code> (gap-analyse)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <footer>
+                        <p class="text-muted">*Dit document is opgesteld door Mandarin-EA conform de werkwijze beschreven in <code>charters-agents/charter.mandarin-ea.md</code>. Voor vragen of feedback, escaleer naar governance.*</p>
+                    </footer>
+                </section>
+            </article>
+        </main>
+    </div>
+    
+    <!-- Optional JavaScript for mobile menu toggle and scroll spy -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.querySelector('.sidebar-overlay');
+        
+        menuToggle?.addEventListener('click', () => {
+            const isOpen = sidebar.classList.contains('open');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', !isOpen);
+            overlay.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+        });
+        
+        overlay?.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            overlay.setAttribute('aria-hidden', 'true');
+        });
+        
+        // Scroll spy - mark active navigation item
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const navLink = document.querySelector(`.sidebar-nav a[href="#${id}"]`);
+                
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    navLink?.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

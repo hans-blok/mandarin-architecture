@@ -3,9 +3,9 @@
 Fetch and organize agents from mandarin-agents repository.
 
 This script fetches agent definitions (charters, prompts, runners) from the
-mandarin-agents GitHub repository based on a published manifest (agents-publicatie.json).
-It organizes files into the workspace according to their type and applies filtering
-based on value streams.
+mandarin-agents GitHub repository (including .github directory) based on a published 
+manifest (agents-publicatie.json). It organizes files into the workspace according 
+to their type and applies filtering based on value streams.
 
 Usage:
     python fetch_mandarin_agents.py kennispublicatie
@@ -46,6 +46,7 @@ class Agent:
     value_stream: str
     charter_count: int = 0
     prompt_count: int = 0
+    agent_count: int = 0
     runner_count: int = 0
     
     def is_utility(self) -> bool:
@@ -86,44 +87,71 @@ class ManifestParser:
         self._locations: Dict[str, str] = {}
         
     def parse(self) -> Tuple[List[Agent], Dict[str, str], Dict[str, str]]:
-        """Parse manifest and return agents, metadata, and location templates."""
+        """Parse manifest and return agents, metadata, and location templates.
+        
+        Supports both v1.x (flat list) and v2.x (nested by value stream) format.
+        """
         self._data = json.loads(self.manifest_path.read_text(encoding="utf-8"))
         
         # Extract metadata
+        version = str(self._data.get("versie", "unknown"))
         metadata = {
-            "version": str(self._data.get("versie", "unknown")),
+            "version": version,
             "published_at": str(self._data.get("publicatiedatum", "unknown")),
         }
         
         # Extract location templates
         self._locations = self._data.get("locaties", {})
         
-        # Parse agents
-        agents_raw = self._data.get("agents", [])
-        for idx, entry in enumerate(agents_raw):
-            if not isinstance(entry, dict):
-                raise ValueError(f"Agent entry {idx} must be object, got {type(entry)}")
-            
-            name = entry.get("naam")
-            value_stream = entry.get("valueStream")
-            
-            if not name or not value_stream:
-                raise ValueError(f"Agent entry {idx} missing required fields: naam={name}, valueStream={value_stream}")
-            
-            agent = Agent(
-                name=str(name),
-                value_stream=str(value_stream),
-                charter_count=1,  # Always 1 charter per agent
-                prompt_count=int(entry.get("aantalPrompts", 0)),
-                runner_count=int(entry.get("aantalRunners", 0)),
-            )
-            self._agents.append(agent)
+        # Parse agents - support both v1.x and v2.x formats
+        if "valueStreams" in self._data and isinstance(self._data["valueStreams"], dict):
+            # v2.x format: nested structure with valueStreams object
+            for value_stream, vs_data in self._data["valueStreams"].items():
+                agents_dict = vs_data.get("agents", {})
+                for agent_name, agent_data in agents_dict.items():
+                    agent = Agent(
+                        name=str(agent_name),
+                        value_stream=str(value_stream),
+                        charter_count=1,  # Always 1 charter per agent
+                        prompt_count=int(agent_data.get("aantalPrompts", 0)),
+                        agent_count=int(agent_data.get("aantalAgents", 0)),
+                        runner_count=int(agent_data.get("aantalRunners", 0)),
+                    )
+                    self._agents.append(agent)
+        else:
+            # v1.x format: flat list with agents array
+            agents_raw = self._data.get("agents", [])
+            for idx, entry in enumerate(agents_raw):
+                if not isinstance(entry, dict):
+                    raise ValueError(f"Agent entry {idx} must be object, got {type(entry)}")
+                
+                name = entry.get("naam")
+                value_stream = entry.get("valueStream")
+                
+                if not name or not value_stream:
+                    raise ValueError(f"Agent entry {idx} missing required fields: naam={name}, valueStream={value_stream}")
+                
+                agent = Agent(
+                    name=str(name),
+                    value_stream=str(value_stream),
+                    charter_count=1,  # Always 1 charter per agent
+                    prompt_count=int(entry.get("aantalPrompts", 0)),
+                    agent_count=int(entry.get("aantalAgents", 0)),
+                    runner_count=int(entry.get("aantalRunners", 0)),
+                )
+                self._agents.append(agent)
         
         metadata["agent_count"] = str(len(self._agents))
         return self._agents, metadata, self._locations
     
     def get_value_streams(self) -> List[str]:
         """Extract unique value streams from parsed agents."""
+        # For v2.x format, check if valueStreams key exists in data
+        if "valueStreams" in self._data and isinstance(self._data["valueStreams"], dict):
+            streams = {vs.lower() for vs in self._data["valueStreams"].keys() if vs.lower() != "utility"}
+            return sorted(streams)
+        
+        # For v1.x format, extract from agents
         streams = {agent.value_stream.lower() for agent in self._agents if not agent.is_utility()}
         return sorted(streams)
 
@@ -174,6 +202,7 @@ class FileOrganizer:
         
         # Target directories
         self.charters_dir = workspace / "charters-agents"
+        self.agents_dir = workspace / ".github" / "agents"
         self.prompts_dir = workspace / ".github" / "prompts"
         self.scripts_dir = workspace / "scripts"
     
@@ -192,6 +221,13 @@ class FileOrganizer:
                 operations.append(charter_path)
             else:
                 warnings.append(f"{agent.name}: charter not found")
+            
+            # Agents - always try to resolve, even if count is 0
+            agent_ops = self._resolve_agents(agent)
+            if agent_ops:
+                operations.extend(agent_ops)
+            elif agent.agent_count > 0:
+                warnings.append(f"{agent.name}: expected {agent.agent_count} agent files but found none")
             
             # Prompts
             if agent.prompt_count > 0:
@@ -234,9 +270,26 @@ class FileOrganizer:
         )
         charter_path = self.repo_path / charter_path_str
         
+        # Try the template path first
         if charter_path.exists():
             dest = self.charters_dir / f"{agent.name}.md"
             return FileOperation(source=charter_path, destination=dest)
+        
+        # Fallback: try alternative naming convention (charter.<agent-naam>.md vs <agent-naam>.charter.md)
+        if ".charter." in charter_path_str:
+            # Try charter.<agent-naam>.md format
+            alt_path_str = charter_path_str.replace(".charter.", ".")
+            alt_path_str = alt_path_str.replace(f"{agent.name}.md", f"charter.{agent.name}.md")
+        elif "charter." in charter_path_str:
+            # Try <agent-naam>.charter.md format
+            alt_path_str = charter_path_str.replace(f"charter.{agent.name}", f"{agent.name}.charter")
+        else:
+            return None
+        
+        alt_charter_path = self.repo_path / alt_path_str
+        if alt_charter_path.exists():
+            dest = self.charters_dir / f"{agent.name}.md"
+            return FileOperation(source=alt_charter_path, destination=dest)
         
         return None
     
@@ -264,18 +317,77 @@ class FileOrganizer:
             .replace("<value-stream>", agent.value_stream)
         )
         
-        # Extract directory path (remove werkwoord pattern and filename)
-        prompts_dir_str = template_path.rsplit("/", 1)[0]
+        # Extract directory path and pattern from template
+        # Handle both old format (<agent-naam>-<werkwoord>.prompt.md) 
+        # and new format (mandarin.<agent-naam>*.prompt.md)
+        if "*" in template_path:
+            # Template contains wildcard, extract directory and pattern
+            prompts_dir_str = template_path.rsplit("/", 1)[0]
+            pattern = template_path.rsplit("/", 1)[1]
+        else:
+            # Old format without wildcard
+            prompts_dir_str = template_path.rsplit("/", 1)[0]
+            pattern = f"{agent.name}-*.prompt.md"
+        
         prompts_dir = self.repo_path / prompts_dir_str
         
         if not prompts_dir.exists():
             return operations
         
         # Find all prompts matching pattern
-        pattern = f"{agent.name}-*.prompt.md"
         for prompt_file in prompts_dir.glob(pattern):
             dest = self.prompts_dir / prompt_file.name
             operations.append(FileOperation(source=prompt_file, destination=dest))
+        
+        return operations
+    
+    def _resolve_agents(self, agent: Agent) -> List[FileOperation]:
+        """Resolve agent definition files using manifest location template."""
+        operations: List[FileOperation] = []
+        
+        agents_template = self.locations.get("agents")
+        
+        # If no template in manifest, use default pattern based on value stream
+        if not agents_template:
+            # Default: exports/<value-stream>/agents/<agent-naam>*.agent.md
+            agents_dir = self.repo_path / "exports" / agent.value_stream / "agents"
+            pattern = f"{agent.name}*.agent.md"
+        else:
+            # Get value-stream-specific template or default
+            if isinstance(agents_template, dict):
+                template = agents_template.get(agent.value_stream) or agents_template.get("default")
+            else:
+                template = agents_template
+            
+            if not template:
+                return operations
+            
+            # Substitute known placeholders
+            template_path = (
+                template
+                .replace("<agent-naam>", agent.name)
+                .replace("<value-stream>", agent.value_stream)
+            )
+            
+            # Extract directory path and pattern from template
+            if "*" in template_path:
+                # Template contains wildcard, extract directory and pattern
+                agents_dir_str = template_path.rsplit("/", 1)[0]
+                pattern = template_path.rsplit("/", 1)[1]
+            else:
+                # No wildcard, use agent name pattern
+                agents_dir_str = template_path.rsplit("/", 1)[0]
+                pattern = f"{agent.name}*.agent.md"
+            
+            agents_dir = self.repo_path / agents_dir_str
+        
+        if not agents_dir.exists():
+            return operations
+        
+        # Find all agent files matching pattern
+        for agent_file in agents_dir.glob(pattern):
+            dest = self.agents_dir / agent_file.name
+            operations.append(FileOperation(source=agent_file, destination=dest))
         
         return operations
     
