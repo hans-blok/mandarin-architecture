@@ -22,11 +22,11 @@
   
   /* Typografie */
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
-  --font-sans: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
-  --font-size-base: 1.125rem; /* 18px - groter voor 50+ */
-  --font-size-h1: 2.5rem;     /* 40px */
-  --font-size-h2: 2rem;       /* 32px */
-  --font-size-h3: 1.5rem;     /* 24px */
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-size-base: 1.2rem; /* 18px - groter voor 50+ */
+  --font-size-h1: 2.8rem;     /* 40px */
+  --font-size-h2: 2.2rem;       /* 32px */
+  --font-size-h3: 1.6rem;     /* 24px */
   --line-height-body: 1.7;    /* Extra ruimte voor leescomfort */
   --line-height-heading: 1.3;
   
