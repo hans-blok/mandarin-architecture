@@ -13,6 +13,12 @@ theme:
     - scheme: default
       primary: indigo
       accent: indigo
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
 
 extra_css:
   - style/mandarin.css
