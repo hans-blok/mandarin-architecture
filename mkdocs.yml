@@ -8,6 +8,7 @@ theme:
   language: nl
   logo: assets/mandarin-logo-m.png
   favicon: assets/mandarin-logo-m.png
+  logo_link: /
   palette:
     - scheme: default
       primary: indigo
