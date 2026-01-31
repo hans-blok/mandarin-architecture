@@ -1,5 +1,7 @@
+site_name: Mandarin Architecture
 site_url: https://hans-blok.github.io/mandarin-architecture/
 repo_url: https://github.com/hans-blok/mandarin-architecture
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -20,7 +22,7 @@ nav:
       - Axioma van gezag: axioma-van-gezag.md
       - Concepten Mandarin: concepten-mandarin.md
       - Constitutie: constitutie.md
-      - Essay – De AS bestaat al: essay.de-as-bestaat- al.md
+      - Essay – De AS bestaat al: essay.de-as-bestaat-al.md
       - Essay – Speckit pattern vs state pattern: essay-speckit-pattern-vs-state-pattern.md
 
 markdown_extensions:
