@@ -71,6 +71,26 @@ De expliciete afbakening en structurering van deze concepten is een **bewuste on
 
 Concepten die betrekking hebben op **gedrag, werking en sturing** van het ecosysteem — zoals governance, inferentie, intentie en logging — worden daarom vastgelegd in een afzonderlijk document. Deze scheiding voorkomt vermenging van verantwoordelijkheden en draagt bij aan meer grip op wat agents doen, waarom zij dat doen en wanneer zij moeten escaleren.
 
+### Gebruik van Synoniemen
+
+Bij elk concept worden **synoniemen** vermeld onder de sectie 🏷️. Deze synoniemen zijn **uitsluitend bedoeld voor menselijke spreektaal** en **NIET toegestaan binnen het Mandarin-ecosysteem**.
+
+**Strikte regel**: Binnen het ecosysteem (in governance-artefacten, agent-charters, doctrines, agent-contracts, agent-communicatie) wordt **altijd de volledige, officiële conceptnaam gebruikt**. Synoniemen zijn verboden in formele context.
+
+**Rationale**: Door consequent de officiële conceptnamen te gebruiken, wordt spraakverwarring voorkomen en weten **mandarin-agents** precies wat wordt bedoeld. Synoniemen zijn uitsluitend hulpmiddel voor mensen om het ecosysteem te begrijpen in informele gesprekken.
+
+**Voorbeelden van VERPLICHT gebruik**:
+- ✅ **Agent-contract** (NIET: "contract")
+- ✅ **Mandarin-artefact** (NIET: "artefact")
+- ✅ **Agent-soort** (NIET: "agent-type" of "agent-classificatie")
+- ✅ **Mandarin-capability** (NIET: "capability")
+- ✅ **Agent-charter** (NIET: "charter")
+- ✅ **Governance-artefact** (NIET: "governance-document" of "systeemartefact")
+- ✅ **Waarde-artefact** (NIET: "resultaat-artefact" of "value artefact")
+
+**Toegestaan**: In informele menselijke communicatie (gesprekken, notities, brainstorms) mogen synoniemen gebruikt worden voor leesbaarheid. Zodra het ecosysteem wordt geadresseerd (documenten, agent-interacties), gelden de officiële termen.
+
+--- 
 ## Mandarin-concept
 
 ### Definitie 📝
@@ -206,20 +226,20 @@ Ecosysteemprincipe
 ## Mandarin-agent
 
 ### Definitie 📝
-Een **mandarin-agent** is een expliciet gedefinieerde, autonome software-entiteit binnen het **Mandarin-ecosysteem** die, op basis van een formeel charter en contract, specifieke taken uitvoert, artefacten produceert of informatie levert, en daarbij altijd opereert binnen een afgebakende boundary en volgens de geldende governance.
+Een **mandarin-agent** is een expliciet gedefinieerde, autonome software-entiteit binnen het **Mandarin-ecosysteem** die, op basis van een formeel agent-charter en agent-contract, specifieke taken uitvoert, Mandarin-artefacten produceert of informatie levert, en daarbij altijd opereert binnen een afgebakende agent-boundary en volgens de geldende governance.
 
 ### Kenmerken ⭐
-- Heeft een expliciet charter en agent-contract
+- Heeft een expliciet agent-charter en agent-contract
 - Is autonoom en verantwoordelijk voor eigen uitvoering binnen boundary
 - Voert één of meer agent-capabilities uit
-- Produceert artefacten of levert informatie
+- Produceert Mandarin-artefacten of levert informatie
 - Is herbruikbaar en vervangbaar binnen het ecosysteem
 - Werkt altijd volgens expliciete input/output-afspraken
 
 ### Wat het niet is ❌
 - Geen impliciete of ad-hoc softwarecomponent
 - Geen menselijke actor
-- Geen agent zonder expliciet contract of charter
+- Geen agent zonder expliciet agent-contract of agent-charter
 - Geen monolithische applicatie
 
 ### Voorbeelden 💡
@@ -324,7 +344,7 @@ Een **agent-contract** definieert formeel de intent (**agent-capability**) van d
  - In SOA: WSDL of service agreement
 
 ### Toelichting 💬
-Totdat charter en agent-contract bestaan, is dit géén agent, maar een agent-capability-voornemen.
+Totdat agent-charter en agent-contract bestaan, is dit géén agent, maar een agent-capability-voornemen.
 
 ---
 ## Agent-boundary
@@ -373,6 +393,10 @@ Een **agent-soort** is een expliciete classificatie van **mandarin-agents** op b
 - Bepaalt welke governanceregels van toepassing zijn
 - Maakt duidelijk welke rol een agent speelt in het ecosysteem
 - Is leidend voor contractontwerp en template-vereisten
+- Bepaalt of een agent aan value stream fasen wordt toegekend:
+  - **Adviserende agents** en **uitvoerende agents** → toegekend aan één of meerdere value stream fasen
+  - **Beheeragents** → opereren in alle fasen
+  - Orthogonaal hierop: **utility agents** (niet aan fasen gebonden)
 
 ### Wat het niet is ❌
 - Geen rol of functie van een specifieke agent
@@ -515,6 +539,7 @@ Een **adviserende agent** levert uitsluitend informatieve output (advies, analys
 - Output is niet-normatief
 - Geen templates vereist
 - Output is niet bedoeld voor downstream automatisering
+- **Fase-toekenning**: Adviserende agents kunnen worden toegekend aan één of meerdere value stream fasen
 
 ### Wat het niet is ❌
 - Geen uitvoerende agent
@@ -549,6 +574,7 @@ Een **uitvoerende agent** levert duurzame **artefacten** als expliciet onderdeel
 - Output MOET voldoen aan een vooraf gedefinieerd template
 - Template is verplicht onderdeel van capability policy
 - Contract faalt als template ontbreekt
+- **Fase-toekenning**: Uitvoerende agents kunnen worden toegekend aan één of meerdere value stream fasen
 
 ### Wat het niet is ❌
 - Geen adviserende agent
@@ -576,13 +602,15 @@ De uitvoerende agent levert tastbare resultaten en structurele wijzigingen in de
 ## Beheeragent
 
 ### Definitie 📝
-Een **beheeragent** wijzigt de operationele staat van de **workspace** of runtime-omgeving, zonder business-**artefacten** te produceren.
+Een **beheeragent** wijzigt de operationele staat van de **workspace** of runtime-omgeving, zonder waarde-**artefacten** te produceren.
 
 ### Kenmerken ⭐
 - Wijzigt bestanden zoals .gitignore, folders, config
 - Start/stop containers of tooling
-- Produceert geen business-artefacten
+- Produceert geen waarde-artefacten
 - Levert geen inhoudelijke waarde aan de value stream
+- **Fase-toekenning**: Beheeragents zijn NIET gebonden aan specifieke fasen, maar opereren in **alle fasen** van alle value streams
+- Primair voorbeeld: **Moeder agent**
 
 ### Wat het niet is ❌
 - Geen adviserende agent
@@ -711,7 +739,7 @@ Een **uitvoerende agent** is een **mandarin-agent** die duurzame **artefacten** 
 
 Er zijn twee sub-typen:
 - **Ecosysteem uitvoerende agent** — levert governance-artefacten
-- **Waarde uitvoerende agent** — levert business-artefacten
+- **Waarde uitvoerende agent** — levert waarde-artefacten
 
 ### Kenmerken ⭐
 - Maakt artefacten (documenten, modellen, DSL, code, configuratie)
@@ -720,6 +748,7 @@ Er zijn twee sub-typen:
 - Output MOET voldoen aan een vooraf gedefinieerd template
 - Template is verplicht onderdeel van capability policy
 - Contract faalt als template ontbreekt
+- **Fase-toekenning**: Uitvoerende agents kunnen worden toegekend aan één of meerdere value stream fasen
 
 ### Wat het niet is ❌
 - Geen adviserende agent
@@ -759,7 +788,7 @@ Een **ecosysteem uitvoerende agent** is een agent die artefacten of wijzigingen 
 ### Wat het niet is ❌
 - Geen uitvoerende agent binnen een value stream
 - Geen adviserende agent
-- Geen agent die business-artefacten levert
+- Geen agent die waarde-artefacten levert
 
 ### Voorbeelden 💡
 - Agent die een nieuw governance-artefact publiceert
@@ -782,10 +811,10 @@ De ecosysteem uitvoerende agent zorgt voor de randvoorwaarden en structuur waarb
 ## Waarde uitvoerende agent
 
 ### Definitie 📝
-Een **waarde uitvoerende agent** is een agent die expliciete business-artefacten levert als resultaat van een value stream fase, en daarmee directe waarde toevoegt aan het Mandarin-ecosysteem.
+Een **waarde uitvoerende agent** is een agent die expliciete waarde-artefacten levert als resultaat van een value stream fase, en daarmee directe waarde toevoegt aan het Mandarin-ecosysteem.
 
 ### Kenmerken ⭐
-- Levert business-artefacten (documenten, modellen, code, configuratie)
+- Levert waarde-artefacten (documenten, modellen, code, configuratie)
 - Werkt binnen een value stream fase
 - Output is persistent en overdraagbaar
 - Output is input voor volgende fasen of agents
@@ -814,10 +843,116 @@ De waarde uitvoerende agent levert tastbare resultaten en directe waarde binnen 
 
 ---
 
+## Value stream agent
+
+### Definitie 📝
+Een **value stream agent** is een **adviserende agent** of **uitvoerende agent** die expliciet is toegekend aan één of meerdere **value stream fasen** en daar specifieke waarde of inzicht levert.
+
+### Kenmerken ⭐
+- Gebonden aan specifieke value stream fase(n)
+- Produceert waarde-artefacten, governance-artefacten of informatieve output binnen hun toegekende fase(n)
+- Opereert binnen de grenzen van hun toegekende fase(n)
+- Agent-soort: adviserende agent of uitvoerende agent (inclusief sub-typen)
+- Mag niet buiten de scope van hun toegekende fase(n) treden
+
+### Wat het niet is ❌
+- Geen beheeragent (beheeragents opereren in alle fasen)
+- Geen utility agent (utility agents staan orthogonaal op value streams)
+- Geen agent zonder fase-toekenning
+
+### Voorbeelden 💡
+- **Constitutioneel Auteur** — ecosysteem uitvoerende agent, fase: Grondslagvorming
+- **Canon Curator** — ecosysteem uitvoerende agent, fase: Ecosysteeminrichting
+- **Feature-analist** — waarde uitvoerende agent, value stream: Softwareontwikkeling, fase: Analyse
+- **Service-architect** — waarde uitvoerende agent, value stream: Softwareontwikkeling, fase: Ontwerp
+- **Architectuuradviseur** — adviserende agent, value stream: Architectuur- en Oplossingsontwerp, fase: Oplossingsontwerp
+
+### Synoniemen 🏷️
+- Value stream gebonden agent
+- Fase-agent
+
+### Analogieën 🔄
+- Vergelijkbaar met een role-based actor in een proces
+- In SAFe: een rol die specifiek in één of meerdere program increments werkt
+- In DevOps: een pipeline-stage-specifieke service
+
+### Toelichting 💬
+**Value stream agents** zijn de tegenterm van **utility agents**. Waar value stream agents expliciet aan fasen zijn gebonden en daar specifieke waarde leveren, staan utility agents orthogonaal op de value stream structuur en zijn generiek inzetbaar.
+
+Bij het opstellen van een **Agent-charter** voor een value stream agent moet expliciet worden aangegeven:
+- Tot welke value stream de agent behoort
+- Tot welke fase(n) de agent is toegekend
+- Welke waarde of inzicht de agent in die fase(n) levert
+
+---
+
+## Utility agent
+
+### Definitie 📝
+Een **utility agent** is een **mandarin-agent** die **orthogonaal** op de **value stream** structuur staat en generieke, ondersteunende diensten levert die niet specifiek aan één value stream fase zijn gebonden.
+
+### Kenmerken ⭐
+- Niet gebonden aan value stream fasen
+- Levert technische of ondersteunende capabilities
+- Kan in willekeurige contexten worden ingezet
+- Kan door meerdere value streams en agents worden gebruikt
+- Produceert ondersteunende artefacten, geen waarde-artefacten
+- Valt wel onder dezelfde governance-principes als andere agents
+- Heeft een Agent-charter dat scope en verantwoordelijkheden vastlegt
+
+### Wat het niet is ❌
+- Geen value stream agent (niet aan fasen gebonden)
+- Geen beheeragent (wijzigt geen workspace-structuur)
+- Geen agent met specifieke value stream fase-toekenning
+
+### Voorbeelden 💡
+- **format-vertaler** — transformeert documenten tussen formaten (Markdown ↔ Word)
+- **kort-schrijver** — herformuleert en optimaliseert teksten
+- **docker-steward** — beheert container-infrastructuur
+- **python-expert** — schrijft en reviewt Python-scripts
+- **layout-optimizer** — optimaliseert documentstructuur
+- **publicatie-agent** — publiceert artefacten naar diverse kanalen
+
+### Synoniemen 🏷️
+- Ondersteunende agent
+- Generieke agent
+- Hulpagent
+
+### Analogieën 🔄
+- Vergelijkbaar met shared services in enterprise architectuur
+- In DevOps: cross-cutting concerns of platform services
+- In software engineering: utility libraries of helper functions
+
+### Toelichting 💬
+**Utility agents** staan orthogonaal op de value stream structuur. Dit betekent dat zij niet aan specifieke fasen zijn gebonden, maar in willekeurige contexten kunnen worden ingezet om ondersteunende diensten te leveren.
+
+**Verschil met value stream agents**:
+
+| Aspect | Value stream agent | Utility agent |
+|--------|-------------------|---------------|
+| **Value stream koppeling** | Ja, specifieke value stream | Nee, orthogonaal |
+| **Fase koppeling** | Ja, één of meerdere fasen | Nee, willekeurig inzetbaar |
+| **Primaire output** | Waarde-artefacten, governance-artefacten of informatieve output | Ondersteunende artefacten |
+| **Scope** | Beperkt tot toegekende fase(n) | Generiek, meerdere contexten |
+
+**Verschil met beheeragents**:
+- Beheeragents opereren in **alle fasen** en wijzigen workspace-structuur
+- Utility agents zijn **niet fase-gebonden** en leveren ondersteunende diensten zonder structurele wijziging
+
+Bij het opstellen van een **Agent-charter** voor een utility agent moet expliciet worden aangegeven:
+- Dat de agent een utility agent is (niet aan value stream fasen gebonden)
+- Welke generieke diensten de agent levert
+- In welke contexten de agent kan worden ingezet
+
+---
+
 ## Change Log
 
 | Datum      | Versie | Wijziging                                                           | Auteur     |
 |------------|--------|---------------------------------------------------------------------|------------|
+| 2026-01-31 | 1.3.0  | Toevoeging concepten Value stream agent en Utility agent; verduidelijking fase-toekenning per agent-soort: adviserende/uitvoerende agents aan fasen, beheeragents in alle fasen, utility agents orthogonaal | Constitutioneel Auteur  |
+| 2026-01-31 | 1.2.1  | Aanscherping "Gebruik van Synoniemen" — Synoniemen VERBODEN binnen ecosysteem, uitsluitend toegestaan in menselijke spreektaal; voorbeelden toegevoegd | Canon Curator  |
+| 2026-01-31 | 1.2.0  | Subsectie toegevoegd in Inleiding: "Gebruik van Synoniemen" — Verduidelijkt dat synoniemen spreektaal zijn en niet erkend binnen ecosysteem | Canon Curator  |
 | 2026-01-31 | 1.1.1  | Herstel Mandarin-ecosysteem definitie — Ontbrekende definitie-sectie toegevoegd | Canon Curator  |
 | 2026-01-31 | 1.1.0  | Toevoeging definitie Agent-soort — Expliciete classificatie toegevoegd | Canon Curator  |
 | 2026-01-31 | 1.0.0  | Initiële versie — Concepten en definities voor actieve structuren opgesteld | Hans Blok  |
