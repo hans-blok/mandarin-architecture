@@ -21,10 +21,12 @@ plugins:
 
 nav:
   - Home: index.md
-  - Documenten:
+    - Documenten:
       - Axioma van gezag: axioma-van-gezag.md
       - Concepten Mandarin: concepten-mandarin.md
       - Constitutie: constitutie.md
+      - Organisatie-Principes: organisatie-principes.md
+      - Toelichting Mandarin: toelichting-mandarin.md
       - Essay – De AS bestaat al: essay.de-as-bestaat-al.md
       - Essay – Speckit pattern vs state pattern: essay.speckit-pattern-vs-state-pattern.md
 
