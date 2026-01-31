@@ -507,3 +507,20 @@ img, svg, video {
 .md-header, .md-sidebar, .md-nav {
   background: #fff !important;
 }
+
+/* Zorg dat Material navigatie altijd zichtbaar is op mobiel */
+.md-nav, .md-sidebar, .md-header {
+  display: block !important;
+}
+
+/* Logo als home button */
+.md-header__button.md-logo, .md-logo {
+  cursor: pointer;
+}
+
+/* Optioneel: logo iets groter op mobiel */
+@media (max-width: 768px) {
+  .md-logo img {
+    max-width: 120px;
+  }
+}
