@@ -23,7 +23,7 @@ nav:
       - Concepten Mandarin: concepten-mandarin.md
       - Constitutie: constitutie.md
       - Essay – De AS bestaat al: essay.de-as-bestaat-al.md
-      - Essay – Speckit pattern vs state pattern: essay-speckit-pattern-vs-state-pattern.md
+      - Essay – Speckit pattern vs state pattern: essay.speckit-pattern-vs-state-pattern.md
 
 markdown_extensions:
   - admonition
