@@ -71,7 +71,6 @@ De expliciete afbakening en structurering van deze concepten is een **bewuste on
 
 Concepten die betrekking hebben op **gedrag, werking en sturing** van het ecosysteem — zoals governance, inferentie, intentie en logging — worden daarom vastgelegd in een afzonderlijk document. Deze scheiding voorkomt vermenging van verantwoordelijkheden en draagt bij aan meer grip op wat agents doen, waarom zij dat doen en wanneer zij moeten escaleren.
 
---- 
 ## Mandarin-concept
 
 ### Definitie 📝
@@ -87,7 +86,7 @@ Kernbegrip, Bouwsteen
 
 - In Archimate een Concept 
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 **Mandarin-concepten** vormen het fundament voor alle verdere uitwerking, structurering en automatisering binnen het **Mandarin-ecosysteem.**
 
 ---
@@ -129,17 +128,37 @@ Actieve structuren vormen het handelende en uitvoerende deel van het **Mandarin-
 
 ## Mandarin-ecosysteem
 
+### Definitie 📝
+Het **Mandarin-ecosysteem** is de overkoepelende, samenhangende verzameling van alle **Mandarin-concepten**, **actieve structuren**, **artefacten**, governance-mechanismen en hun onderlinge relaties, die samen een expliciet, adaptief en bestuurbaar geheel vormen voor het realiseren van waarde binnen gedefinieerde **value streams**.
+
+### Kenmerken ⭐
+- Omvat alle Mandarin-concepten en hun relaties
 - Is uitbreidbaar en aanpasbaar zonder verlies van samenhang
 - Waarborgt expliciete contracten en governance
-- Geen statisch systeem
-- Geen enkelvoudige applicatie
+- Biedt een coherent kader voor agents, artefacten en value streams
+- Maakt automatisering, samenwerking en waardecreatie mogelijk
+- Is adaptief en zelfbeschrijvend (meta-concepten zijn onderdeel van het ecosysteem)
+
+### Wat het niet is ❌
+- Geen statisch systeem of vaste architectuur
+- Geen enkelvoudige applicatie of tool
+- Geen organisatie of bedrijfseenheid
+- Geen tijdelijke samenwerkingsvorm
+
+### Voorbeelden 💡
+- De combinatie van alle agents, charters, doctrines, workspaces en value streams die samen het Mandarin-systeem vormen
+- Het geheel van governance-artefacten en waarde-artefacten in samenhang
 
 ### Synoniemen 🏷️
+- Mandarin-systeem, Mandarin-omgeving
 
 ### Analogieën 🔄
+- Vergelijkbaar met een platform-ecosysteem in software (zoals een cloud platform met services, API's en governance)
+- In enterprise architectuur: een capability-gebaseerd operating model
+- In biologie: een ecosysteem met verschillende soorten en hun interacties
 
 ### Toelichting 💬
-Het **Mandarin-ecosysteem** vormt de overkoepelende context waarbinnen alle Mandarin-concepten samenkomen en waarde leveren. Het is ontworpen om adaptief, expliciet en samenhangend te zijn.
+Het **Mandarin-ecosysteem** vormt de overkoepelende context waarbinnen alle Mandarin-concepten samenkomen en waarde leveren. Het is ontworpen om adaptief, expliciet en samenhangend te zijn. Het ecosysteem is zelfbeschrijvend: de concepten die het ecosysteem beschrijven (zoals **Mandarin-concept** en **Mandarin-architectuurprincipe**) maken zelf deel uit van het ecosysteem.
 
 ---
 ## Mandarin-capability
@@ -799,6 +818,7 @@ De waarde uitvoerende agent levert tastbare resultaten en directe waarde binnen 
 
 | Datum      | Versie | Wijziging                                                           | Auteur     |
 |------------|--------|---------------------------------------------------------------------|------------|
+| 2026-01-31 | 1.1.1  | Herstel Mandarin-ecosysteem definitie — Ontbrekende definitie-sectie toegevoegd | Canon Curator  |
 | 2026-01-31 | 1.1.0  | Toevoeging definitie Agent-soort — Expliciete classificatie toegevoegd | Canon Curator  |
 | 2026-01-31 | 1.0.0  | Initiële versie — Concepten en definities voor actieve structuren opgesteld | Hans Blok  |
 
