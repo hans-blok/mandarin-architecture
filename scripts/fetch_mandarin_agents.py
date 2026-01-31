@@ -252,16 +252,16 @@ class FileOrganizer:
         charter_template = self.locations.get("charters")
         if not charter_template:
             return None
-        
+
         # Get value-stream-specific template or default
         if isinstance(charter_template, dict):
             template = charter_template.get(agent.value_stream) or charter_template.get("default")
         else:
             template = charter_template
-        
+
         if not template:
             return None
-        
+
         # Substitute placeholders
         charter_path_str = (
             template
@@ -269,28 +269,43 @@ class FileOrganizer:
             .replace("<value-stream>", agent.value_stream)
         )
         charter_path = self.repo_path / charter_path_str
-        
-        # Try the template path first
+
+        # 1. Probeer het template pad
         if charter_path.exists():
             dest = self.charters_dir / f"{agent.name}.md"
             return FileOperation(source=charter_path, destination=dest)
-        
-        # Fallback: try alternative naming convention (charter.<agent-naam>.md vs <agent-naam>.charter.md)
+
+        # 2. Probeer expliciet <agent-naam>.charter.md in dezelfde map
+        charter_dir = charter_path.parent
+        charter_charter_md = charter_dir / f"{agent.name}.charter.md"
+        if charter_charter_md.exists():
+            dest = self.charters_dir / f"{agent.name}.charter.md"
+            return FileOperation(source=charter_charter_md, destination=dest)
+
+        # 3. Fallback: alternatieve conventies uit originele code
         if ".charter." in charter_path_str:
-            # Try charter.<agent-naam>.md format
             alt_path_str = charter_path_str.replace(".charter.", ".")
             alt_path_str = alt_path_str.replace(f"{agent.name}.md", f"charter.{agent.name}.md")
+            alt_charter_path = self.repo_path / alt_path_str
+            if alt_charter_path.exists():
+                dest = self.charters_dir / f"{agent.name}.md"
+                return FileOperation(source=alt_charter_path, destination=dest)
         elif "charter." in charter_path_str:
-            # Try <agent-naam>.charter.md format
             alt_path_str = charter_path_str.replace(f"charter.{agent.name}", f"{agent.name}.charter")
-        else:
-            return None
-        
-        alt_charter_path = self.repo_path / alt_path_str
-        if alt_charter_path.exists():
-            dest = self.charters_dir / f"{agent.name}.md"
-            return FileOperation(source=alt_charter_path, destination=dest)
-        
+            alt_charter_path = self.repo_path / alt_path_str
+            if alt_charter_path.exists():
+                dest = self.charters_dir / f"{agent.name}.md"
+                return FileOperation(source=alt_charter_path, destination=dest)
+
+        # 4. Case-insensitive fallback in de directory
+        if charter_dir.exists():
+            for file in charter_dir.iterdir():
+                if file.name.lower() == f"{agent.name}.charter.md".lower():
+                    dest = self.charters_dir / file.name
+                    return FileOperation(source=file, destination=dest)
+
+        # 5. Log het geprobeerde pad voor debugging
+        print(f"[DEBUG] Charter not found for agent '{agent.name}'. Tried: {charter_path}, {charter_charter_md}")
         return None
     
     def _resolve_prompts(self, agent: Agent) -> List[FileOperation]:
@@ -639,7 +654,32 @@ Examples:
         
         # Execute operations
         stats = organizer.execute_operations(operations)
-        
+
+        # === TEMPLATE FETCHING LOGIC ===
+        templates_dir = workspace / "templates"
+        templates_dir.mkdir(exist_ok=True)
+        template_refs = set()
+        import re
+        # Zoek in alle gekopieerde charters naar template-verwijzingen
+        for op in operations:
+            if op.destination.parent == organizer.charters_dir and op.destination.exists():
+                text = op.destination.read_text(encoding="utf-8")
+                # Zoek naar regels als: template: bestandsnaam.ext of Template: ...
+                for match in re.findall(r"template\s*:\s*([\w\-./]+)", text, re.IGNORECASE):
+                    template_refs.add(match.strip())
+        # Kopieer gevonden templates uit repo naar templates/
+        templates_copied = []
+        for tref in template_refs:
+            src = repo_path / "templates" / tref
+            dst = templates_dir / tref
+            if src.exists():
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src, dst)
+                templates_copied.append(tref)
+                print(f"  [TEMPLATE] {tref} -> {dst.relative_to(workspace)}")
+            else:
+                print(f"  [WARNING] Template not found in repo: {tref}")
+
         # Write log
         logger = FetchLogger(workspace)
         log_path = logger.write_log(
@@ -650,7 +690,7 @@ Examples:
             warnings=warnings,
             repo_url=args.repo_url,
         )
-        
+
         # Print summary
         print("\nSUMMARY")
         print(f"Value-stream: {value_stream}")
@@ -659,23 +699,26 @@ Examples:
         for agent in applicable_agents:
             agent_type = "utility" if agent.is_utility() else "value-stream"
             print(f"  - {agent.name} ({agent_type})")
-        
+
         print(f"Files copied -> new: {stats['new']}, updated: {stats['updated']}, "
               f"unchanged: {stats['unchanged']}, errors: {stats['error']}")
-        
+
         if stats.get('modules_replaced', 0) > 0:
             print(f"Runner modules replaced: {stats['modules_replaced']} (⚠️  old content removed)")
-        
+
+        if templates_copied:
+            print(f"Templates copied: {', '.join(templates_copied)}")
+
         if warnings:
             print(f"\nWarnings: {len(warnings)}")
             for warning in warnings[:5]:  # Limit to first 5
                 print(f"  - {warning}")
             if len(warnings) > 5:
                 print(f"  ... and {len(warnings) - 5} more (see log)")
-        
+
         print(f"\nLog: {log_path.relative_to(workspace)}")
         print("[SUCCESS] Agents fetched")
-        
+
         return 0
         
     except FileNotFoundError as e:

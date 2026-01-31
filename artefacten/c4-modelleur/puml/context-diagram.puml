@@ -1,0 +1,34 @@
+@startuml
+skinparam rectangle {
+  BackgroundColor #dae8fc
+  BorderColor #6c8ebf
+}
+skinparam shadowing false
+
+actor "Gebruiker" as Gebruiker
+
+rectangle "GitHub Standards" as GitHubStandards
+rectangle "GitHub Agent-Capabilities" as AgentCapabilities
+rectangle "Project Workspace" as ProjectWorkspace
+rectangle "LLM Provider" as LLMProvider
+rectangle "GitHub" as GitHub
+rectangle "Agent Ecosysteem" as AgentEcosysteem
+
+' Relaties C4
+Gebruiker --> AgentCapabilities : Activeert agent\n(Via prompt)
+AgentCapabilities --> LLMProvider : Gebruik voor inferentie\n(API)
+AgentCapabilities --> ProjectWorkspace : Schrijft/leest artefacten\n(Via VC)
+AgentCapabilities --> GitHubStandards : Leest charters en regels\n(Via VC)
+GitHubStandards --> GitHub : Gepubliceerd in standards repo
+ProjectWorkspace --> GitHub : Gepubliceerd in project repo
+GitHubStandards --> ProjectWorkspace : Gepubliceerd in standards repo
+ProjectWorkspace --> AgentCapabilities : Gepubliceerd in project repo
+LLMProvider --> ProjectWorkspace : Semantische zoeken, validatie, cross-referencing\n(API)
+
+' Relaties C1
+Gebruiker --> AgentEcosysteem : Geeft opdracht (s5 regels)\n[Natural language]
+AgentEcosysteem --> Gebruiker : Levert artefacten\n[Markdown, code]
+AgentEcosysteem --> LLMProvider : Gebruikt voor inferentie\n[API]
+AgentEcosysteem --> GitHub : Leest standards, persisteert output\n[Git]
+
+@enduml

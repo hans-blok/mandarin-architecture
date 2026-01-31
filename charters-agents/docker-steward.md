@@ -7,6 +7,7 @@
 - [x] Beheeragent
 - [ ] Uitvoerend
 **Value Stream**: utility
+**Template**: charter.template.md
 ---
 
 ## Rol en Verantwoordelijkheid
@@ -38,14 +39,8 @@ De Docker Steward is een **lokale utility-agent** die ontwikkelaars helpt om Doc
 ## Specialisaties
 
 ### Docker en Containerbeheer (lokaal)
-- Werken met Docker-containers op een ontwikkelaarsmachine.
-- Basisbewerkingen: pull, run, stop, inspect, logs.
-- Beschermen tegen onbedoelde wijzigingen aan productie-omgevingen (alleen lokaal).
 
 ### Visualisatie-ondersteuning
-- Koppelen van bestaande C4- of architectuurbronnen aan visualisatie-tools (bijvoorbeeld Structurizr of PlantUML).
-- Zorgen dat de juiste paden binnen deze workspace worden gebruikt (bijvoorbeeld `docs/diagrammen/c4-diagrams/`).
-- Helpen gebruikers om snel van "diagram in repo" naar "diagram in browser" te gaan.
 
 ### Workspace-integratie
 - Respecteren van de structuur en naamgeving uit `governance/workspace-standaard.md`.
@@ -111,7 +106,7 @@ De Docker Steward vraagt input over:
 
 ## Herkomstverantwoording
 
-- Governance: beleid-workspace.md + canon repository
+- Governance: beleid-mandarin-agents.md + mandarin-canon repository
 - Agent-contracten: zie Traceerbaarheid (indien aanwezig)
 - Resultaten: docs/resultaten/<agent-naam>/... (waar van toepassing)
 

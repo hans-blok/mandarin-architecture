@@ -1,0 +1,1 @@
+docker run --rm -p 8080:8080 -v c:/git/mandarin-architecture/artefacten/c4-modelleur:/usr/local/structurizr structurizr/lite

@@ -1,107 +1,54 @@
-workspace "Ecosysteem Bouwarchitectuur" "Context- en containermodel van de ecosysteem-bouwketen (EBA) op basis van de canon." {
-
+workspace {
     model {
-
-        aiAgenticSystemDeveloper = person "AI Agentic System Developer" "Ontwerpt en evolueert het agentische ecosysteem; beheert agent-capabilities charters en stuurt de end-to-end bouw- en evolutiecyclus."
-        canonArchitect = person "Canon Architect" "Bewaakt de canon en ontwerpt architectuurkaders voor de bouwketen."
-
-        eba = softwareSystem "Ecosysteem Bouwketen (EBA)" "Bouwketen die met LLM's, charters, runners, workflows en governance het agentische ecosysteem ontwerpt, genereert en evolueert." {
-
-            orchestrator = container "Orchestrator Script (make-agent.py)" "Hoofdentrypoint dat charters ophaalt, buildplans aanmaakt, generators aanstuurt en resultaten wegschrijft in de juiste mappen." "Python"
-
-            generators = container "Generators & Runners" "LLM-gestuurde generators en runners die rolbeschrijvingen, prompts, runners en workflow-definities produceren." "Python, LLM API"
-
-            buildplanStore = container "Buildplan & Traceability Store" "Bestanden (bijv. JSON/YAML) waarin per agent wordt vastgelegd: bron-charter, LLM-calls/parameters en gegenereerde artefacten." "Files" {
-                tags "Database"
-            }
-
-            governanceLayer = container "Governance & Standaarden (werkruimte)" "Lokale governance-documenten en standaarden die de bouwketen kaderen (beleid, gedragscode, workspace-/agent-standaard)." "Markdown"
-
-            ciCdWorkflows = container "CI/CD Workflows" "Workflow-definities (bijv. GitHub Actions of GitLab CI) die de bouwketen automatisch uitvoeren." "YAML"
+        user = person "Gebruiker" {
+            description "Owner, Software engineer, architect, product owner die opdrachten geeft aan het agent ecosysteem"
         }
-
-        agentCapabilitiesRepo = softwareSystem "Agent-capabilities repository" "Repository met agent-charters, templates en generator-bronnen." {
-            tags "Extern"
+        githubStandards = softwareSystem "GitHub Standards" {
+            description "Container: Standaarden, regels, charters, Git Repository"
         }
-
-        standardsRepo = softwareSystem "Standards repository" "Repository met standaarden, beleid en normerende kaders voor het ecosysteem." {
-            tags "Extern"
+        agentCapabilities = softwareSystem "GitHub Agent-Capabilities" {
+            description "Extensie: Agentmodellen en prompts, Git Repository"
         }
-
-        projectWorkspaces = softwareSystem "Project workspace(s)" "Concrete werkruimtes waar het ecosysteem (of deel daarvan) wordt toegepast, opgebouwd en onderhouden." {
-            tags "Extern"
+        projectWorkspace = softwareSystem "Project Workspace" {
+            description "Extensie: gegenereerde artefacten per project, Git Repository"
         }
-
-        canonRepo = softwareSystem "Canon-repository" "Git-repository met canon-documenten en referentie-architecturen voor agentische systemen." {
-            tags "Extern"
+        llmProvider = softwareSystem "LLM Provider" {
+            description "Externe systeem: Claude, GPT-4 - AI inference"
         }
-
-        llmPlatform = softwareSystem "LLM-platform(en)" "Meerdere LLM-diensten (bijv. Claude, Gemini, GPT) die via API's worden aangeroepen vanuit generators en runners." {
-            tags "Extern"
+        github = softwareSystem "GitHub" {
+            description "Extern systeem: Code repository, standards repository"
         }
-
-        ciCdPlatform = softwareSystem "CI/CD-platform" "CI/CD-platform (bijv. GitHub Actions of GitLab CI) dat workflows van de bouwketen uitvoert." {
-            tags "Extern"
+        agentEcosysteem = softwareSystem "Agent Ecosysteem" {
+            description "Gegeoverend netwerk van AI-agents voor software delivery"
         }
+        user -> agentCapabilities "Activeert agent\n(Via prompt)"
+        agentCapabilities -> llmProvider "Gebruik voor inferentie\n(API)"
+        agentCapabilities -> projectWorkspace "Schrijft/leest artefacten\n(Via VC)"
+        agentCapabilities -> githubStandards "Leest charters en regels\n(Via VC)"
+        githubStandards -> github "Gepubliceerd in standards repo"
+        projectWorkspace -> github "Gepubliceerd in project repo"
+        githubStandards -> projectWorkspace "Gepubliceerd in standards repo"
+        projectWorkspace -> agentCapabilities "Gepubliceerd in project repo"
+        llmProvider -> projectWorkspace "Semantische zoeken, validatie, cross-referencing\n(API)"
 
-        // Relaties (na alle element-definities)
-        aiAgenticSystemDeveloper -> eba "Initieert en stuurt de evolutie van het ecosysteem via issues en charters" "Issues, charters"
-        canonArchitect -> eba "Levert canon-documenten en architectuurkaders voor de bouwketen" "Canon, architectuur"
-
-        aiAgenticSystemDeveloper -> agentCapabilitiesRepo "Schrijft/actualiseert charters en templates" "Git"
-        canonArchitect -> canonRepo "Schrijft/actualiseert canon-documenten" "Git"
-
-        eba -> canonRepo "Leest en schrijft canon-documenten" "Git"
-        eba -> agentCapabilitiesRepo "Leest charters, templates en generator-bronnen" "Git"
-        eba -> standardsRepo "Leest standaarden en beleid" "Git"
-        eba -> projectWorkspaces "Levert/actualiseert artefacten in werkruimtes" "Files/Git"
-
-        aiAgenticSystemDeveloper -> orchestrator "Start en configureert (re)builds" "CLI"
-
-        orchestrator -> agentCapabilitiesRepo "Leest charters/templates" "Git"
-        orchestrator -> standardsRepo "Leest standaarden/beleid" "Git"
-        orchestrator -> canonRepo "Leest/schrijft canon" "Git"
-        orchestrator -> buildplanStore "Schrijft buildplans en traceability" "Files"
-        orchestrator -> generators "Stuurt generators/runners aan" "Script-calls"
-        orchestrator -> ciCdWorkflows "Genereert/wijzigt workflows" "Files"
-        orchestrator -> projectWorkspaces "Schrijft resultaten weg" "Files/Git"
-
-        generators -> buildplanStore "Verrijkt buildplans met LLM-details" "Files"
-        generators -> llmPlatform "Roept LLM's aan" "HTTPS/API"
-
-        ciCdWorkflows -> ciCdPlatform "Worden uitgevoerd door" "Pipelines"
-        ciCdPlatform -> orchestrator "Triggert runs" "Events"
+        // C1-relaties
+        user -> agentEcosysteem "Geeft opdracht (s5 regels)\n[Natural language]"
+        agentEcosysteem -> user "Levert artefacten\n[Markdown, code]"
+        agentEcosysteem -> llmProvider "Gebruikt voor inferentie\n[API]"
+        agentEcosysteem -> github "Leest standards, persisteert output\n[Git]"
     }
 
     views {
-        systemContext eba "EBA-Context" "Contextdiagram van de ecosysteem-bouwketen (EBA) binnen de ecosysteemcontext." {
+        systemContext agentCapabilities {
             include *
-            autoLayout lr
+            autolayout lr
+            title "C4 Contextdiagram - Agent Ecosysteem"
         }
-
-        container eba "EBA-Containers" "Containermodel van de ecosysteem-bouwketen (EBA) met focus op hoofdonderdelen uit de canon." {
+        systemContext agentEcosysteem {
             include *
-            autoLayout lr
-        }
-
-        styles {
-            element "Person" {
-                shape Person
-            }
-            element "Software System" {
-                background "#1168bd"
-                color "#ffffff"
-            }
-            element "Extern" {
-                background "#999999"
-            }
-            element "Container" {
-                background "#438dd5"
-                color "#ffffff"
-            }
-            element "Database" {
-                shape Cylinder
-            }
+            autolayout lr
+            title "C1 - System context"
         }
     }
 }
+theme default
