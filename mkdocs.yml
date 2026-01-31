@@ -13,6 +13,9 @@ theme:
       primary: indigo
       accent: indigo
 
+extra_css:
+  - style/mandarin.css
+
 plugins:
   - search
 
