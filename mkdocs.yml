@@ -1,8 +1,5 @@
-site_name: Mandarin Architecture
-site_url: https://hans.blok.github.io/mandarin-architecture/
-
-repo_url: https://github.com/hans.blok/mandarin-architecture
-edit_uri: edit/main/docs/
+site_url: https://hans-blok.github.io/mandarin-architecture/
+repo_url: https://github.com/hans-blok/mandarin-architecture
 
 theme:
   name: material
