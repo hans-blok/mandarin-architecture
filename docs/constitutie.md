@@ -252,26 +252,26 @@ Deze Constitutie is de bindende grondslag voor het gehele normatieve stelsel. De
 
 ### Workspace Governance
 
-- **[workspace-doctrine.md](workspace-doctrine.md)**  
+- **workspace-doctrine.md**  
   Standaardisatie van mappenstructuur, naamgeving en organisatie voor alle workspaces. Verplicht voor alle document-repositories en borgt toepassing van deze constitutie binnen werkgebieden.
 
-- **[agent-charter-normering.md](agent-charter-normering.md)**  
+- **agent-charter-normering.md**  
   Structuur en vereisten voor agent-charters. Waarborgt consistentie en kwaliteit van alle agent-definities binnen het normatieve stelsel.
 
 ### Handoff & Uitvoering
 
-- **[doctrine-handoff-creatie-en-overdrachtsdiscipline.md](doctrine-handoff-creatie-en-overdrachtsdiscipline.md)**  
+- **doctrine-handoff-creatie-en-overdrachtsdiscipline.md**  
   Regels voor handoff-creatie en handoff-validatie tussen agents. Implementeert Artikel 2 (Automatisering en orkestratie) en het principe van duidelijke afhankelijkheden.
 
-- **[doctrine-runner-discipline-en-runner-kernel.md](doctrine-runner-discipline-en-runner-kernel.md)**  
+- **doctrine-runner-discipline-en-runner-kernel.md**  
   Gedragsregels voor agents en runners (orchestrators). Definieert hoe automatisering zich gedraagt conform Artikel 2 (governance lezen en conflictmelding).
 
 ### Tijdstempel & Geldigheid
 
-- **[doctrine-tijdreferentie-en-contextuele-geldigheid.md](doctrine-tijdreferentie-en-contextuele-geldigheid.md)**  
+- **doctrine-tijdreferentie-en-contextuele-geldigheid.md**  
   Vastlegging van hoe tijdreferenties worden beheerd en hoe normatieve artefacten hun actualiteit behouden. Ondersteunt traceerbaarheid conform Artikel 1 (doel) en Artikel 3 (kwaliteit en compliance).
 
 ### State & Audit
 
-- **[doctrine-workspace-state-en-legitimiteit.md](doctrine-workspace-state-en-legitimiteit.md)**  
+- **doctrine-workspace-state-en-legitimiteit.md**  
   State-logging en audit trail voor alle wijzigingen aan canonieke artefacten. Waarborgt integriteit conform Artikel 1 (traceerbaarheid) en Artikel 4 (wijzigingsbeheer).
