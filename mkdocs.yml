@@ -20,8 +20,8 @@ theme:
     - navigation.expand
     - toc.integrate
 
-extra_css:
-  - style/mandarin.css
+# extra_css:
+#   - style/mandarin.css
 
 plugins:
   - search
