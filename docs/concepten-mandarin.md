@@ -27,36 +27,36 @@ Dit document is opgesteld door Hans Blok op 31 januari 2026 als definitie van co
 ## Inhoudsopgave
 
 ### Fundamentele Concepten
-- [Mandarin-concept](#mandarin-concept) — Expliciet gedefinieerd, herbruikbaar bouwblok
-- [Actieve structuur](#actieve-structuur) — Functioneel element dat handelt en output produceert
-- [Mandarin-ecosysteem](#mandarin-ecosysteem) — Overkoepelende context van alle concepten
-- [Mandarin-architectuurprincipe](#mandarin-architectuurprincipe) — Richtinggevende regel voor ontwerp
+- Mandarin-concept — Expliciet gedefinieerd, herbruikbaar bouwblok
+- Actieve structuur — Functioneel element dat handelt en output produceert
+- Mandarin-ecosysteem — Overkoepelende context van alle concepten
+- Mandarin-architectuurprincipe — Richtinggevende regel voor ontwerp
 
 ### Capabilities en Value Streams
-- [Mandarin-capability](#mandarin-capability) — Duurzaam, herbruikbaar vermogen
-- [Value stream](#value-stream) — Samenhangende reeks van activiteiten
-- [Value stream fase](#value-stream-fase) — Afgebakende stap binnen value stream
-- [Workspace](#workspace) — Bevat alle artefacten voor een specifiek doel
+- Mandarin-capability — Duurzaam, herbruikbaar vermogen
+- Value stream — Samenhangende reeks van activiteiten
+- Value stream fase — Afgebakende stap binnen value stream
+- Workspace — Bevat alle artefacten voor een specifiek doel
 
 ### Agent-Gerelateerde Concepten
-- [Mandarin-agent](#mandarin-agent) — Gecharterd element dat taken uitvoert
-- [Agent-charter](#agent-charter) — Normatief contract van een agent
-- [Agent-capability](#agent-capability) — Wat een agent kan leveren
-- [Agent-contract](#agent-contract) — Specificatie van input, output en gedrag
-- [Agent-boundary](#agent-boundary) — Expliciete afbakening van verantwoordelijkheid
-- [Agent-soort](#agent-soort) — Classificatie op basis van output-type en impact
+- Mandarin-agent — Gecharterd element dat taken uitvoert
+- Agent-charter — Normatief contract van een agent
+- Agent-capability — Wat een agent kan leveren
+- Agent-contract — Specificatie van input, output en gedrag
+- Agent-boundary — Expliciete afbakening van verantwoordelijkheid
+- Agent-soort — Classificatie op basis van output-type en impact
 
 ### Agent-Soorten
-- [Adviserende agent](#adviserende-agent) — Levert alleen informatieve output
-- [Uitvoerende agent](#uitvoerende-agent) — Wijzigt inhoud en levert artefacten
-- [Beheeragent](#beheeragent) — Beheert structuur en configuratie
-- [Ecosysteem uitvoerende agent](#ecosysteem-uitvoerende-agent) — Beheert governance-artefacten
-- [Waarde uitvoerende agent](#waarde-uitvoerende-agent) — Levert business-artefacten
+- Adviserende agent — Levert alleen informatieve output
+- Uitvoerende agent — Wijzigt inhoud en levert artefacten
+- Beheeragent — Beheert structuur en configuratie
+- Ecosysteem uitvoerende agent — Beheert governance-artefacten
+- Waarde uitvoerende agent — Levert business-artefacten
 
 ### Artefacten
-- [Mandarin-artefact](#mandarin-artefact) — Expliciet vastgelegd, overdraagbaar resultaat
-- [Governance-artefact](#governance-artefact) — Artefact dat governance vastlegt
-- [Waarde-artefact](#waarde-artefact) — Artefact uit value stream fase
+- Mandarin-artefact — Expliciet vastgelegd, overdraagbaar resultaat
+- Governance-artefact — Artefact dat governance vastlegt
+- Waarde-artefact — Artefact uit value stream fase
 
 ---
 
