@@ -24,8 +24,7 @@
 
 
 ### Synoniemen 🏷️
-- {{Synoniem 1}}
-- {{Synoniem 2}}
+{{Synoniem 1}}, {{Synoniem 2}}
 
 ### Analogieën 🔄
 - {{analogie 1}

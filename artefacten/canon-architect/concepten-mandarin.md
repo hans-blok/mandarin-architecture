@@ -1,36 +1,84 @@
+# De Mandarin concepten
+
+## Inleiding
+
+Dit document beschrijft de concepten die betrekking hebben op de **actieve structuren** van het **Mandarin-ecosysteem**.  
+Onder actieve structuren verstaan we de samenstellende en functionele elementen die het ecosysteem laten handelen, samenwerken en output produceren.
+
+De concepten **Mandarin-concept** en **Mandarin-architectuurprincipe** maken **geen** onderdeel uit van deze set. Deze concepten hebben een beschrijvend en duidend karakter en zijn uitsluitend opgenomen ter ondersteuning van menselijke leesbaarheid en begripsvorming.
+
+De expliciete afbakening en structurering van deze concepten is een **bewuste ontwerpkeuze**. Door structurele en gedragsmatige aspecten strikt te scheiden, worden agents voorspelbaarder in hun handelen, beter toetsbaar en consistenter in hun output. Dit vergroot de bestuurbaarheid van het ecosysteem en zorgt ervoor dat agents aantoonbaar handelen binnen de bedoelde kaders.
+
+Concepten die betrekking hebben op **gedrag, werking en sturing** van het ecosysteem — zoals governance, inferentie, intentie en logging — worden daarom vastgelegd in een afzonderlijk document. Deze scheiding voorkomt vermenging van verantwoordelijkheden en draagt bij aan meer grip op wat agents doen, waarom zij dat doen en wanneer zij moeten escaleren.
+
+--- 
+## Mandarin-concept
+
+### Definitie 📝
+Een **Mandarin-concept** is een expliciet gedefinieerd, samenhangend en herbruikbaar bouwblok binnen het **Mandarin-ecosysteem**, dat een fundamenteel begrip, structuur of mechanisme beschrijft en als referentie dient voor ontwerp, implementatie en governance.
+
+- Is onderdeel van het canon van Mandarin
+
+- Geen tijdelijke afspraak of conventie
+
+- Agent, agent-contract, artefact, value stream, workspace
+- Governance-artefact, capability, agent-boundary
+Kernbegrip, Bouwsteen
+
+- In Archimate een Concept 
+
+### Toelichting (optioneel) 💬
+**Mandarin-concepten** vormen het fundament voor alle verdere uitwerking, structurering en automatisering binnen het **Mandarin-ecosysteem.**
+
+---
+
+## Actieve structuur
+
+### Definitie 📝
+Een **actieve structuur** in het **Mandarin-ecosysteem** is een expliciet gedefinieerd, functioneel element dat zelfstandig of in samenwerking met andere structuren taken uitvoert, interactie aangaat en output produceert, en daarmee het dynamisch functioneren van het ecosysteem mogelijk maakt.
+
+### Kenmerken ⭐
+- Heeft een expliciete, afgebakende rol of functie binnen het ecosysteem
+- Is in staat tot handelen, samenwerken en output genereren
+- Is structureel en functioneel onderscheiden van passieve of beschrijvende elementen
+- Kan zelfstandig of in samenhang met andere actieve structuren opereren
+- Is toetsbaar op gedrag en output
+
+### Wat het niet is ❌
+- Geen passief, beschrijvend of uitsluitend informatief element
+- Geen tijdelijke of impliciete structuur
+- Geen abstracte regel, principe of conventie
+- Geen gedrag
+
+### Voorbeelden 💡
+- Mandarin-agent
+- Workspace
+- Value stream
+
+### Synoniemen 🏷️
+Functioneel element, Dynamische component
+
+### Analogieën 🔄
+- Vergelijkbaar met actieve structuren in ArchiMate (bijv. component, actor, device)
+- In softwareontwikkeling: service, proces, actor
+
+### Toelichting 💬
+Actieve structuren vormen het handelende en uitvoerende deel van het **Mandarin-ecosysteem**. Zij maken samenwerking, automatisering en waardecreatie mogelijk door expliciet gedrag en output te leveren binnen de afgesproken kaders.
 
 ---
 
 ## Mandarin-ecosysteem
 
-### Definitie 📝
-Het **Mandarin-ecosysteem** is het geheel van onderling samenwerkende agents, artefacten, governance-structuren, capabilities en workspaces die gezamenlijk waardecreatie mogelijk maken volgens de Mandarin-architectuurprincipes.
-
-### Kenmerken ⭐
-- Omvat alle agents, artefacten, governance-artefacten, capabilities en workspaces
-- Biedt de context en randvoorwaarden voor samenwerking en waardecreatie
 - Is uitbreidbaar en aanpasbaar zonder verlies van samenhang
 - Waarborgt expliciete contracten en governance
-- Is onafhankelijk van specifieke tooling of implementatie
-
-### Wat het niet is ❌
-- Geen losse verzameling van tools of documenten
 - Geen statisch systeem
 - Geen enkelvoudige applicatie
 
-### Voorbeelden 💡
-- Een organisatiebrede omgeving waarin Mandarin-agents samenwerken aan waardecreatie
-- Een ecosysteem van agents, artefacten en governance-structuren binnen een project
-
 ### Synoniemen 🏷️
-- Architectuurecosysteem
-- Samenwerkingsomgeving
 
 ### Analogieën 🔄
-- Vergelijkbaar met een enterprise-ecosysteem in enterprise architectuur
-- In softwareontwikkeling: een platform of framework waarin verschillende componenten samenwerken
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 Het **Mandarin-ecosysteem** vormt de overkoepelende context waarbinnen alle Mandarin-concepten samenkomen en waarde leveren. Het is ontworpen om adaptief, expliciet en samenhangend te zijn.
 
 ---
@@ -47,38 +95,111 @@ Een **Mandarin-capability** is een duurzaam, herbruikbaar vermogen van het **Man
 - Wordt ingezet door value stream fasen, maar hoort daar niet bij
 - Bestaat ook als er (tijdelijk) geen agent actief is
 
-### Wat het niet is ❌
-- Geen concrete handeling
-- Geen agent
-- Geen artefact
-
 ### Voorbeelden 💡
 - Veranderhypotheses formuleren
-- Werk expliciet en ordenbaar maken
-- Architectuur visualiseren
-- Artefacten publiceren
 
 - **Artefact**
-### Synoniemen 🏷️
-Artefact
-- Vermogen
 
 ### Analogieën 🔄
 - Vergelijkbaar met een capability in enterprise architectuur
 - In softwareontwikkeling: een herbruikbare service of functie
 
-### Toelichting (optioneel) 💬
-Dit zijn vermogens, geen handelingen.
+### Toelichting 💬
+
+---
+## Mandarin-architectuurprincipe
+
+### Definitie 📝
+Een **Mandarin-architectuurprincipe** is een expliciet geformuleerde, richtinggevende regel of afspraak die het ontwerp, de inrichting en de evolutie van het Mandarin-ecosysteem structureel stuurt en begrenst, en die als toetssteen geldt voor alle architecturale keuzes binnen het ecosysteem.
+
+### Kenmerken ⭐
+- Is expliciet vastgelegd en breed gedragen binnen het ecosysteem
+- Geen operationele regel of processtap
+- Geen organisatieprincipe of bedrijfswaarde
+- "Artefacten zijn altijd overdraagbaar en inspecteerbaar"
+- "Governance is gescheiden van uitvoering"
+Ecosysteemprincipe
+
+- In softwareontwikkeling: design principle, guiding rule
+
+---
+
+## Mandarin-agent
+
+### Definitie 📝
+Een **mandarin-agent** is een expliciet gedefinieerde, autonome software-entiteit binnen het **Mandarin-ecosysteem** die, op basis van een formeel charter en contract, specifieke taken uitvoert, artefacten produceert of informatie levert, en daarbij altijd opereert binnen een afgebakende boundary en volgens de geldende governance.
+
+### Kenmerken ⭐
+- Heeft een expliciet charter en agent-contract
+- Is autonoom en verantwoordelijk voor eigen uitvoering binnen boundary
+- Voert één of meer agent-capabilities uit
+- Produceert artefacten of levert informatie
+- Is herbruikbaar en vervangbaar binnen het ecosysteem
+- Werkt altijd volgens expliciete input/output-afspraken
+
+### Wat het niet is ❌
+- Geen impliciete of ad-hoc softwarecomponent
+- Geen menselijke actor
+- Geen agent zonder expliciet contract of charter
+- Geen monolithische applicatie
+
+### Voorbeelden 💡
+- Mandarin architect, Logisch datamodelleur, Technisch datamodelleur, Agent smeder
+
+### Synoniemen 🏷️
+- Agent, Software-agent
+
+### Analogieën 🔄
+- Vergelijkbaar met een microservice, bot of autonome service in softwareontwikkeling
+- In enterprise architectuur: een performer of actor met expliciete verantwoordelijkheden
+
+### Toelichting 💬
+Een **mandarin-agent** is altijd expliciet ontworpen, beschreven en begrensd. De agent ontleent zijn legitimiteit aan het **agent-charter** en het **agent-contract**, en is alleen via formele interfaces aanspreekbaar. Dit waarborgt consistentie, vervangbaarheid en governance binnen het **Mandarin-ecosysteem**.
+
+---
+
+## Agent-charter
+
+### Definitie 📝
+Een **agent-charter** is een formeel, expliciet document dat de missie, verantwoordelijkheden, grenzen en governance van een specifieke **mandarin-agent** vastlegt, en daarmee de legitimiteit, autonomie en het bestaansrecht van de agent binnen het **Mandarin-ecosysteem** waarborgt.
+
+### Kenmerken ⭐
+- Legt de missie en het bestaansrecht van de agent vast
+- Bepaalt de grenzen (boundary) en verantwoordelijkheden
+- Beschrijft de governance, policies en randvoorwaarden
+- Is expliciet, versieerbaar en bindend
+- Is leidend voor ontwerp, implementatie en evaluatie van de agent
+- Vormt de basis voor het agent-contract
+
+### Wat het niet is ❌
+- Geen impliciete afspraak of mondelinge instructie
+- Geen technische specificatie of implementatiedocument
+- Geen agent-contract (maar vormt wel de basis daarvoor)
+- Geen tijdelijke of informele notitie
+
+### Voorbeelden 💡
+- Charter van een publicatie-agent waarin missie, scope en governance zijn vastgelegd
+- Charter van een beheeragent met expliciete operationele grenzen
+
+### Synoniemen 🏷️
+- Mandaat, rolbeschrijving
+
+### Analogieën 🔄
+- Vergelijkbaar met een projectcharter, mandaat of mission statement in projectmanagement
+- In enterprise architectuur: purpose statement of governance charter
+
+### Toelichting 💬
+Het **agent-charter** is het fundament voor de legitimiteit en autonomie van een agent. Zonder charter bestaat een agent niet formeel binnen het **Mandarin-ecosysteem**. Het **agent-charter** is leidend voor alle ontwerp- en governancekeuzes rondom de **mandarin-agent**.
 
 ---
 ## Agent-capability
 
 ### Definitie 📝
-Een **agent-capability** is een expliciet aanroepbare functie van een **agent**, vastgelegd in een **agent-contract**.
+Een **agent-capability** is een expliciet aanroepbare functie van een **mandarin-agent**, vastgelegd in een **agent-contract**.
 
 ### Kenmerken ⭐
 - Eén capability = één intent / operation
-- Capability bestaat alleen in het contract
+- Capability bestaat alleen in het **agent-contract**
 - Capability is aanroepbaar (uitvoerbaar), niet beschrijvend
 
 ### Wat het niet is ❌
@@ -91,63 +212,46 @@ Een **agent-capability** is een expliciet aanroepbare functie van een **agent**,
 - vertaler.vertaal
 
 ### Synoniemen 🏷️
-- Intent
-- Intentie
+- Intent, Intentie
 
 ### Analogieën 🔄
 - Vergelijkbaar met een operation in een API
 - In softwareontwikkeling: een expliciete functie of methode
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 Soms wordt dit de prompt genoemd. In Mandarin noemen we dit niet de prompt!
----## Agent-contract
+
+---
+
+## Agent-contract
 
 ### Definitie 📝
-Een **agent-contract** definieert formeel de **intent** (**agent-capability**) van de **agent**, de input die het verwacht en de output (**artefact**) die hij creëert of antwoorden die hij geeft, evenals de beleidsregels en beperkingen waaronder die mogelijkheden toegankelijk zijn.
+Een **agent-contract** definieert formeel de intent (**agent-capability**) van de **mandarin-agent**, de input die het verwacht en de output (**artefact**) die hij creëert of antwoorden die hij geeft, evenals de beleidsregels en beperkingen waaronder die mogelijkheden toegankelijk zijn.
  
- - Beschrijft één **agent-capability**
- - Agent-contract bestaat om **agent-capabilities** te beschrijven
- - Elke **agent-capability** is expliciet, afzonderlijk aanroepbaar, extern zichtbaar
- - **Agent-capability** bestaat niet onafhankelijk van het agent-contract
- - **Agent-capability** = wat het agent-contract exposeert
- - Agent-contract beschrijft inputs en outputs (welke data vereist, welke data teruggegeven, formaat/structuur)
- - Interface-definitie, geen implementatie
- - Uitvoerende agents produceren altijd een artefact
- - Agent-contract bevat constraints en policies (gebruiksbeperkingen, validatieregels, kwaliteitsverwachtingen, foutcondities, security/accessregels)
- - Governance zit in het agent-contract
- - Agent-contract is extern en bindend (stabiel, zelfstandig, leidend)
- - Service-consumenten mogen alleen vertrouwen op het agent-contract
- - Interne veranderingen toegestaan zolang agent-contract ongewijzigd blijft
- - Agent-contract beschrijft nooit de interne werking (geen processtappen, algoritmen, technische keuzes, implementatiedetails)
-
-### Wat het niet is ❌
+ ### Wat het niet is ❌
  - Geen beschrijving van interne werking
  - Geen implementatiedetails
  - Geen impliciet agent-contract
 
 ### Voorbeelden 💡
- - Agent-contract voor een publicatie-agent
- - Agent-contract voor een analyse-agent-capability
+ - Zie mandarin-architect.schrijf-concept.agent.md
+ - Zie workflow-architect.1-ontwerp-workflow.agent.md
 
 ### Synoniemen 🏷️
-Value artefact
-Resultaat-artefact
- - Service contract
- - Interface contract
+ Service contract, Interface contract
 
 ### Analogieën 🔄
  - Vergelijkbaar met een API-agent-contract in softwareontwikkeling
  - In SOA: WSDL of service agreement
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 Totdat charter en agent-contract bestaan, is dit géén agent, maar een agent-capability-voornemen.
-
 
 ---
 ## Agent-boundary
 
 ### Definitie 📝
-Een **agent-boundary** is de expliciet vastgelegde servicegrens waarbinnen een **agent** zijn interne werking, **governance** en **agent-capabilities** organiseert, en waarbuiten interactie uitsluitend plaatsvindt via formele **agent-contracts**.
+Een **agent-boundary** is de expliciet vastgelegde servicegrens waarbinnen een **mandarin-agent** zijn interne werking, governance en **agent-capabilities** organiseert, en waarbuiten interactie uitsluitend plaatsvindt via formele **agent-contracts**.
 
 ### Kenmerken ⭐
 - Bepaalt wat tot de agent behoort en wat daarbuiten ligt
@@ -175,7 +279,7 @@ Een **agent-boundary** is de expliciet vastgelegde servicegrens waarbinnen een *
 - Workspace als project workspace, repository, of solution folder
 - In DevOps: deployment workspace of CI/CD pipeline context
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 Het expliciet definiëren van de agent-boundary voorkomt dat agents samenvallen met tooling of prompts, verantwoordelijkheden vervagen of contracten impliciet worden. Alles binnen de boundary valt onder het agent-charter, de bijbehorende agent-contracten en de interne governance van de agent. Alles buiten de boundary is alleen toegankelijk via formele, expliciete contracten.
 
 ---
@@ -206,9 +310,12 @@ Een **Mandarin-artefact** is een duurzame, expliciete en overdraagbare vastleggi
 - In projectmanagement: **deliverable**
 - In DDD: **Aggregate Result** of **Documented Outcome**
 
-### Toelichting (optioneel)
+### Toelichting
 Er zijn twee hoofdklassen van **artefacten**: **governance-artefacten** en **waarde-artefacten**.
----## Governance-artefact
+
+---
+
+## Governance-artefact
 
 ### Definitie 📝
 Een **governance-artefact** is een normatieve of contractuele vastlegging die het functioneren van het **Mandarin-ecosysteem** mogelijk maakt, maar zelf geen directe waarde levert in een **value stream fase**.
@@ -239,7 +346,7 @@ Een **governance-artefact** is een normatieve of contractuele vastlegging die he
 - Vergelijkbaar met **policies**, **API contracts**, **infrastructuurdefinities** in DevOps
 - In SOA: **WSDL's**, **policies**, **service agreements**
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 Deze artefacten horen bij het ecosysteem, niet bij een value stream fase.
 
 ---
@@ -276,7 +383,7 @@ Resultaat-artefact
 - Vergelijkbaar met business deliverables, user stories, output van een pipeline
 - In DDD: Entities of Value Objects als resultaat van een proces
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 Waarde-artefacten zijn de tastbare resultaten van het werk binnen value streams.
 ---## Adviserende agent
 
@@ -310,7 +417,7 @@ Een **adviserende agent** levert uitsluitend informatieve output (advies, analys
 - Function-style service in SOA
 - Query/read-only service
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 De adviserende agent ondersteunt met informatie, maar levert geen artefacten of structurele waarde.
 
 ---
@@ -346,7 +453,7 @@ Een **uitvoerende agent** levert duurzame **artefacten** als expliciet onderdeel
 - Command met persistent effect
 - Write-side van een value stream
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 De uitvoerende agent levert tastbare resultaten en structurele wijzigingen in de workspace.
 
 ---
@@ -379,7 +486,7 @@ Een **beheeragent** wijzigt de operationele staat van de **workspace** of runtim
 - Infrastructure service
 - Control-plane gedrag
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 De beheeragent ondersteunt de operationele kant van de workspace, maar levert geen artefacten of directe waarde in de value stream.
 
 ---
@@ -410,7 +517,7 @@ Een **value stream** is een expliciet gedefinieerde keten van waarde-creërende 
 ### Analogieën 🔄
 - Vergelijkbaar met een waardeketen in Lean of een pipeline in DevOps
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 Value streams structureren het werk en maken waardecreatie inzichtelijk via expliciete stappen en artefacten.
 
 ---
@@ -447,7 +554,7 @@ Een **value stream fase** is een logisch afgebakende, waarde-creërende eenheid 
 - Vergelijkbaar met een stage in een pipeline
 - In Lean: een waardemoment in de waardestroom
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 **Value stream fasen** structureren het werk en maken expliciet welke waarde in elke stap ontstaat. **Artefacten** zijn herleidbaar van **mandarin-agent** → **value stream fase** → **value stream**.
 
 ---
@@ -477,7 +584,7 @@ Een **workspace** is een afgebakende werkomgeving die wordt ingericht om één o
 ### Analogieën 🔄
 - Vergelijkbaar met een project workspace, repository of solution folder
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 In de eerste fase van ontwikkeling worden agents gefetched uit de Mandarin workspace. De workspaces bevatten dus wel agents, maar deze worden hier niet aangepast. In die zin 'bevatten' deze workspaces geen agents.
 
 ---
@@ -496,7 +603,7 @@ In de eerste fase van ontwikkeling worden agents gefetched uit de Mandarin works
 ## Agent-soort
 
 ### Definitie 📝
-Een **agent-soort** is in het **Mandarin-ecosysteem** een classificatie van het effect van een **agent** op de project **workspace**. De volgende soorten worden onderkend:
+Een **agent-soort** is in het **Mandarin-ecosysteem** een classificatie van het effect van een **mandarin-agent** op de project **workspace**. De volgende soorten worden onderkend:
 -  **adviserende agent** (geen effect)
 -- **uitvoerende agent** (**mandarin artefacten** of **goverance) of **beherend** (operationele staat).
 
@@ -525,7 +632,7 @@ Rolcategorie
 - Vergelijkbaar met rolclassificaties in enterprise architectuur (bijv. actor, performer, controller)
 - In softwareontwikkeling: user role, service type
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 Het onderscheid tussen agent-soorten zorgt voor heldere verantwoordelijkheden en voorkomt verwarring tussen advies, uitvoering en beheer binnen het Mandarin-ecosysteem.
 
 ---
@@ -593,7 +700,7 @@ Systeem-agent
 - Vergelijkbaar met een infrastructuurbeheerder in DevOps
 - In enterprise architectuur: policy manager, platformbeheerder
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 De ecosysteem uitvoerende agent zorgt voor de randvoorwaarden en structuur waarbinnen alle andere agents en value streams kunnen functioneren.
 
 ---
@@ -628,5 +735,5 @@ Producerende agent
 - Vergelijkbaar met een resource-creating service in SOA
 - In softwareontwikkeling: developer, modelleur, documentgenerator
 
-### Toelichting (optioneel) 💬
+### Toelichting 💬
 De waarde uitvoerende agent levert tastbare resultaten en directe waarde binnen het Mandarin-ecosysteem, als onderdeel van een value stream.
