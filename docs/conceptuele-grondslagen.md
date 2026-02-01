@@ -31,13 +31,13 @@ Dit document is opgesteld door Constitutioneel Auteur op 1 februari 2026 om de c
 
 ## Inhoudsopgave
 
-- [Concept — Conceptuele grondslagen](#concept--conceptuele-grondslagen)
-- [Concept — Ordeningsconcepten (meta-concepten)](#concept--ordeningsconcepten-meta-concepten)
-- [Concept — Domeinconcepten](#concept--domeinconcepten)
-- [Concept — Concept](#concept--concept)
-- [Concept — Definitie](#concept--definitie)
-- [Concept — Term](#concept--term)
-- [Concept — Kenmerk](#concept--kenmerk)
+- Concept — Conceptuele grondslagen
+- Concept — Ordeningsconcepten (meta-concepten)
+- Concept — Domeinconcepten
+- Concept — Concept
+- Concept — Definitie
+- Concept — Term
+- Concept — Kenmerk
 
 ---
 

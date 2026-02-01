@@ -28,30 +28,30 @@ Dit document is afgeleid van "concepten-en-architectonische-grondslagen.md" (ver
 ## Inhoudsopgave
 
 ### Classificatie en Structuur
-- [Mandarin-architectuurprincipe](#mandarin-architectuurprincipe) — Richtinggevende regel voor ontwerp
-- [**mandarin-agent**-boundary](#**mandarin-agent**-boundary) — Expliciete afbakening van verantwoordelijkheid
-- [mandarin-agent-classificatie](#mandarin-agent-classificatie) — Positionering langs orthogonale assen
-- [As](#as) — Ordeningsdimensie voor positionering
-- [Artefactclassificatie](#artefactclassificatie) — Indeling van Mandarin-artefacten
+- Mandarin-architectuurprincipe — Richtinggevende regel voor ontwerp
+- **mandarin-agent**-boundary — Expliciete afbakening van verantwoordelijkheid
+- mandarin-agent-classificatie — Positionering langs orthogonale assen
+- As — Ordeningsdimensie voor positionering
+- Artefactclassificatie — Indeling van Mandarin-artefacten
 
 ### mandarin-agent-classificatie Assen
-- [Inhoudelijke as](#inhoudelijke-as) — Effect op betekenis
-- [Inzet-as](#inzet-as) — Context van gebruik
-- [Vorm-as](#vorm-as) — Betekenis of representatie
-- [Werkingsas](#werkingsas) — Inhoud of voorwaarden
+- Inhoudelijke as — Effect op betekenis
+- Inzet-as — Context van gebruik
+- Vorm-as — Betekenis of representatie
+- Werkingsas — Inhoud of voorwaarden
 
 ### Artefacten
-- [Mandarin-artefact](#mandarin-artefact) — Expliciet vastgelegd, overdraagbaar resultaat
-- [Normerend artefact](#normerend-artefact) — Artefact dat normen en regels vastlegt
-  - [Governance-artefact](#governance-artefact) — Specialisatie: governance in ecosysteem (value stream 0)
-  - [Richtinggevend artefact](#richtinggevend-artefact) — Specialisatie: normerende richting in waarde value streams (1-n)
-- [Realiserend artefact](#realiserend-artefact) — Artefact dat gedrag of structuur in systemen realiseert
-- [Afgeleid artefact](#afgeleid-artefact) — Artefact dat is afgeleid uit andere artefacten
-- [Beschrijvend artefact](#beschrijvend-artefact) — Artefact dat inzicht en uitleg biedt
-- [Documenterend artefact](#documenterend-artefact) — Artefact dat documenteert (inclusief modellen)
-- [Representatievorm](#representatievorm) — Vorm waarin betekenis wordt uitgedrukt
-- [Representatie](#representatie) — Concrete uitdrukking van betekenis
-- [Representatiestatus](#representatiestatus) — Bron of afgeleid in de keten
+- Mandarin-artefact — Expliciet vastgelegd, overdraagbaar resultaat
+- Normerend artefact — Artefact dat normen en regels vastlegt
+  - Governance-artefact — Specialisatie: governance in ecosysteem (value stream 0)
+  - Richtinggevend artefact — Specialisatie: normerende richting in waarde value streams (1-n)
+- Realiserend artefact — Artefact dat gedrag of structuur in systemen realiseert
+- Afgeleid artefact — Artefact dat is afgeleid uit andere artefacten
+- Beschrijvend artefact — Artefact dat inzicht en uitleg biedt
+- Documenterend artefact — Artefact dat documenteert (inclusief modellen)
+- Representatievorm — Vorm waarin betekenis wordt uitgedrukt
+- Representatie — Concrete uitdrukking van betekenis
+- Representatiestatus — Bron of afgeleid in de keten
 
 ---
 
