@@ -30,8 +30,10 @@ nav:
   - Home: index.md
   - Organisatie-Principes: organisatie-principes.md
   - Toelichting Mandarin: toelichting-mandarin.md
-  - Concepten:
+  - Concepten-in-Notendop:
+      - Mandarin Artefacten in een Notendop: mandarin-artefacten-in-een-notendop.md
       - Mandarin Agents in een Notendop: mandarin-agents-in-een-notendop.md
+  - Concepten:
       - Domeinconcepten: mandarin-domeinconcepten.md
       - Ordeningsconcepten: mandarin-ordeningsconcepten.md
       - Value Streams en Fasen: mandarin-value-streams-en-fasen.md
