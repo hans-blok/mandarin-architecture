@@ -98,9 +98,7 @@ Het verschil zit in dat "in theorie" versus "in de praktijk".
 
 ---
 
-## Het logo: 
-
-![Mandarin Logo](assets/mandarin-logo-m.png)
+## Het logo
 
 Het Mandarin-logo is een gestileerde mandarijn. Simpel, maar met betekenis:
 
