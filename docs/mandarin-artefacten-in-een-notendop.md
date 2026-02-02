@@ -1,138 +1,87 @@
 # Mandarin-artefacten in een notendop
 
-**Mandarin-artefacten** zijn duurzame, expliciete en overdraagbare vastleggingen van resultaat of besluitvorming binnen het Mandarin-ecosysteem. Deze artefacten dragen waarde en kunnen als input dienen voor vervolgwerk. Dit document geeft een overzicht van de artefactclassificatie en hoe artefacten zich tot elkaar verhouden.
+**Mandarin-artefacten** zijn duurzame, expliciete en overdraagbare vastleggingen van resultaat of besluitvorming die waarde vertegenwoordigen binnen het Mandarin-ecosysteem.
 
-## Artefactclassificatie
+## Tweedimensionale artefactclassificatie
 
-Mandarin-artefacten worden geclassificeerd in **vier hoofdklassen**, waarbij de normerende klasse twee specialisaties kent:
+Artefacten worden geordend langs **twee orthogonale assen**:
 
+### 1. Artefact-functie-as: *Welke functie vervult het artefact?*
 
-| Aspect | Governance-artefact |
-|--------|---------------------|
-| **Ontstaat in** | Value stream 0 (Ecosysteem Ontwikkeling) |
-| **Scope** | Ecosysteem-breed |
-| **Doel** | Besturing en continuïteit ecosysteem |
-| **Normerend voor** | Het ecosysteem zelf |
-| **Voorbeelden** | Agent-charter, agent-contract, prompt, template, workspace-state, handoff-document |
+| Positie | Bindend | Primair | Ontstaat in | Functie | Voorbeelden |
+|---------|---------|---------|-------------|---------|-------------|
+| **Normerend** | ✓ | ✓ | Max. 1 VS-fase | Normen vastleggen | Zie specialisaties ↓ |
+| → **Governance** | ✓ | ✓ | VS 0 | Ecosysteem-besturing | Agent-charter, prompt, template, workspace-state |
+| → **Richtinggevend** | ✓ | ✓ | VS 1-n | VS-richting geven | Requirements, ontwerp, logisch model, API-richtlijnen |
+| **Realiserend** | – | – | N.v.t. | Gedrag realiseren | DDL, code, IaC, seed-scripts |
+| **Beschrijvend** | – | – | N.v.t. | Inzicht bieden | Analyse-rapporten, architectuurvisies, rationale |
+| **Documenterend** | – | – | N.v.t. | Kennis vastleggen | Technische docs, handleidingen, ArchiMate, API-docs |
+| **Afgeleid** | – | – | N.v.t. | Afgeleid van andere artefacten | Gegenereerde API-docs, views, samenvattingen |
 
-**Governance-artefacten**:
-- Maken governance en besturing van het ecosysteem mogelijk
-- Zijn randvoorwaardelijk voor alle andere value streams
-- Leveren geen directe waarde in waarde value streams
-- Zijn operationeel en faciliterend voor het ecosysteem
+**VS** = Value stream
 
-**Analogie**: Vergelijkbaar met API contracts, infrastructuurdefinities, configuration files in DevOps.
+### 2. Representatievorm-as: *Hoe wordt de betekenis uitgedrukt?*
 
-#### 1.2 Richtinggevende artefacten
+| Representatievorm | Kenmerken | Voorbeelden |
+|-------------------|-----------|-------------|
+| **Tekstueel** | Natuurlijke taal, lineair | Markdown, docx, txt |
+| **Gestructureerd** | Schema-gebaseerd, parseerbaar | JSON, YAML, XML |
+| **Visueel** | Grafisch, diagrammatisch | PNG, SVG, draw.io |
+| **Machine-leesbaar** | Direct interpreteerbaar door tooling | SQL DDL, Terraform, code |
+| **Model-gebaseerd** | Formele metamodel-structuur | ArchiMate, UML, C4 |
 
-**Richtinggevende artefacten** (synoniem: **value-stream-artefacten**) leggen expliciet de gewenste inhoud, structuur of randvoorwaarden van een **value stream fase** in een **waarde value stream** vast (value streams 1-n).
+**Principe**: Dezelfde functie kan in verschillende representatievormen bestaan zonder dat de positie op de artefact-functie-as verandert.
 
-| Aspect | Richtinggevend artefact |
-|--------|------------------------|
-| **Ontstaat in** | Waarde value streams (1-n) |
-| **Scope** | Specifieke value stream fase |
-| **Doel** | Richting geven aan realisatie |
-| **Normerend voor** | Value stream fase inhoud |
-| **Voorbeelden** | Requirements, ontwerpdocumenten, solution outlines, logische datamodellen, API-richtlijnen |
+## Normerende artefacten: governance vs richtinggevend
 
-**Richtinggevende artefacten**:
-- Vertegenwoordigen inhoudelijke keuzes, richting en gewenste resultaten
-- Zijn input voor volgende fasen en voor realiserende artefacten
-- Worden geleverd door uitvoerende mandarin-agents met inhoudelijke verantwoordelijkheid
-- Zijn primair artefacten (niet afgeleid)
+| Aspect | Governance-artefact | Richtinggevend artefact |
+|--------|---------------------|-------------------------|
+| **Ontstaat in** | Value stream 0 (Ecosysteem) | Value streams 1-n (Waarde) |
+| **Scope** | Ecosysteem-breed | Value stream fase |
+| **Normerend voor** | Het ecosysteem zelf | Value stream inhoud |
+| **Functie** | Besturing en continuïteit | Richting en randvoorwaarden |
+| **Faciliterend** | Ja (randvoorwaardelijk) | Nee (waardevol) |
+| **Afgeleid** | Nee (primair) | Nee (primair) |
 
-**Analogie**: Vergelijkbaar met business requirements, solution outlines, logical data models in DDD.
+## Tweedimensionale positionering: voorbeelden
 
----
+Een artefact heeft **twee dimensies**: functie én representatievorm.
 
-## 2. Realiserende artefacten
+| Artefact | Artefact-functie-as | Representatievorm-as | Toelichting |
+|----------|---------------------|----------------------|-------------|
+| Constitutie | Normerend (Governance) | Tekstueel | Ecosysteem-norm in natuurlijke taal (bijv. Markdown) |
+| Requirements-spec | Normerend (Richtinggevend) | Gestructureerd | VS-norm in parseerbaar formaat (bijv. JSON, YAML) |
+| PostgreSQL-DDL | Realiserend | Machine-leesbaar | Implementeert structuur, direct uitvoerbaar |
+| ArchiMate-diagram | Beschrijvend | Model-gebaseerd + Visueel | Visualiseert architectuur ter uitleg |
+| API-documentatie | Afgeleid / Documenterend | Tekstueel + Gestructureerd | Afgeleid uit code, documenteert kennis |
+| Analyse-rapport | Beschrijvend | Tekstueel | Biedt inzicht zonder te normeren |
 
-### Definitie
-Een **realiserend artefact** realiseert direct gedrag, structuur of configuratie in een werkend systeem op basis van richtinggevende artefacten.
+## Waarom tweedimensionale classificatie?
 
-### Kernkenmerken
-- Uitvoerbaar, interpreteerbaar of direct toepasbaar door tooling
-- Realiseert beslissingen uit richtinggevende artefacten
-- Niet zelf normerend, maar volgt normerende artefacten
-- Wijzigingen hebben direct effect op systeemgedrag of data
-- Kan gegenereerd of handmatig gemaakt zijn
+| Voordeel | Toelichting |
+|----------|-------------|
+| **Scheidt betekenis van vorm** | Functie (betekenis) blijft constant, ongeacht representatievorm |
+| **Houdt governance scherp** | Governance-artefacten ontstaan alleen in VS 0, richtinggevend in VS 1-n |
+| **Erkent modellen als uitleg** | ArchiMate en UML zijn beschrijvend/documenterend, niet normerend |
+| **Maakt tooling verwisselbaar** | Classificatie onafhankelijk van formaat of implementatie |
+| **Verbindt met value streams** | Helder waar artefacten ontstaan (artefact-functie-as) |
+| **Zichtbaar primair vs afgeleid** | Afgeleid is expliciete positie op artefact-functie-as |
+| **Ondersteunt representatie-transformatie** | Zelfde functie in meerdere vormen (bijv. tekst → diagram) |
 
-### Voorbeelden
-- PostgreSQL-DDL (CREATE TABLE, CONSTRAINTS, etc.)
-- Angular-code of andere frontend/backend-code
-- Seed-scripts voor databases
-- Infrastructure-as-code (Terraform, Ansible, Kubernetes manifests)
+## Leidende vragen bij classificatie
 
-### Relatie met andere artefacten
-Realiserende artefacten vormen de **brug tussen richtinggevende artefacten en het werkende systeem**. Zij maken de bedoelde structuur en het gewenste gedrag feitelijk waar in code, data en configuratie.
+Twee vragen bepalen de positie van een artefact:
 
-**Analogie**: Vergelijkbaar met gecompileerde of interpreteerbare artefacten die in productie draaien in softwareontwikkeling.
+1. **Artefact-functie-as**: *Welke normerende, realiserende, beschrijvende, documenterende of afgeleide functie heeft dit artefact in het ecosysteem?*
+2. **Representatievorm-as**: *In welke vorm wordt de betekenis uitgedrukt (tekstueel, gestructureerd, visueel, machine-leesbaar, model-gebaseerd)?*
 
----
-
-## 3. Beschrijvende artefacten
-
-### Definitie
-Een **beschrijvend artefact** biedt inzicht, uitleg of overzicht over bestaande structuren, besluiten of situaties, zonder zelf normerend, governerend of waardevol in een value stream fase te zijn.
-
-### Kernkenmerken
-- Biedt inzicht en uitleg
-- Descriptief (beschrijft wat is)
-- Niet bindend of prescriptief
-- Kan afgeleid zijn uit andere artefacten
-- Ondersteunt begripsvorming en communicatie
-
-### Voorbeelden
-- Overzichtsdocumenten
-- Analyse-rapporten
-- Conceptuele modellen (ter uitleg)
-- Architectuurvisies
-- Rationale-documenten (waarom-uitleg)
-- Kennisbankartikelen
-
-### Doel
-Beschrijvende artefacten helpen mensen het ecosysteem te begrijpen. Zij zijn vaak afgeleid uit normerende, governance- of richtinggevende artefacten en zijn **ondersteunend, niet bindend**.
-
-**Analogie**: Vergelijkbaar met white papers, explanatory documents, vision documents in enterprise architectuur.
+**Voorbeeld classificatie**:
+- **Constitutie**: Normerend (Governance) × Tekstueel
+- **DDL-script**: Realiserend × Machine-leesbaar
+- **ArchiMate-model**: Beschrijvend × Model-gebaseerd + Visueel
 
 ---
 
-## 4. Documenterende artefacten
+**Zie ook**: [Mandarin-agents in een notendop](mandarin-agents-in-een-notendop.md) voor relatie tussen agents en artefacten.
 
-### Definitie
-Een **documenterend artefact** legt kennis, structuren of besluiten vast in een formele, toegankelijke vorm (inclusief model-gebaseerde beschrijvingen zoals ArchiMate), bedoeld voor duurzame raadpleegbaarheid en kennisoverdracht.
-
-### Kernkenmerken
-- Legt kennis en structuren formeel vast
-- Bedoeld voor duurzame raadpleegbaarheid
-- Kan model-gebaseerd zijn (bijv. ArchiMate, UML)
-- Kan afgeleid of gegenereerd zijn uit andere artefacten
-- Ondersteunt kennisoverdracht en onderhoud
-
-### Voorbeelden
-- Technische documentatie
-- Gebruikershandleidingen
-- ArchiMate-modellen (documenterende variant)
-- UML-diagrammen (documenterende variant)
-- API-documentatie (gegenereerd)
-- Release notes
-- Geëxporteerde visualisaties
-
-### Modellen als documentatie
-**Model-gebaseerde beschrijvingen** (zoals ArchiMate) worden gezien als documenterende artefacten: zij leggen structuur vast, maar zijn **uitleg, niet waarheid**. Deze indeling scheidt betekenis van vorm en maakt tooling verwisselbaar.
-
-**Analogie**: Vergelijkbaar met technical documentation, reference manuals, generated docs, Javadoc, Swagger/OpenAPI specs.
-
----
-
-## Overzicht van artefactklassen
-
-| Klasse | Bindend | Primair | Doel | Ontstaat in |
-|--------|---------|---------|------|-------------|
-| **Normerend** | ✓ | ✓ | Normen vastleggen | Max. 1 value stream fase |
-| → Governance | ✓ | ✓ | Ecosysteem-besturing | Value stream 0 |
-| → Richtinggevend | ✓ | ✓ | Value stream richting | Value streams 1-n |
-| **Realiserend** | – | – | Gedrag realiseren | N.v.t. |
-| **Beschrijvend** | – | – | Inzicht bieden | N.v.t. |
-| **Documenterend** | – | – | Kennis vastleggen | N.v.t. |
-
+**Bronnen**: [Conceptuele grondslagen](conceptuele-grondslagen.md) • [Ordeningsconcepten](mandarin-ordeningsconcepten.md) • [Domeinconcepten](mandarin-domeinconcepten.md)
