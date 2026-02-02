@@ -12,7 +12,7 @@ Artefacten worden geordend langs **twee orthogonale assen**:
 |---------|---------|---------|-------------|---------|-------------|
 | **Normerend** | ✓ | ✓ | Max. 1 VS-fase | Normen vastleggen | Zie specialisaties ↓ |
 | → **Governance** | ✓ | ✓ | VS 0 | Ecosysteem-besturing | Agent-charter, prompt, template, workspace-state |
-| → **Richtinggevend** | ✓ | ✓ | VS 1-n | VS-richting geven | Requirements, ontwerp, logisch model, API-richtlijnen |
+| → **Richtinggevend** | ✓ | ✓ | VS 1-n | Value Stream-richting geven | Requirements, ontwerp, logisch model, API-richtlijnen |
 | **Realiserend** | – | – | N.v.t. | Gedrag realiseren | DDL, code, IaC, seed-scripts |
 | **Beschrijvend** | – | – | N.v.t. | Inzicht bieden | Analyse-rapporten, architectuurvisies, rationale |
 | **Documenterend** | – | – | N.v.t. | Kennis vastleggen | Technische docs, handleidingen, ArchiMate, API-docs |
