@@ -2,7 +2,7 @@
 
 **Doel**: Snel overzicht van mandarin-agent-classificatie op basis van orthogonale assen
 
-**Bron**: Gebaseerd op conceptuele-grondslagen.md, mandarin-ordeningsconcepten.md en mandarin-domeinconcepten.md
+**Bron**: Gebaseerd op mandarin-ordeningsconcepten.md en mandarin-domeinconcepten.md
 
 ---
 
@@ -24,93 +24,110 @@ Een mandarin-agent heeft op elke as een expliciete positie:
 
 ## 1. Inhoudelijke As
 
-**Vraag**: Wat doet deze agent met de betekenis/inhoud?
+**Vraag**: Wat is het effect van deze agent op de betekenis van het werk?
 
-| **Positie** | **Betekenis** | **Voorbeeld** |
-|------------|---------------|---------------|
-| **Beschrijvend** | Legt inhoud uit, analyseert, adviseert | Analyse-agent, Adviesagent |
-| **Normerend** | Legt regels en normen vast | Constitutioneel Auteur, Beleid-agent |
-| **Structuur-normerend** | Bepaalt hoe het ecosysteem zelf is ingericht | Canon Curator |
-| **Realiserend** | Produceert uitvoerbare code/configuratie | Code-generator, Infrastructure-as-Code agent |
-| **Documenterend** | Maakt documentatie of modellen | Modelleur, Documentatie-agent |
+| **Positie** | **Betekenis** | **Timing** | **Voorbeeld** |
+|------------|---------------|------------|---------------|
+| **Beschrijvend** | Vastleggen, uitleggen, documenteren van bestaande werkelijkheid | **Achteraf** | Analyse-agent, Verslagagent |
+| **Structuurrealisend** | Maken impliciete samenhang en relaties expliciet | Impliciet → expliciet | Logisch datamodel-agent, Nummeragent |
+| **Architectuur-structurerend** | Instantiëren samenhangend architectuurmodel binnen gestelde kaders | Volgens metamodel | ArchiMate-modelleur, C4-modelleur |
+| **Structuur-normerend** | Normeren vooraf de structuur van toekomstig werk | **Vooraf**, value-stream-gebonden | Thema-vormende agent, Feature-beschrijver |
+| **Curator** | Beschrijvend met expliciet oordeel of duiding | Beoordeling + escalatie | Review-agent, Samenhangbeoordelaar |
+| **Ecosysteem-normerend** | Vaststellen/wijzigen regels en kaders van het ecosysteem | Meta-niveau, zwaar | Constitutie-agent, Doctrine-agent |
 
 ---
 
 ## 2. Inzet-As
 
-**Vraag**: In welke context is deze agent inzetbaar?
+**Vraag**: Waar mag deze agent worden ingezet?
 
 | **Positie** | **Betekenis** | **Voorbeeld** |
 |------------|---------------|---------------|
-| **Value-stream-specifiek** | Gebonden aan 1+ specifieke value stream fase(n) | Feature-analist (fase: analyse), Service-architect (fase: ontwerp) |
-| **Value-stream-overstijgend** | Inzetbaar over meerdere value streams heen | Format-vertaler, Publicatie-agent, Moeder agent, Canon Curator |
+| **Value-stream-specifiek** | Inzetbaar binnen één value stream, vaak fase-gebonden | Feature-analist (analyse-fase), Service-architect (ontwerp-fase) |
+| **Value-stream-overstijgend** | Inzetbaar over meerdere value streams heen | Format-vertaler, Publicatie-agent, Canon Curator |
 
 ---
 
 ## 3. Vorm-As
 
-**Vraag**: Werkt deze agent met betekenis of met representatie?
+**Vraag**: Werkt deze agent op betekenis of alleen op vorm?
 
 | **Positie** | **Betekenis** | **Voorbeeld** |
 |------------|---------------|---------------|
-| **Vormvast** | Werkt met betekenis, begrijpt inhoud | Mandarin-architect (werkt met concepten), Feature-analist |
-| **Representatieomvormend** | Transformeert alleen vorm, betekenis-blind | Publicatie-agent (Markdown→HTML), Format-vertaler |
+| **Vormvast** | Output is betekenisdragend, begrijpt betekenis van het werk | Mandarin-architect (werkt met concepten), Feature-analist |
+| **Representatieomvormend** | Zet inhoud om van representatie naar representatie, betekenis-blind | Publicatie-agent (Markdown→HTML), Format-vertaler |
 
 ---
 
-## 4. Werkings-As
+## 4. Werkingsas
 
-**Vraag**: Werkt deze agent met inhoud of met voorwaarden?
+**Vraag**: Intervenieert deze agent in de inhoud of in de voorwaarden?
 
 | **Positie** | **Betekenis** | **Voorbeeld** |
 |------------|---------------|---------------|
-| **Inhoudelijk** | Levert inhoudelijke output (tekst, modellen, code) | Feature-analist, Service-architect |
-| **Conditioneel** | Beheert voorwaarden en runtime (configuratie, workspace-structuur) | Moeder agent, Docker-steward |
+| **Inhoudelijk** | Werkt direct op betekenisvolle artefacten | Feature-analist, Service-architect, alle categorieën van inhoudelijke as |
+| **Conditioneel** | Werkt op voorwaarden en hygiëne, bewaak randvoorwaarden | Workspace Steward, Engineering Steward |
 
 ---
 
 ## Voorbeelden: Agents Gepositioneerd
 
-### Agent: Mandarin-architect
-- **Inhoudelijke as**: Beschrijvend (legt concepten uit)
+### Agent: Canon Curator
+- **Inhoudelijke as**: Curator (beoordelt kwaliteit en samenhang met expliciet oordeel)
 - **Inzet-as**: Value-stream-overstijgend (werkt aan het ecosysteem zelf)
-- **Vorm-as**: Vormvast (werkt met betekenis, niet met representatie)
-- **Werkings-as**: Inhoudelijk (produceert concept-documenten)
+- **Vorm-as**: Vormvast (werkt met betekenis van concepten)
+- **Werkingsas**: Inhoudelijk (produceert curator-rapporten en analyses)
 
 ### Agent: Publicatie-agent
-- **Inhoudelijke as**: Documenterend (maakt publicaties)
+- **Inhoudelijke as**: Beschrijvend (documenteert door publicaties te maken)
 - **Inzet-as**: Value-stream-overstijgend (overal inzetbaar)
 - **Vorm-as**: Representatieomvormend (transformeert Markdown naar HTML, PDF, etc.)
-- **Werkings-as**: Inhoudelijk (produceert documenten)
+- **Werkingsas**: Inhoudelijk (produceert documenten)
 
-### Agent: Moeder agent
-- **Inhoudelijke as**: Structuur-normerend (beheert workspace-structuur)
-- **Inzet-as**: Value-stream-overstijgend (beheert workspace-inrichting over alle value streams)
-- **Vorm-as**: Vormvast (werkt met structuur, niet representatie)
-- **Werkings-as**: Conditioneel (beheert voorwaarden en configuratie)
+### Agent: Workspace Steward
+- **Inhoudelijke as**: Conditioneel ondersteunend (geen specifieke inhoudelijke positie)
+- **Inzet-as**: Value-stream-overstijgend (beheert workspace-inrichting)
+- **Vorm-as**: Vormvast (werkt met structuur en betekenis van workspace)
+- **Werkingsas**: Conditioneel (beheert voorwaarden: structuur, beleid, scope, mappen)
 
 ### Agent: Feature-analist
-- **Inhoudelijke as**: Beschrijvend (analyseert features)
-- **Inzet-as**: Value-stream-specifiek (fase: analyse)
+- **Inhoudelijke as**: Beschrijvend (analyseert bestaande of voorgenomen features)
+- **Inzet-as**: Value-stream-specifiek (analyse-fase)
 - **Vorm-as**: Vormvast (werkt met betekenis)
-- **Werkings-as**: Inhoudelijk (produceert analyse-documenten)
+- **Werkingsas**: Inhoudelijk (produceert analyse-documenten)
+
+### Agent: ArchiMate-modelleur  
+- **Inhoudelijke as**: Architectuur-structurerend (instantieert coherent architectuurmodel)
+- **Inzet-as**: Value-stream-specifiek (ontwerp-fase)
+- **Vorm-as**: Vormvast (werkt met architectuurbetekenis)
+- **Werkingsas**: Inhoudelijk (produceert structuurmodellen)
 
 ---
 
 ## Artefacten per Agent-positie
 
-### Normerend → Normerende Artefacten
-- **Governance-artefacten**: Agent-charters, policies, constitutie
-- **Richtinggevende artefacten**: Templates, standaarden voor value streams
-
 ### Beschrijvend → Beschrijvende Artefacten
-- Analyses, adviezen, overzichten
+- Analyses, adviezen, overzichten van bestaande situaties
 
-### Realiserend → Realiserende Artefacten
-- Code, configuratie, infrastructuur-definities
+### Structuurrealisend → Realiserende Artefacten  
+- Logische datamodellen, expliciete relatie-modellen, nummeringsschema's
+- Maken impliciete structuur expliciet zonder normatief te zijn
 
-### Documenterend → Documenterende Artefacten
-- Modellen, diagrammen, documentatie
+### Architectuur-structurerend → Structurerende Artefacten
+- ArchiMate-modellen, C4-modellen, domeinmodellen met coherente architectuurstructuur
+- Volgens metamodellen, binnen gestelde kaders
+
+### Structuur-normerend → Richtinggevende Artefacten
+- Themabeschrijvingen, feature-specificaties, value-stream-specifieke normen
+- Normeren vooraf het werk binnen waarde value streams
+
+### Curator → Beschrijvende Artefacten (met oordeel)
+- Review-rapporten, kwaliteitsbeoordelingen, samenhanganalyses
+- Escalatie-adviezen, expliciete duiding
+
+### Ecosysteem-normerend → Governance-artefacten
+- Constitutie, doctrines, agent-charters, ecosysteem-brede policies
+- Meta-niveau normen voor het systeem zelf
 
 ---
 
@@ -132,35 +149,41 @@ Een mandarin-agent heeft op elke as een expliciete positie:
 
 | **Oud Systeem** | **Nieuw Systeem** |
 |-----------------|-------------------|
-| "Adviserende agent" = enkelvoudig label | Beschrijvend (inhoudelijke as) + value-stream-specifiek (inzet-as) + vormvast (vorm-as) + inhoudelijk (werkings-as) |
-| "Uitvoerende agent" = enkelvoudig label | Normerend/Realiserend (inhoudelijke as) + specifieke posities op andere assen |
-| "Beheeragent" = enkelvoudig label | Conditioneel (werkings-as) + value-stream-overstijgend (inzet-as) |
-| Hiërarchische structuur (parent/child) | Orthogonale assen (geen hiërarchie) |
+| "Adviserende agent" = enkelvoudig label | Beschrijvend (inhoudelijke as) + expliciete posities op andere assen |
+| "Uitvoerende agent" = enkelvoudig label | Structuurrealisend/Architectuur-structurerend/Structuur-normerend (inhoudelijke as) + specifieke posities op andere assen |
+| "Beheeragent" = enkelvoudig label | Conditioneel (werkingsas) + value-stream-overstijgend (inzet-as) |
+| Enkelvoudige "normerend" categorie | Onderscheid tussen Structuur-normerend (waarde value streams) en Ecosysteem-normerend (meta-niveau) |
+| Hiërarchische structuur | Orthogonale assen (geen hiërarchie) |
+| Geen onderscheid architect/realisatie | Expliciet onderscheid Architectuur-structurerend vs Structuurrealisend |
 
 ---
 
 ## Gebruik in Praktijk
 
 ### Bij Ontwerp van een Nieuwe Agent
-1. Bepaal positie op **Inhoudelijke as**: Wat doet deze agent met betekenis?
-2. Bepaal positie op **Inzet-as**: Waar is deze agent inzetbaar?
+1. Bepaal positie op **Inhoudelijke as**: Wat is het effect op betekenis? (6 opties)
+2. Bepaal positie op **Inzet-as**: Waar is deze agent inzetbaar? (value-stream-specifiek vs overstijgend)
 3. Bepaal positie op **Vorm-as**: Werkt deze agent met betekenis of representatie?
-4. Bepaal positie op **Werkings-as**: Werkt deze agent met inhoud of voorwaarden?
+4. Bepaal positie op **Werkingsas**: Werkt deze agent met inhoud of voorwaarden?
 
 ### Bij Governance-controle
 - Check: Heeft elke agent een expliciete positie op alle 4 assen?
 - Check: Is de agent-charter consistent met deze posities?
 - Check: Zijn de templates en contracten afgestemd op de as-posities?
+- Check: Voor ecosysteem-normerende agents: is de impact en zwaarte gerechtvaardigd?
+
+### Bij Artefact-classificatie
+- Gebruik **artefact-functie-as** om artefacten te positioneren: normerend (governance vs richtinggevend), realiserend, structurerend, beschrijvend, documenterend, afgeleid
+- Combineer met **representatievorm-as** voor volledige classificatie
 
 ---
 
 **Gebruik**: Dit document biedt een compact overzicht van de multi-dimensionale agent-classificatie. Voor volledige definities en kenmerken, zie:
-- mandarin-ordeningsconcepten.md (voor classificatie en assen)
-- mandarin-domeinconcepten.md (voor agent-concepten)
-- conceptuele-grondslagen.md (voor meta-concepten)
+- mandarin-ordeningsconcepten.md (voor classificatie, assen en artefacten)
+- mandarin-domeinconcepten.md (voor agent-concepten en werkingsprincipes)
 
-**Versie**: 2.0.0  
-**Laatst bijgewerkt**: 2026-02-01  
+**Versie**: 3.0.0  
+**Laatst bijgewerkt**: 2026-02-15  
 **Auteur**: Canon Curator  
-**Gebaseerd op**: conceptuele-grondslagen.md, mandarin-ordeningsconcepten.md, mandarin-domeinconcepten.md
+**Gebaseerd op**: mandarin-ordeningsconcepten.md v1.9.0, mandarin-domeinconcepten.md
 
