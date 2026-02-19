@@ -29,7 +29,7 @@ Dat voelt flexibel, maar het is onbestuurbaar.
 
 Als een prompt tegelijk contract, rolbeschrijving en implementatie is, wordt alles impliciet. De scope is niet afgebakend, want die staat verstopt in een losse alinea. Het contract is niet observeerbaar, want het hangt af van hoe de LLM de tekst die dag leest. De verantwoordelijkheden zijn niet expliciet, maar lopen door elkaar heen.
 
-Het resultaat is voorspelbaar. Scope creep blijft onzichtbaar. Agents gaan op elkaar lijken zonder echt herbruikbaar te worden. Governance komt pas achteraf, als noodreparatie op een al werkend systeem.
+Scope creep blijft onzichtbaar. Agents gaan op elkaar lijken zonder echt herbruikbaar te worden. Governance komt pas achteraf, als noodreparatie op een werkend systeem.
 
 Dit is geen nieuw probleem. Het is hetzelfde patroon waar service-architectuur en API-design al decennia voor waarschuwen.
 
@@ -39,13 +39,14 @@ De oplossing is niet spectaculair. Ze is disciplinair.
 
 Je begint met een boundary. Eén zin, scherp geformuleerd, die precies aangeeft wat deze agent wel doet en wat niet. Geen ruimte voor vage toevoegingen. Geen "en misschien ook nog". Gewoon: dit is de capability, hier begint zij en hier stopt zij.
 
-Uit die boundary volgt een contract. Dat contract is de prompt: kort, normatief en observeerbaar. Het contract zegt wat erin gaat, wat eruit komt en waar de agent stopt. Niet meer, niet minder. De prompt is geen essay over wat de agent allemaal zou kunnen doen, maar een concrete afspraak over wat hij belooft te leveren.
+Uit die boundary volgt een contract. Dat contract is de prompt: kort, normatief en observeerbaar. Het contract zegt wat erin gaat, wat eruit komt en waar de agent stopt. Niet meer, niet minder. De prompt is geen ongestructureerde tekst over wat de agent allemaal zou kunnen doen, maar een concrete afspraak over wat hij belooft te leveren.
 
-Uit dat contract volgt een rolbeschrijving. Die beschrijft de interne werking: hoe maakt de agent zijn beloftes waar, wat zijn zijn verantwoordelijkheden en waar liggen zijn grenzen. De rolbeschrijving herhaalt de prompt niet, maar legt uit hoe de agent het contract betrouwbaar uitvoert.
+Uit dat contract volgt een rolbeschrijving (charter). Die beschrijft de interne werking: hoe maakt de agent zijn beloftes waar, wat zijn zijn verantwoordelijkheden en waar liggen zijn grenzen. De rolbeschrijving herhaalt de prompt niet, maar legt uit hoe de agent het contract betrouwbaar uitvoert.
 
-Daarna volgt de uitvoering. Een runner automatiseert de herhaalbare stappen. De runner voegt geen betekenis toe, verandert geen regels en verzint geen nieuwe scope. Hij voert alleen uit.
+Daarna volgt de uitvoering. Een runner automatiseert de herhaalbare stappen. De runner voegt geen betekenis toe, verandert geen regels en verzint geen nieuwe scope. Hij voert alleen uit en is voor een groot deel deterministisch. Het LLM wordt alleen ingezet als het waarde toevoegt.
 
-Dit is geen nieuw idee. Het is service-architectuur, DDD en API-design. Het is contract-first denken zoals dat al decennia wordt toegepast op services. Het verschil is dat we het hier toepassen op agents.
+De inzet van een model dat kan interpreteren en bestaande producten kan verbeteren, is nieuw en disruptief.
+Maar het denken in boundaries, verantwoordelijkheden en contracten is geen nieuw idee. Het is service-architectuur, DDD en API-design. Het is contract-first denken zoals dat al decennia wordt toegepast op services. Het verschil is dat we het hier toepassen op agents.
 
 ## Waarom dit zeldzaam is
 
@@ -65,9 +66,9 @@ De verleiding is om flexibiliteit als beginpunt te nemen en structuur als nabran
 
 Een tweede reden waarom dit model werkt, is de expliciete scheiding tussen regels, processen en data.
 
-- **Regels** beschrijven wat in dit ecosysteem als geldig geldt. Ze liggen vast in de canon-repository: constitutie, doctrines. 
+- **Regels** beschrijven wat in dit ecosysteem als geldig geldt. Ze liggen vast in de canon-repository: constitutie en doctrines.
 - **Processen** belichamen gedrag. Ze zitten in agent-capabilities: wat agents in dit landschap mogen en kunnen doen.
-- **Data** is toestand. Die staat in workspaces: de feitelijke output en resultaten; de datamodellen en de requirements..
+- **Data** is toestand. Die staat in workspaces: de feitelijke output en resultaten, de datamodellen en de requirements.
 
 Die scheiding is oud. Ze komt uit klassiek informatiekundig denken. In agent-systemen raakt ze makkelijk uit beeld, omdat alles in tekst lijkt te passen en alles met alles kan praten.
 
