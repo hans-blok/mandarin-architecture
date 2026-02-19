@@ -1,4 +1,4 @@
-# Axioma van Gezag Mandaryn
+﻿# Axioma van Gezag Mandaryn
 
 **Type**: Normatief Governance Document  
 **Repository**: standards  
@@ -22,13 +22,13 @@
 **Gezag bestaat alleen zolang het wordt erkend.**
 
 > **Mandarins** zijn hooggeplaatste, niet-gekozen ambtenaren die binnen een bestuurlijk 
-> systeem continuïteit, expertise en beleidsuitvoering waarborgen, onafhankelijk van politieke wisselingen.
+> systeem continuÃ¯teit, expertise en beleidsuitvoering waarborgen, onafhankelijk van politieke wisselingen.
 
 **Mandarins zorgen dat het systeem blijft werken, ook als de macht wisselt.**
 
 Dit document wordt niet gebruikt in geautomatiseerde processen.
 Het wordt uitsluitend geschreven door mensen en uitsluitend door
-mensen geïnterpreteerd.
+mensen geÃ¯nterpreteerd.
 
 De enige uitzondering hierop is de Mandaryn-agent **canon-curator**.
 Deze agent beoordeelt de canon op interne consistentie, volledigheid
@@ -45,18 +45,18 @@ door mensen doorgevoerd.
 ### Stelling
 
 In het agent-ecosysteem **Mandaryn** heeft **mandarins-gezag** geen geldigheid.  
-Niet omdat hiërarchie per definitie verkeerd is,  
+Niet omdat hiÃ«rarchie per definitie verkeerd is,  
 maar omdat **gezag niet voortkomt uit positie**,  
 maar uit **expliciet toegekend mandaat**.
 
 ---
 
-## "Mandarins-gezag”
+## "Mandarins-gezagâ€
 
 Met *mandarins-gezag* bedoelen we een vorm van gezag die:
 
 - is gebaseerd op formele positie of titel;
-- werkt via hiërarchie in plaats van expliciet mandaat;
+- werkt via hiÃ«rarchie in plaats van expliciet mandaat;
 - afhankelijk is van context, interpretatie en sociale conventie.
 
 Dit type gezag is:
@@ -108,7 +108,7 @@ Alles wat daarbuiten valt, is ruis.
 
 Dit leidt tot een harde ontwerpregel:
 
-- geen beroep op hiërarchie;
+- geen beroep op hiÃ«rarchie;
 - geen informele goedkeuring;
 - geen impliciete uitzonderingen;
 - geen stilzwijgende mandaten.

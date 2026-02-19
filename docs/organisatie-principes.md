@@ -1,16 +1,16 @@
-# Organisatie-Principes — Ondernemingsvorming
+﻿# Organisatie-Principes — Ondernemingsvorming
 
 **Versie**: 1.0  
 **Datum**: 18 januari 2026  
-**Eigenaar**: Mandarin-EA  
+**Eigenaar**: Mandaryn-EA  
 **Review-cyclus**: Jaarlijks of bij significante veranderingen  
-**Scope**: Ondernemingsvorming value stream (Mandarin ontwikkeling)
+**Scope**: Ondernemingsvorming value stream (Mandaryn ontwikkeling)
 
 ---
 
 ## Inleiding
 
-Dit document definieert de organisatie-principes voor de ondernemingsvorming waarin Mandarin wordt ontwikkeld. Deze principes vormen de fundamentele grondslagen voor hoe we als organisatie opereren, beslissingen nemen en waarde creëren.
+Dit document definieert de organisatie-principes voor de ondernemingsvorming waarin Mandaryn wordt ontwikkeld. Deze principes vormen de fundamentele grondslagen voor hoe we als organisatie opereren, beslissingen nemen en waarde creëren.
 
 Ze zijn bedoeld als strategische richtlijnen die de lange termijn koers bewaken en operationele besluiten sturen.
 
@@ -22,7 +22,7 @@ Ze zijn bedoeld als strategische richtlijnen die de lange termijn koers bewaken 
 Wij zijn soeverein: we nemen onze eigen besluiten en maken ons niet structureel afhankelijk van externe partijen, leveranciers of gesloten ecosystemen.
 
 ### Rationale
-Robert is uitgesproken voorstander van Linux en open source. Dit principe borgt die overtuiging op organisatieniveau en bewaakt onze onafhankelijkheid en autonomie. Door soevereiniteit te kiezen, behouden we controle over onze eigen richting, kennis en ontwikkeling.
+Door soevereiniteit te kiezen, behouden we controle over onze eigen richting, kennis en ontwikkeling.
 
 In een wereld waarin vendor lock-in en afhankelijkheid van grote platforms steeds groter worden, beschermt dit principe onze vrijheid om te kiezen wat het beste is voor onze eigen situatie.
 
@@ -37,7 +37,6 @@ In een wereld waarin vendor lock-in en afhankelijkheid van grote platforms steed
 - Vendor lock-in wordt actief vermeden
 - We prefereren oplossingen waarbij we data en logica volledig beheren
 - We blijven zelf ontwikkelen en innoveren, ook als dat meer inspanning vraagt
-- We onderzoeken de mogelijkheid om een eigen LLM te ontwikkelen om volledige controle te behouden over onze AI-capabilities
 
 **Voor organisatie en cultuur**:
 - We investeren in eigen kennis en vaardigheden
@@ -49,7 +48,7 @@ In een wereld waarin vendor lock-in en afhankelijkheid van grote platforms steed
 **Goed** ✓
 - Gebruik van Linux als besturingssysteem in plaats van proprietary alternatieven
 - Kiezen voor open source databases met sterke community en standaarden
-- Zelf agents ontwikkelen en beheren binnen Mandarin in plaats van afhankelijk zijn van closed source AI platforms
+- Zelf agents ontwikkelen en beheren binnen Mandaryn in plaats van afhankelijk zijn van closed source AI platforms
 - Gebruik van Git met eigen repository-beheer in plaats van volledige afhankelijkheid van één cloud provider
 
 **Slecht** ✗
@@ -178,7 +177,7 @@ Bij dergelijke dilemma's:
 - **Agent Curator**: Zorg dat nieuwe agents en charters deze principes reflecteren in capability boundaries en werkwijze
 
 ### Vervolgstappen
-1. **Systeem-principes definiëren**: De Mandarin-EA moet nu systeem-principes voor Mandarin platform opstellen die aligned zijn met deze organisatie-principes
+1. **Systeem-principes definiëren**: De Mandaryn-EA moet nu systeem-principes voor Mandaryn platform opstellen die aligned zijn met deze organisatie-principes
 2. **Value stream definitie**: Definieer de ondernemingsvorming value stream expliciet met stakeholders, in/out criteria en agents
 3. **Gap-analyse**: Voer een gap-analyse uit tussen huidige staat en gewenste staat conform deze principes
 4. **Communicatie**: Deel deze principes met alle betrokkenen en organiseer een review-sessie
@@ -186,8 +185,8 @@ Bij dergelijke dilemma's:
 ### Review en onderhoud
 - **Jaarlijkse review**: Evalueer of deze principes nog steeds relevant zijn
 - **Bij grote wijzigingen**: Als er fundamentele veranderingen zijn in context of richting, herzie dan deze principes
-- **Versioning**: Nieuwe versies krijgen een nieuw versienummer en worden gedocumenteerd in `docs/resultaten/mandarin-ea/`
+- **Versioning**: Nieuwe versies krijgen een nieuw versienummer en worden gedocumenteerd in `docs/resultaten/mandaryn-ea/`
 
 ---
 
-*Dit document is opgesteld door Mandarin-EA conform de werkwijze beschreven in `charters-agents/charter.mandarin-ea.md`. Voor vragen of feedback, escaleer naar governance.*
+*Dit document is opgesteld door Mandaryn-EA conform de werkwijze beschreven in `charters-agents/charter.mandaryn-ea.md`. Voor vragen of feedback, escaleer naar governance.*

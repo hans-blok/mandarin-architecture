@@ -1,0 +1,1177 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentatie van het Mandaryn Architecture ecosysteem">
+      
+      
+        <meta name="author" content="Mandaryn Team">
+      
+      
+        <link rel="canonical" href="https://hans-blok.github.io/mandarin-architecture/essays/essay.de-as-bestaat-al/">
+      
+      
+        <link rel="prev" href="../../de%20vastlegging/mandarin-value-streams-en-fasen/">
+      
+      
+        <link rel="next" href="../essay.speckit-pattern-vs-state-pattern/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/mandarin-logo-m.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>De as bestaat al - Mandaryn Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:300,300i,400,400i,700,700i%7CConsolas:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Segoe UI";--md-code-font:"Consolas"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#de-as-bestaat-al-nu-laten-we-het-wiel-passen" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Mandaryn Architecture" class="md-header__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mandaryn Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              De as bestaat al
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../axioma-van-gezag/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Axioma van gezag (root)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../organisatie-principes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Organisatieprincipes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../toelichting-mandaryn/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Toelichting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepten/conceptuele-grondslagen/" class="md-tabs__link">
+          
+  
+  
+  Concepten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../de%20vastlegging/axioma-van-gezag/" class="md-tabs__link">
+          
+  
+  
+  Vastlegging
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Essays
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Mandaryn Architecture" class="md-nav__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    Mandaryn Architecture
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag (root)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../organisatie-principes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisatieprincipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toelichting-mandaryn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toelichting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/conceptuele-grondslagen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptuele grondslagen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/mandarin-agents-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/mandarin-artefacten-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artefacten in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/mandarin-domeinconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domeinconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/mandarin-ordeningsconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordeningsconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vastlegging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vastlegging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/constitutie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constitutie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/mandarin-value-streams-en-fasen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Value streams en fasen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De as bestaat al
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De as bestaat al
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#het-probleem-prompt-agent-rol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Het probleem: prompt = agent = rol
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-oplossing-boundary-contract-rol-uitvoering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De oplossing: boundary → contract → rol → uitvoering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#waarom-dit-zeldzaam-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waarom dit zeldzaam is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regels-processen-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regels, processen, data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#waarom-dit-werkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waarom dit werkt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essay.speckit-pattern-vs-state-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speckit vs state pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="de-as-bestaat-al-nu-laten-we-het-wiel-passen">De as bestaat al; nu laten we het wiel passen<a class="headerlink" href="#de-as-bestaat-al-nu-laten-we-het-wiel-passen" title="Permanent link">&para;</a></h1>
+<p>In de gesprekken over agents die ik de afgelopen tijd heb gezien, hoor ik steeds dezelfde spanning. Agent-systemen worden behandeld alsof ze iets fundamenteel nieuws zijn, alsof de komst van een LLM betekent dat we alle architectuurprincipes opnieuw moeten uitvinden. In die voorbeelden ontstaan vrijblijvendheid, vage grenzen, impliciete contracten en ontbrekende governance. Het stille excuus is: dit is nieuw, dus we mogen eerst chaotisch beginnen.</p>
+<p>Binnen het domein waar ik naar kijk, agent-systemen voor software-ontwikkeling en ontwerp, houdt die redenering geen stand. In dit domein is ze zelfs gevaarlijk. De architecturale as ligt hier al: een constitutie, governance-afspraken, capability boundaries, en een duidelijke scheiding tussen regels, processen en data. Wat ontbrak, was niet de as. Wat ontbrak, was een wiel dat daarop past.</p>
+<p>De meeste agent-opzetten die ik in deze context zie, zijn geen fundamenteel nieuw soort systeem. Het zijn toepassingen van bekende architectuurprincipes op een nieuw type uitvoerder. De principes bestaan al: expliciete afbakening, contract-first ontwerp, scheiding van zorgen, heldere verantwoordelijkheden. Die principes komen uit service-architectuur, uit Domain-Driven Design en uit gedisciplineerde API-ontwikkeling. Ze zijn niet nieuw. Ze werken. En precies die principes hebben we hier opnieuw nodig.</p>
+<p>Ik schrijf dit vanuit een praktijk waarin ik lange tijd gedistribueerde landschappen heb helpen ontwerpen en uitrollen. Daarbij werkte ik met principes uit onder andere Thomas Erl zijn service-architectuur en contract-first denken. Vanuit diezelfde ervaring werk ik nu mee aan het bouwen van een agent-ecosysteem dat niet naast die principes staat, maar erop voortbouwt.</p>
+<h2 id="het-probleem-prompt-agent-rol">Het probleem: prompt = agent = rol<a class="headerlink" href="#het-probleem-prompt-agent-rol" title="Permanent link">&para;</a></h2>
+<p>Een terugkerend patroon in agent-opzetten is dat drie verschillende lagen in één tekstblok worden gestopt:</p>
+<ul>
+<li>De prompt fungeert als agent.</li>
+<li>De agent fungeert als rolbeschrijving.</li>
+<li>De rolbeschrijving fungeert als uitvoering.</li>
+</ul>
+<p>Dat voelt flexibel, maar het is onbestuurbaar.</p>
+<p>Als een prompt tegelijk contract, rolbeschrijving en implementatie is, wordt alles impliciet. De scope is niet afgebakend, want die staat verstopt in een losse alinea. Het contract is niet observeerbaar, want het hangt af van hoe de LLM de tekst die dag leest. De verantwoordelijkheden zijn niet expliciet, maar lopen door elkaar heen.</p>
+<p>Het resultaat is voorspelbaar. Scope creep blijft onzichtbaar. Agents gaan op elkaar lijken zonder echt herbruikbaar te worden. Governance komt pas achteraf, als noodreparatie op een al werkend systeem.</p>
+<p>Dit is geen nieuw probleem. Het is hetzelfde patroon waar service-architectuur en API-design al decennia voor waarschuwen.</p>
+<h2 id="de-oplossing-boundary-contract-rol-uitvoering">De oplossing: boundary → contract → rol → uitvoering<a class="headerlink" href="#de-oplossing-boundary-contract-rol-uitvoering" title="Permanent link">&para;</a></h2>
+<p>De oplossing is niet spectaculair. Ze is disciplinair.</p>
+<p>Je begint met een boundary. Eén zin, scherp geformuleerd, die precies aangeeft wat deze agent wel doet en wat niet. Geen ruimte voor vage toevoegingen. Geen "en misschien ook nog". Gewoon: dit is de capability, hier begint zij en hier stopt zij.</p>
+<p>Uit die boundary volgt een contract. Dat contract is de prompt: kort, normatief en observeerbaar. Het contract zegt wat erin gaat, wat eruit komt en waar de agent stopt. Niet meer, niet minder. De prompt is geen essay over wat de agent allemaal zou kunnen doen, maar een concrete afspraak over wat hij belooft te leveren.</p>
+<p>Uit dat contract volgt een rolbeschrijving. Die beschrijft de interne werking: hoe maakt de agent zijn beloftes waar, wat zijn zijn verantwoordelijkheden en waar liggen zijn grenzen. De rolbeschrijving herhaalt de prompt niet, maar legt uit hoe de agent het contract betrouwbaar uitvoert.</p>
+<p>Daarna volgt de uitvoering. Een runner automatiseert de herhaalbare stappen. De runner voegt geen betekenis toe, verandert geen regels en verzint geen nieuwe scope. Hij voert alleen uit.</p>
+<p>Dit is geen nieuw idee. Het is service-architectuur, DDD en API-design. Het is contract-first denken zoals dat al decennia wordt toegepast op services. Het verschil is dat we het hier toepassen op agents.</p>
+<h2 id="waarom-dit-zeldzaam-is">Waarom dit zeldzaam is<a class="headerlink" href="#waarom-dit-zeldzaam-is" title="Permanent link">&para;</a></h2>
+<p>Als dit zo logisch klinkt en deze principes al zo lang bestaan, is de vraag waarom ze in veel agent-opzetten toch ontbreken.</p>
+<p>In de voorbeelden die ik zie, ligt de oorzaak vaak in een misverstand over flexibiliteit.</p>
+<p>Een LLM voelt anders: taal-gedreven, dynamisch en ogenschijnlijk adaptief. Vanuit die ervaring lijkt het verleidelijk om grenzen uit te stellen. Eerst spelen, later organiseren. Eerst kijken wat er gebeurt, daarna pas kaderen.</p>
+<p>In de praktijk levert dat geen kracht op, maar ruis.</p>
+<p>Flexibiliteit zonder grens is geen kracht. Het is chaos. Een agent zonder expliciete boundary is niet krachtiger, maar onvoorspelbaar. Een prompt zonder contract is niet dynamischer, maar vager. Een systeem zonder governance is niet vrijer, maar stuurloos.</p>
+<p>De verleiding is om flexibiliteit als beginpunt te nemen en structuur als nabrander te zien. Architectuur werkt omgekeerd. Je legt eerst een geraamte vast, zodat flexibiliteit ergens binnen kan bewegen.</p>
+<h2 id="regels-processen-data">Regels, processen, data<a class="headerlink" href="#regels-processen-data" title="Permanent link">&para;</a></h2>
+<p>Een tweede reden waarom dit model werkt, is de expliciete scheiding tussen regels, processen en data.</p>
+<ul>
+<li><strong>Regels</strong> beschrijven wat in dit ecosysteem als geldig geldt. Ze liggen vast in de canon-repository: constitutie, doctrines. </li>
+<li><strong>Processen</strong> belichamen gedrag. Ze zitten in agent-capabilities: wat agents in dit landschap mogen en kunnen doen.</li>
+<li><strong>Data</strong> is toestand. Die staat in workspaces: de feitelijke output en resultaten; de datamodellen en de requirements..</li>
+</ul>
+<p>Die scheiding is oud. Ze komt uit klassiek informatiekundig denken. In agent-systemen raakt ze makkelijk uit beeld, omdat alles in tekst lijkt te passen en alles met alles kan praten.</p>
+<p>Juist daarom helpt het om dit hard op te schrijven. Regels zijn geen processen. Processen bezitten geen waarheid. Data is geen gedrag. Als je die drie in elkaar schuift, ontstaan systemen die niet meer uit te leggen zijn.</p>
+<p>Die spanning is niet uniek voor agents. Fred Brooks beschreef in zijn essay <em>No Silver Bullet</em> al hoe ontwerpers steeds opnieuw hopen dat een nieuwe technologie de essentiële complexiteit van hun domein zal wegtoveren. Tools kunnen toevallige complexiteit verminderen, maar de essentiële complexiteit blijft. LLM-gebaseerde agents veranderen de uitvoerder, niet de aard van de architectonische keuzes die we moeten maken.</p>
+<h2 id="waarom-dit-werkt">Waarom dit werkt<a class="headerlink" href="#waarom-dit-werkt" title="Permanent link">&para;</a></h2>
+<p>Dit ontwerp werkt omdat het drie dingen tegelijk bewaakt:</p>
+<ul>
+<li><strong>Begrijpelijkheid</strong>: je kunt uitleggen wat een agent belooft en wat niet.</li>
+<li><strong>Bestuurbaarheid</strong>: scope creep wordt zichtbaar, omdat de boundary leidend is.</li>
+<li><strong>Uitvoerbaarheid</strong>: een contract is pas echt een contract als het herhaalbaar en controleerbaar kan worden uitgevoerd.</li>
+</ul>
+<p>Samen maken die drie een ecosysteem dat niet alleen werkt, maar ook overdraagbaar is. Je kunt een agent overdragen aan iemand anders zonder het hele systeem te hoeven reconstrueren. Je kunt een boundary aanpassen zonder alles te breken. Je kunt governance toepassen zonder achteraf elke uitzondering te moeten repareren.</p>
+<h2 id="slot">Slot<a class="headerlink" href="#slot" title="Permanent link">&para;</a></h2>
+<p>De as bestaat al. Die as is contract-first ontwerp, expliciete boundaries, governance en scheiding van zorgen. Die principes zijn beproefd en komen uit decennia service-architectuur, DDD en API-design.</p>
+<p>Wat nieuw is, is niet de as. Wat nieuw is, is dat we nu een wiel ontwerpen dat daarop past.</p>
+<p>Agents vormen in mijn ogen geen uitzondering op architectuurprincipes. Ze zijn een toepassing ervan. Ik geloof dat we helderder en veiliger ontwerpen zodra we dat onder ogen zien. Dit essay is geen wetenschappelijk artikel, maar een aanzet om samen met anderen verder uit te werken hoe een volwassen agent-ecosysteem eruitziet dat op een bestaande architecturale as past.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Maxia Consultancy. Alle rechten voorbehouden.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "content.code.copy", "content.code.annotate", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

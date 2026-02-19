@@ -1,0 +1,3588 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentatie van het Mandaryn Architecture ecosysteem">
+      
+      
+        <meta name="author" content="Mandaryn Team">
+      
+      
+        <link rel="canonical" href="https://hans-blok.github.io/mandarin-architecture/concepten/mandarin-ordeningsconcepten/">
+      
+      
+        <link rel="prev" href="../mandarin-domeinconcepten/">
+      
+      
+        <link rel="next" href="../../de%20vastlegging/axioma-van-gezag/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/mandarin-logo-m.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Ordeningsconcepten - Mandaryn Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:300,300i,400,400i,700,700i%7CConsolas:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Segoe UI";--md-code-font:"Consolas"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mandaryn-ordenings-concepten" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Mandaryn Architecture" class="md-header__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mandaryn Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ordeningsconcepten
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../axioma-van-gezag/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Axioma van gezag (root)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../organisatie-principes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Organisatieprincipes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../toelichting-mandaryn/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Toelichting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../conceptuele-grondslagen/" class="md-tabs__link">
+          
+  
+  
+  Concepten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../de%20vastlegging/axioma-van-gezag/" class="md-tabs__link">
+          
+  
+  
+  Vastlegging
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../essays/essay.de-as-bestaat-al/" class="md-tabs__link">
+          
+  
+  
+  Essays
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Mandaryn Architecture" class="md-nav__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    Mandaryn Architecture
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag (root)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../organisatie-principes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisatieprincipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toelichting-mandaryn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toelichting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conceptuele-grondslagen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptuele grondslagen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandarin-agents-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandarin-artefacten-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artefacten in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandarin-domeinconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domeinconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordeningsconcepten
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordeningsconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#herkomstverantwoording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Herkomstverantwoording
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inhoudsopgave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inhoudsopgave
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inhoudsopgave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classificatie-en-structuur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificatie en Structuur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mandaryn-agent-classificatie-assen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mandaryn-agent-classificatie Assen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artefacten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artefacten
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mandaryn-agent-classificatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mandaryn-agent-classificatie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mandaryn-agent-classificatie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerelateerde-doctrines-ys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerelateerde Doctrines ðŸ“š
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inhoudelijke-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inhoudelijke as
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inhoudelijke as">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoriean-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CategorieÃ«n ðŸ’«
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inzet-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inzet-as
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inzet-as">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoriean-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CategorieÃ«n ðŸ’«
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vorm-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vorm-as
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vorm-as">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoriean-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CategorieÃ«n ðŸ’«
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#werkingsas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Werkingsas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Werkingsas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoriean-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CategorieÃ«n ðŸ’«
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artefact-functie-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artefact-functie-as
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artefact-functie-as">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posities-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posities ðŸ’«
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artefactclassificatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artefactclassificatie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artefactclassificatie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normerend-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normerend artefact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Normerend artefact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#governance-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance-artefact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Governance-artefact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#richtinggevend-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Richtinggevend artefact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Richtinggevend artefact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realiserend-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realiserend artefact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Realiserend artefact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structurerend-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structurerend artefact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structurerend artefact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beschrijvend-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beschrijvend artefact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Beschrijvend artefact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documenterend-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documenterend artefact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documenterend artefact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representatievorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Representatievorm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Representatievorm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Representatie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Representatie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatie-tussen-betekenis-representatie-en-representatievorm-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatie tussen betekenis, representatie en representatievorm ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatie-tot-mandaryn-agents-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatie tot mandaryn-agents ðŸ¤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canonieke-zin-kort-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canonieke zin (kort) ðŸ§­
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representatiestatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Representatiestatus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Representatiestatus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoriean-binnen-representatiestatus-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CategorieÃ«n binnen representatiestatus ðŸ’«
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vastlegging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vastlegging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/constitutie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constitutie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/mandarin-value-streams-en-fasen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Value streams en fasen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essays/essay.de-as-bestaat-al/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De as bestaat al
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essays/essay.speckit-pattern-vs-state-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speckit vs state pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mandaryn-ordenings-concepten">Mandaryn <strong>ordenings-concepten</strong><a class="headerlink" href="#mandaryn-ordenings-concepten" title="Permanent link">&para;</a></h1>
+<p><strong>Type</strong>: Concepten en Definities<br />
+<strong>Repository</strong>: mandaryn-canon<br />
+<strong>Identifier</strong>: mandaryn-canon.concepten.meta<br />
+<strong>Version</strong>: 1.9.0<br />
+<strong>Status</strong>: Active<br />
+<strong>Last Updated</strong>: 2026-02-15<br />
+<strong>Owner</strong>: Hans Blok</p>
+<hr />
+<h2 id="herkomstverantwoording">Herkomstverantwoording<a class="headerlink" href="#herkomstverantwoording" title="Permanent link">&para;</a></h2>
+<p>Dit document is afgeleid van "concepten-en-architectonische-grondslagen.md" (versie 1.6.0) door Constitutioneel Auteur op 1 februari 2026.</p>
+<p><strong>Geraadpleegde bronnen</strong>:
+- concepten-en-architectonische-grondslagen.md (versie 1.6.0, gelezen op 2026-02-01)
+- herijking 2.md (gelezen op 2026-02-01)</p>
+<p><strong>Datum</strong>: 2026-02-01<br />
+<strong>Doel</strong>: Expliciete scheiding tussen <strong>ordenings-concepten</strong> (die structuur en classificatie beschrijven) en <strong>domein-concepten</strong> (actieve structuren en hun werking)</p>
+<p><strong>Ontwerpkeuze</strong>: <strong>ordenings-concepten</strong> beschrijven hoe het ecosysteem zichzelf structureert en classificeert. Door deze in een apart document te plaatsen, wordt de architectonische lagenstructuur expliciet: <strong>ordenings-concepten</strong> definiÃ«ren het classificatiestelsel en de artefactstructuur, terwijl operationele concepten de actieve elementen beschrijven die binnen dat stelsel werken.</p>
+<hr />
+<h2 id="inhoudsopgave">Inhoudsopgave<a class="headerlink" href="#inhoudsopgave" title="Permanent link">&para;</a></h2>
+<h3 id="classificatie-en-structuur">Classificatie en Structuur<a class="headerlink" href="#classificatie-en-structuur" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#mandaryn-agent-classificatie">mandaryn-agent-classificatie</a> â€” Positionering langs orthogonale assen</li>
+<li><a href="#artefact-functie-as">Artefact-functie-as</a> â€” Functierol van Mandaryn-artefacten</li>
+<li><a href="#artefactclassificatie">Artefactclassificatie</a> â€” Indeling van Mandaryn-artefacten</li>
+</ul>
+<h3 id="mandaryn-agent-classificatie-assen">mandaryn-agent-classificatie Assen<a class="headerlink" href="#mandaryn-agent-classificatie-assen" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#inhoudelijke-as">Inhoudelijke as</a> â€” Effect op betekenis</li>
+<li><a href="#inzet-as">Inzet-as</a> â€” Context van gebruik</li>
+<li><a href="#vorm-as">Vorm-as</a> â€” Betekenis of representatie</li>
+<li><a href="#werkingsas">Werkingsas</a> â€” Inhoud of voorwaarden</li>
+</ul>
+<h3 id="artefacten">Artefacten<a class="headerlink" href="#artefacten" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#normerend-artefact">Normerend artefact</a> â€” Artefact dat normen en regels vastlegt</li>
+<li><a href="#governance-artefact">Governance-artefact</a> â€” Specialisatie: governance in ecosysteem (value stream 0)</li>
+<li><a href="#richtinggevend-artefact">Richtinggevend artefact</a> â€” Specialisatie: normerende richting in waarde value streams (1-n)</li>
+<li><a href="#realiserend-artefact">Realiserend artefact</a> â€” Artefact dat gedrag of structuur in systemen realiseert</li>
+<li><a href="#structurerend-artefact">Structurerend artefact</a> â€” Artefact dat architectuurelementen en relaties expliciteert</li>
+<li><a href="#beschrijvend-artefact">Beschrijvend artefact</a> â€” Artefact dat inzicht en uitleg biedt</li>
+<li><a href="#documenterend-artefact">Documenterend artefact</a> â€” Artefact dat documenteert (inclusief modellen)</li>
+<li><a href="#representatievorm">Representatievorm</a> â€” Vorm waarin betekenis wordt uitgedrukt</li>
+<li><a href="#representatie">Representatie</a> â€” Concrete uitdrukking van betekenis</li>
+<li><a href="#representatiestatus">Representatiestatus</a> â€” Bron of afgeleid in de keten</li>
+</ul>
+<hr />
+<h2 id="mandaryn-agent-classificatie">Mandaryn-agent-classificatie<a class="headerlink" href="#mandaryn-agent-classificatie" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y">Definitie ðŸ“<a class="headerlink" href="#definitie-y" title="Permanent link">&para;</a></h3>
+<p>mandaryn-agent-classificatie is het expliciet positioneren van een <strong>mandaryn-agent</strong> langs een vast stelsel van orthogonale assen, waarmee wordt vastgelegd wat het effect van de <strong>mandaryn-agent</strong> is, waarop hij intervenieert, in welke context hij inzetbaar is en hoe hij handelt.</p>
+<h3 id="kenmerken-a">Kenmerken â­<a class="headerlink" href="#kenmerken-a" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is geen enkelvoudig label en geen hiÃ«rarchie</li>
+<li>Een <strong>mandaryn-agent</strong> is niet "een soort", maar neemt posities in op meerdere assen</li>
+<li>Elke as beschrijft een fundamenteel ander architectonisch aspect van de <strong>mandaryn-agent</strong></li>
+<li>Samen maken deze posities het gedrag, de bevoegdheid en de beperkingen van een <strong>mandaryn-agent</strong> uitlegbaar, toetsbaar en overdraagbaar</li>
+<li>Bestaat uit 4 orthogonale assen:</li>
+<li><strong>Inhoudelijke as</strong> â€” effect op betekenis</li>
+<li><strong>Inzet-as</strong> â€” context van gebruik</li>
+<li><strong>Vorm-as</strong> â€” betekenis of representatie</li>
+<li><strong>Werkingsas</strong> â€” inhoud of voorwaarden</li>
+</ul>
+<h3 id="wat-het-niet-is-a">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen enkelvoudig label (zoals "adviserende <strong>mandaryn-agent</strong>" of "uitvoerende <strong>mandaryn-agent</strong>")</li>
+<li>Geen hiÃ«rarchische structuur</li>
+<li>Geen technische implementatie-eigenschap</li>
+<li>Geen tijdelijke classificatie</li>
+</ul>
+<h3 id="voorbeelden-y">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Een <strong>mandaryn-agent</strong> kan beschrijvend zijn (inhoudelijke as), value-stream-specifiek (inzet-as), vormvast (vorm-as) en inhoudelijk (werkingsas)</li>
+<li>Een <strong>mandaryn-agent</strong> kan structuur-normerend, value-stream-specifiek, vormvast en inhoudelijk zijn</li>
+<li>Een <strong>mandaryn-agent</strong> kan conditioneel zijn (werkingsas), value-stream-overstijgend (inzet-as)</li>
+</ul>
+<h3 id="synoniemen-yi">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>mandaryn-agent</strong>-positionering</li>
+<li>Multi-dimensionale <strong>mandaryn-agent</strong>-classificatie</li>
+</ul>
+<h3 id="analogiean-y">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met multi-dimensionale classificatie in taxonomie</li>
+<li>In softwareontwikkeling: orthogonale concerns (zoals in aspect-oriented programming)</li>
+<li>In enterprise architectuur: capability matrix met meerdere dimensies</li>
+</ul>
+<h3 id="toelichting-y">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y" title="Permanent link">&para;</a></h3>
+<p>mandaryn-agent-classificatie vervangt het concept "<strong>mandaryn-agent</strong>-soort" door een meer genuanceerd stelsel van orthogonale assen. Dit maakt het mogelijk om <strong>mandaryn-agents</strong> preciezer te positioneren en te begrijpen. Elke <strong>mandaryn-agent</strong> heeft op elke as een expliciete positie, en deze posities bepalen samen het gedrag, de bevoegdheden en de beperkingen van de <strong>mandaryn-agent</strong>.</p>
+<h3 id="gerelateerde-doctrines-ys">Gerelateerde Doctrines ðŸ“š<a class="headerlink" href="#gerelateerde-doctrines-ys" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Intent-naming</strong>: doctrine voor canonieke werkwoorden per classificatie-positie op de werkingsas en inhoudelijke as</li>
+</ul>
+<hr />
+<h2 id="inhoudelijke-as">Inhoudelijke as<a class="headerlink" href="#inhoudelijke-as" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_1">Definitie ðŸ“<a class="headerlink" href="#definitie-y_1" title="Permanent link">&para;</a></h3>
+<p>De <strong>inhoudelijke as</strong> is een classificatie-as binnen mandaryn-agent-classificatie die het effect van een <strong>mandaryn-agent</strong> op de betekenis van het werk beschrijft.</p>
+<p><strong>Leidende vraag:</strong> <em>Wat is het effect van deze <strong>mandaryn-agent</strong> op de betekenis van het werk?</em></p>
+<h3 id="kenmerken-a_1">Kenmerken â­<a class="headerlink" href="#kenmerken-a_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is Ã©Ã©n van vier orthogonale assen voor mandaryn-agent-classificatie</li>
+<li>Onderscheidt <strong>mandaryn-agents</strong> op basis van hun effect op betekenis</li>
+<li>Zes categorieÃ«n: Beschrijvend, Structuurrealiserend, Architectuur-structurerend, Structuur-normerend, Curator, Ecosysteem-normerend</li>
+<li>Onafhankelijk van andere assen (Inzet, Vorm, Werkingsas)</li>
+<li>Bepaalt fundamentele rol en impact van de <strong>mandaryn-agent</strong></li>
+</ul>
+<h3 id="wat-het-niet-is-a_1">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen technische implementatievariant</li>
+<li>Geen organisatorische indeling</li>
+<li>Geen enkelvoudig label</li>
+</ul>
+<h3 id="categoriean-y">CategorieÃ«n ðŸ’«<a class="headerlink" href="#categoriean-y" title="Permanent link">&para;</a></h3>
+<p><strong>1. Beschrijvende **mandaryn-agents</strong> (achteraf)**
+- Vastleggen, uitleggen en documenteren wat er is of was
+- Achteraf: beschrijven bestaande werkelijkheid
+- Wijzigen geen artefacten
+- Voorbeelden: Verslagen, Overzichten, Uitlegdocumentatie</p>
+<p><strong>2. Structuurrealiserende **mandaryn-agents**</strong>
+- Maken impliciete samenhang, relaties en consistentie expliciet
+- Impliciet â†’ expliciet
+- Realiseren modellen, relaties, nummering
+- Geen richting, geen besluit
+- Voorbeelden: Logisch datamodel-<strong>mandaryn-agent</strong>, Nummerende <strong>mandaryn-agent</strong></p>
+<p><strong>3. Architectuur-structurerende **mandaryn-agents**</strong>
+- InstantiÃ«ren een samenhangend architectuurmodel over lagen en aspecten binnen de gestelde kaders
+- CreÃ«ren coherente architectuurmodellen volgens metamodellen
+- Maken architectonische structuur expliciet en beredeneerbaar
+- Werken binnen normatieve kaders en richtlijnen
+- Voorbeelden: ArchiMate-modelleur, C4-modelleur, Enterprise architectuur-<strong>mandaryn-agent</strong></p>
+<p><strong>4. Structuur-normerende **mandaryn-agents</strong> (vooraf)**
+- Normeren vooraf de structuur en indeling van toekomstig werk
+- Beschrijven vooruit
+- Normeren <em>wat als werk bestaat</em>
+- Value-stream-gebonden
+- Geen uitvoering, geen ecosysteemregels
+- Voorbeelden: Thema-vormende <strong>mandaryn-agents</strong>, Feature-beschrijvende <strong>mandaryn-agents</strong></p>
+<p><strong>5. Curator-mandaryn-agents</strong>
+- Beschrijvende <strong>mandaryn-agents</strong> die expliciet oordeel of duiding vastleggen
+- Maken overzichten
+- Beoordelen kwaliteit, samenhang en risico's
+- Leggen oordeel vast, geen besluit
+- Escaleren i.p.v. corrigeren
+- Voorbeelden: Review-mandaryn-agents, Samenhangbeoordeling</p>
+<p><strong>6. Ecosysteem-normerende **mandaryn-agents**</strong>
+- Vaststellen of wijzigen van regels, kaders en constituerende afspraken van het <strong>mandaryn-agent</strong>-ecosysteem
+- Meta-niveau
+- Zeldzaam en zwaar
+- Workspace- en value-stream-overstijgend
+- Bepalen <em>hoe het systeem mag bestaan</em>
+- Voorbeelden: Constitutie-<strong>mandaryn-agents</strong>, Doctrine-<strong>mandaryn-agents</strong>, Charter-<strong>mandaryn-agents</strong></p>
+<h3 id="synoniemen-yi_1">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Effect-as</li>
+<li>Betekenis-as</li>
+</ul>
+<h3 id="analogiean-y_1">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met prescriptive vs descriptive vs evaluative in informatiekunde</li>
+<li>In softwareontwikkeling: read vs write vs validate operaties</li>
+</ul>
+<h3 id="toelichting-y_1">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_1" title="Permanent link">&para;</a></h3>
+<p>De <strong>inhoudelijke as</strong> is de primaire as voor mandaryn-agent-classificatie omdat deze de fundamentele rol en impact van een <strong>mandaryn-agent</strong> op betekenis bepaalt. Het onderscheid tussen structuur-normering (werk) en ecosysteem-normering (spelregels) is cruciaal.</p>
+<hr />
+<h2 id="inzet-as">Inzet-as<a class="headerlink" href="#inzet-as" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_2">Definitie ðŸ“<a class="headerlink" href="#definitie-y_2" title="Permanent link">&para;</a></h3>
+<p>De <strong>inzet-as</strong> is een classificatie-as binnen mandaryn-agent-classificatie die de context van gebruik van een <strong>mandaryn-agent</strong> beschrijft.</p>
+<p><strong>Leidende vraag:</strong> <em>Waar mag deze <strong>mandaryn-agent</strong> worden ingezet?</em></p>
+<h3 id="kenmerken-a_2">Kenmerken â­<a class="headerlink" href="#kenmerken-a_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is Ã©Ã©n van vier orthogonale assen voor mandaryn-agent-classificatie</li>
+<li>Onderscheidt <strong>mandaryn-agents</strong> op basis van inzetbaarheid</li>
+<li>Twee categorieÃ«n: Value-stream-specifiek, Value-stream-overstijgend</li>
+<li>Onafhankelijk van andere assen (Inhoudelijke as, Vorm, Werkingsas)</li>
+<li>Bepaalt waar en wanneer een <strong>mandaryn-agent</strong> kan worden ingezet</li>
+</ul>
+<h3 id="wat-het-niet-is-a_2">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen kwaliteitsmaatstaf</li>
+<li>Geen indicatie van waarde of belang</li>
+<li>Geen hiÃ«rarchische indeling</li>
+</ul>
+<h3 id="categoriean-y_1">CategorieÃ«n ðŸ’«<a class="headerlink" href="#categoriean-y_1" title="Permanent link">&para;</a></h3>
+<p><strong>1. Value-stream-specifiek</strong>
+- Inzetbaar binnen Ã©Ã©n value stream
+- Vaak fase-gebonden
+- Leest en begrijpt context van die value stream</p>
+<p><strong>2. Value-stream-overstijgend</strong>
+- Inzetbaar in meerdere value streams
+- Leest context maar bepaalt die niet
+- Generiek inzetbaar</p>
+<h3 id="synoniemen-yi_2">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Inzetbaarheids-as</li>
+<li>Context-as</li>
+</ul>
+<h3 id="analogiean-y_2">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met bounded vs shared services in enterprise architectuur</li>
+<li>In softwareontwikkeling: domain-specific vs cross-cutting concerns</li>
+</ul>
+<h3 id="toelichting-y_2">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_2" title="Permanent link">&para;</a></h3>
+<p>De <strong>inzet-as</strong> bepaalt of een <strong>mandaryn-agent</strong> specifiek voor Ã©Ã©n value stream werkt of generiek inzetbaar is over meerdere value streams.</p>
+<hr />
+<h2 id="vorm-as">Vorm-as<a class="headerlink" href="#vorm-as" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_3">Definitie ðŸ“<a class="headerlink" href="#definitie-y_3" title="Permanent link">&para;</a></h3>
+<p>De <strong>vorm-as</strong> is een classificatie-as binnen mandaryn-agent-classificatie die beschrijft of een <strong>mandaryn-agent</strong> werkt op betekenis of alleen op representatie.</p>
+<p><strong>Leidende vraag:</strong> <em>Werkt deze <strong>mandaryn-agent</strong> op betekenis, of alleen op vorm?</em></p>
+<h3 id="kenmerken-a_3">Kenmerken â­<a class="headerlink" href="#kenmerken-a_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is Ã©Ã©n van vier orthogonale assen voor mandaryn-agent-classificatie</li>
+<li>Onderscheidt <strong>mandaryn-agents</strong> op basis van begrip van betekenis</li>
+<li>Twee categorieÃ«n: Vormvast, Representatieomvormend</li>
+<li>Onafhankelijk van andere assen (Inhoudelijke as, Inzet, Werkingsas)</li>
+<li>Bepaalt of <strong>mandaryn-agent</strong> betekenis begrijpt</li>
+</ul>
+<h3 id="wat-het-niet-is-a_3">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen kwaliteitsmaatstaf</li>
+<li>Geen indicatie van complexiteit</li>
+<li>Geen technische implementatie-eigenschap</li>
+</ul>
+<h3 id="categoriean-y_2">CategorieÃ«n ðŸ’«<a class="headerlink" href="#categoriean-y_2" title="Permanent link">&para;</a></h3>
+<p><strong>1. Vormvast</strong>
+- Output is betekenisdragend
+- Kan inhoudelijk beoordeeld worden
+- Begrijpt betekenis van het werk</p>
+<p><strong>2. Representatieomvormend</strong>
+- Zet inhoud om van de ene representatie naar de andere
+- Betekenis-blind
+- Infrastructuurachtig
+- Vormtransformatie (bijv. Markdown â†’ XML â†’ diagram)</p>
+<h3 id="synoniemen-yi_3">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Representatie-as</li>
+<li>Betekenisbegrip-as</li>
+</ul>
+<h3 id="analogiean-y_3">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met semantic vs syntactic transformations</li>
+<li>In enterprise architectuur: content vs format converters</li>
+</ul>
+<h3 id="toelichting-y_3">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_3" title="Permanent link">&para;</a></h3>
+<p>De <strong>vorm-as</strong> maakt onderscheid tussen <strong>mandaryn-agents</strong> die betekenis begrijpen en <strong>mandaryn-agents</strong> die alleen vorm transformeren. Dit onderscheid is belangrijk voor tooling-onafhankelijkheid.</p>
+<hr />
+<h2 id="werkingsas">Werkingsas<a class="headerlink" href="#werkingsas" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_4">Definitie ðŸ“<a class="headerlink" href="#definitie-y_4" title="Permanent link">&para;</a></h3>
+<p>De <strong>werkingsas</strong> is een classificatie-as binnen mandaryn-agent-classificatie die beschrijft of een <strong>mandaryn-agent</strong> intervenieert in de inhoud of in de voorwaarden waaronder inhoudelijk werk kan plaatsvinden.</p>
+<p><strong>Leidende vraag:</strong> <em>Intervenieert deze <strong>mandaryn-agent</strong> in de inhoud, of in de voorwaarden waaronder inhoudelijk werk kan plaatsvinden?</em></p>
+<h3 id="kenmerken-a_4">Kenmerken â­<a class="headerlink" href="#kenmerken-a_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is Ã©Ã©n van vier orthogonale assen voor mandaryn-agent-classificatie</li>
+<li>Onderscheidt <strong>mandaryn-agents</strong> op basis van interventiegebied</li>
+<li>Twee categorieÃ«n: Inhoudelijk, Conditioneel</li>
+<li>Onafhankelijk van andere assen (Inhoudelijke as, Inzet, Vorm)</li>
+<li>Bepaalt of <strong>mandaryn-agent</strong> op inhoud of op voorwaarden werkt</li>
+</ul>
+<h3 id="wat-het-niet-is-a_4">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen kwaliteitsmaatstaf</li>
+<li>Geen hiÃ«rarchische indeling</li>
+<li>Geen technische eigenschap</li>
+</ul>
+<h3 id="categoriean-y_3">CategorieÃ«n ðŸ’«<a class="headerlink" href="#categoriean-y_3" title="Permanent link">&para;</a></h3>
+<p><strong>1. Inhoudelijke **mandaryn-agents**</strong>
+- Werken direct op betekenisvolle artefacten
+- Omvat alle categorieÃ«n van de inhoudelijke as:
+  - Beschrijvende <strong>mandaryn-agents</strong>
+  - Structuurrealiserende <strong>mandaryn-agents</strong>
+  - Structuur-normerende <strong>mandaryn-agents</strong>
+  - Curator-<strong>mandaryn-agents</strong>
+  - Ecosysteem-normerende <strong>mandaryn-agents</strong></p>
+<p><strong>2. Conditionele **mandaryn-agents**</strong>
+- Werken niet op inhoud, maar op voorwaarden en hygiÃ«ne
+- Geen betekenis
+- Geen value-stream-artefacten
+- Bewaken randvoorwaarden
+- Subtypen:
+  - <strong>Workspace Steward</strong> â€” structuur, beleid, scope, mappen, gitignore
+  - <strong>Engineering Steward</strong> â€” codekwaliteit, veiligheid, onderhoudbaarheid</p>
+<h3 id="synoniemen-yi_4">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Interventie-as</li>
+<li>Werkgebied-as</li>
+</ul>
+<h3 id="analogiean-y_4">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met business logic vs infrastructure in softwareontwikkeling</li>
+<li>In enterprise architectuur: content vs governance layers</li>
+</ul>
+<h3 id="toelichting-y_4">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_4" title="Permanent link">&para;</a></h3>
+<p>De <strong>werkingsas</strong> maakt cruciaal onderscheid tussen <strong>mandaryn-agents</strong> die inhoud beÃ¯nvloeden en <strong>mandaryn-agents</strong> die de voorwaarden voor inhoudelijk werk bewaken. Conditionele <strong>mandaryn-agents</strong> zijn essentieel maar werken op een ander niveau.</p>
+<hr />
+<h2 id="artefact-functie-as">Artefact-functie-as<a class="headerlink" href="#artefact-functie-as" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_5">Definitie ðŸ“<a class="headerlink" href="#definitie-y_5" title="Permanent link">&para;</a></h3>
+<p>De <strong>artefact-functie-as</strong> is een classificatie-as voor <strong>Mandaryn-artefacten</strong> die beschrijft <em>welke functie</em> een artefact vervult in de besluit- en waardeketen binnen het ecosysteem.</p>
+<p><strong>Leidende vraag:</strong> <em>Welke normerende, realiserende, structurerende, beschrijvende, documenterende of afgeleide functie heeft dit artefact in het ecosysteem?</em></p>
+<h3 id="kenmerken-a_5">Kenmerken â­<a class="headerlink" href="#kenmerken-a_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is een ordenings-as specifiek voor <strong>Mandaryn-artefacten</strong> (niet voor <strong>mandaryn-agents</strong>)</li>
+<li>Positioneert artefacten op basis van hun rol in besluitvorming, uitvoering, inzicht, documentatie en afleiding</li>
+<li>Vormt samen met de <strong>representatievorm-as</strong> de kern van <strong>Artefactclassificatie</strong></li>
+<li>Is onafhankelijk van bestandsformaat, tooling of repository-structuur</li>
+<li>Is onafhankelijk van procesfase of value stream-fase; hetzelfde artefact kan in meerdere fasen worden gebruikt, maar heeft Ã©Ã©n primaire functie</li>
+<li>Maakt onderscheid tussen primaire, normerende artefacten en afgeleide of ondersteunende artefacten</li>
+</ul>
+<h3 id="posities-y">Posities ðŸ’«<a class="headerlink" href="#posities-y" title="Permanent link">&para;</a></h3>
+<p>Op de <strong>artefact-functie-as</strong> worden ten minste de volgende canonieke posities onderscheiden:</p>
+<p><strong>1. Normerend artefact</strong>
+- Legt normen, regels, kaders of richting vast
+- Bevat bindende afspraken of voorschriften
+- Specialisaties: <strong>governance-artefact</strong> (ecosysteem- en value-stream-overstijgend) en <strong>richtinggevend artefact</strong> (waarde value streams 1-n)</p>
+<p><strong>2. Realiserend artefact</strong>
+- Realiseert direct gedrag, structuur of configuratie in systemen of processen
+- Heeft uitvoerbare of door tooling direct interpreteerbare impact
+- Voorbeelden: database-schema's, deployment-configuraties, codegeneratie-templates met normerend karakter</p>
+<p><strong>3. Structurerend artefact</strong>
+- Representeert een coherent geheel van architectuurelementen en hun onderlinge relaties
+- Geordend volgens een metamodel of kader
+- Maakt de structuur van een systeem expliciet en beredeneerbaar
+- Voorbeelden: architectuurmodellen, metamodellen, structuurontwerpen</p>
+<p><strong>4. Beschrijvend artefact</strong>
+- Maakt bestaande of voorgenomen werkelijkheid inzichtelijk
+- Legt analyse, structuur of samenhang vast zonder zelf normerend of realiserend te zijn
+- Voorbeelden: modellen, analyses, overzichten</p>
+<p><strong>5. Documenterend artefact</strong>
+- Documenteert keuzes, werking, besluiten of context
+- Is vaak (deels) afgeleid van andere artefacten
+- Voorbeelden: handleidingen, README's, API-documentatie</p>
+<p><strong>6. Afgeleid artefact</strong>
+- Is expliciet afgeleid van Ã©Ã©n of meer andere artefacten
+- Kan beschrijvend of documenterend zijn, maar is niet primair normerend
+- Voorbeelden: gegenereerde documentatie, views, samenvattende overzichten</p>
+<h3 id="wat-het-niet-is-a_5">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen indeling naar bestandsformaat, repository of tooling</li>
+<li>Geen kwaliteitsmeting of volwassenheidsniveau van artefacten</li>
+<li>Geen fasering van werk of levenscyclus-status (concept, draft, definitief)</li>
+<li>Geen indeling naar betrokken personen, teams of rollen</li>
+</ul>
+<h3 id="voorbeelden-y_1">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Een <strong>constitutie</strong> of <strong>doctrine</strong> staat op de <strong>artefact-functie-as</strong> als <strong>normerend artefact</strong> (met rol <strong>governance-artefact</strong>)</li>
+<li>Een <strong>application-charter</strong> of themabeschrijving staat als <strong>richtinggevend artefact</strong> (dus normerend binnen een specifieke value stream)</li>
+<li>Een logisch datamodel dat direct systeemgedrag bepaalt staat als <strong>realiserend artefact</strong></li>
+<li>Een ArchiMate-model of domeinmodel met coherente structuur staat als <strong>structurerend artefact</strong></li>
+<li>Een architectuurdiagram of analysemodel zonder bindende normatieve status staat als <strong>beschrijvend artefact</strong></li>
+<li>Een gegenereerde API-referentie of gebruikershandleiding staat als <strong>documenterend artefact</strong>, vaak ook als <strong>afgeleid artefact</strong></li>
+</ul>
+<h3 id="synoniemen-yi_5">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Artefact-rol-as</li>
+<li>Functie-as voor artefacten</li>
+</ul>
+<h3 id="analogiean-y_5">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In informatiebeheer: beleid / proces / registratie als verschillende functies van informatie-objecten</li>
+<li>In softwareontwikkeling: onderscheid tussen specificatie, implementatie, documentatie en gegenereerde artefacten</li>
+</ul>
+<h3 id="toelichting-y_5">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_5" title="Permanent link">&para;</a></h3>
+<p>De <strong>artefact-functie-as</strong> maakt zichtbaar <em>wat</em> een artefact doet in het ecosysteem: of het kaders schept (normerend), gedrag realiseert (realiserend), structuur expliciteert (structurerend), inzicht geeft (beschrijvend), vastlegt en uitlegt (documenterend) of is afgeleid van andere artefacten (afgeleid). Deze as werkt samen met de <strong>representatievorm-as</strong>: dezelfde functie kan in verschillende representatievormen bestaan zonder dat de positie op de <strong>artefact-functie-as</strong> verandert.</p>
+<p>De posities op de <strong>artefact-functie-as</strong> corresponderen direct met de ordeningsconcepten <strong>normerend artefact</strong>, <strong>governance-artefact</strong>, <strong>richtinggevend artefact</strong>, <strong>realiserend artefact</strong>, <strong>structurerend artefact</strong>, <strong>beschrijvend artefact</strong>, <strong>documenterend artefact</strong> en <strong>afgeleid artefact</strong>. <strong>Artefactclassificatie</strong> gebruikt deze as expliciet om artefacten te positioneren naar hun functie, los van vorm, tooling en proces.</p>
+<hr />
+<h2 id="artefactclassificatie">Artefactclassificatie<a class="headerlink" href="#artefactclassificatie" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_6">Definitie ðŸ“<a class="headerlink" href="#definitie-y_6" title="Permanent link">&para;</a></h3>
+<p><strong>Artefactclassificatie</strong> is het expliciet ordenen en positioneren van <strong>Mandaryn-artefacten</strong> langs twee orthogonale assen:
+- een <strong>artefact-functie-as</strong> (normerend, richtinggevend, realiserend, structurerend, beschrijvend, documenterend, afgeleid), en
+- een <strong>representatievorm-as</strong> (tekstueel, gestructureerd, visueel, machine-leesbaar, â€¦),
+zodat helder is <em>welk</em> type artefact iets is en <em>in welke vorm</em> het wordt uitgedrukt.</p>
+<h3 id="kenmerken-a_6">Kenmerken â­<a class="headerlink" href="#kenmerken-a_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Biedt een consistent, tweedimensionaal classificatiekader voor alle <strong>Mandaryn-artefacten</strong></li>
+<li>Gebruikt op de <strong>artefact-functie-as</strong> posities als: <strong>normerend artefact</strong> (met specialisaties <strong>governance-artefact</strong> en <strong>richtinggevend artefact</strong>), <strong>realiserend artefact</strong>, <strong>structurerend artefact</strong>, <strong>beschrijvend artefact</strong>, <strong>documenterend artefact</strong> en <strong>afgeleid artefact</strong></li>
+<li>Gebruikt op de <strong>representatievorm-as</strong> de concepten uit <strong>representatievorm</strong> (bijv. tekstueel, gestructureerd, visueel, machine-leesbaar) zonder voor elke positie een apart concept te introduceren</li>
+<li>Is tooling-onafhankelijk: de classificatie verandert niet door bestandsformaat, repository of implementatiedetail</li>
+<li>Verbindt artefacten expliciet met hun rol in <strong>value streams</strong> en in het ecosysteem</li>
+<li>Maakt duidelijk welke artefacten primair zijn (niet-afgeleid) en welke artefacten afgeleid of ondersteunend zijn</li>
+</ul>
+<h3 id="wat-het-niet-is-a_6">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen lijst van bestandsformaten of tooling-keuzes</li>
+<li>Geen hiÃ«rarchie van belangrijkheid of waarde</li>
+<li>Geen procesindeling of fasering van werk</li>
+<li>Geen technische classificatie (bijvoorbeeld op basis van repository of folderstructuur)</li>
+</ul>
+<h3 id="voorbeelden-y_2">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Een <strong>doctrine</strong> of <strong>constitutie</strong> wordt geclassificeerd als <strong>normerend artefact</strong> met rol <strong>governance-artefact</strong>, meestal in een tekstuele representatievorm (bijv. Markdown)</li>
+<li>Een requirements-specificatie of thema-beschrijving wordt geclassificeerd als <strong>richtinggevend artefact</strong> (normerend binnen een waarde value stream), vaak tekstueel of gestructureerd</li>
+<li>Een logisch datamodel dat direct systeemgedrag realiseert wordt geclassificeerd als <strong>realiserend artefact</strong> in een gestructureerde, machine-leesbare vorm (bijv. DDL, model-XML)</li>
+<li>Een <strong>ArchiMate-model</strong> of domeinmodel met coherente architectuurstructuur wordt geclassificeerd als <strong>structurerend artefact</strong> in een visuele of model-gebaseerde representatievorm</li>
+<li>Een architectuurdiagram of ad-hoc analysemodel zonder metamodel wordt geclassificeerd als <strong>beschrijvend artefact</strong> in een visuele representatievorm</li>
+<li>Een <strong>handleiding</strong>, README, mandaryn-agent-overzicht of <strong>API-documentatie</strong> wordt geclassificeerd als <strong>documenterend artefact</strong>, vaak deels gegenereerd uit andere artefacten</li>
+</ul>
+<h3 id="synoniemen-yi_6">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Artefact-positionering</li>
+<li>Artefact-typenindeling</li>
+</ul>
+<h3 id="analogiean-y_6">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met de indeling in policy / process / record in informatiebeheer</li>
+<li>In softwareontwikkeling: onderscheid tussen source artefacts, design docs en generated documentation</li>
+</ul>
+<h3 id="toelichting-y_6">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_6" title="Permanent link">&para;</a></h3>
+<p><strong>Artefactclassificatie</strong> vormt de meta-laag boven op de concrete definities van <strong>Mandaryn-artefact</strong>, <strong>normerend artefact</strong>, <strong>governance-artefact</strong>, <strong>richtinggevend artefact</strong>, <strong>realiserend artefact</strong>, <strong>structurerend artefact</strong>, <strong>beschrijvend artefact</strong>, <strong>documenterend artefact</strong>, <strong>afgeleid artefact</strong>, <strong>representatie</strong> en <strong>representatievorm</strong>. Zij legt vast <em>langs welke assen</em> artefacten worden geordend en welke posities op die assen canoniek zijn.</p>
+<p>Samengevat:
+- de <strong>artefact-functie-as</strong> Positioneert artefacten op basis van hun normerende en afgeleide functie binnen het ecosysteem. Met deze functie krijgt het artefact betekenis.
+- de <strong>representatievorm-as</strong> maakt zichtbaar <em>hoe</em> die betekenis wordt uitgedrukt (tekstueel, gestructureerd, visueel, machine-leesbaar, â€¦).</p>
+<p>Door deze tweedimensionale classificatie wordt helder welke artefacten bindend en prescriptief zijn, welke artefacten uitleg en inzicht bieden, welke artefacten duurzame documentatie en modellen leveren en hoe al deze artefacten in verschillende representatievormen kunnen bestaan zonder dat hun rol verandert. Dit maakt het mogelijk om werk, governance en documentatie scherp van elkaar te scheiden, tooling verwisselbaar te houden en de betekenis van elk artefacttype vast en toetsbaar te maken.</p>
+<hr />
+<h2 id="normerend-artefact">Normerend artefact<a class="headerlink" href="#normerend-artefact" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_7">Definitie ðŸ“<a class="headerlink" href="#definitie-y_7" title="Permanent link">&para;</a></h3>
+<p>Een <strong>normerend artefact</strong> is een <strong>Mandaryn-artefact</strong> dat expliciete normen, regels, principes of standaarden vastlegt die bindend zijn voor het <strong>Mandaryn-ecosysteem</strong> of een specifiek domein, en dat operationeel is in maximaal Ã©Ã©n <strong>value stream fase</strong>.</p>
+<p><strong>Specialisaties</strong>:
+- <strong>Governance-artefact</strong> â€” normerend artefact voor het ecosysteem, ontstaat in value stream "mandaryn-agent Ecosysteem Ontwikkeling"
+- <strong>Richtinggevend artefact</strong> â€” normerend artefact uit waarde value streams (1-n)</p>
+<h3 id="kenmerken-a_7">Kenmerken â­<a class="headerlink" href="#kenmerken-a_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Legt bindende normen, regels of principes vast</li>
+<li>Is prescriptief (schrijft voor wat moet)</li>
+<li>Is leidend voor ontwerp, implementatie en evaluatie</li>
+<li>Vormt de hoogste autoriteit binnen zijn scope</li>
+<li>Is versieerbaar en traceerbaar</li>
+<li>Wordt niet afgeleid uit andere artefacten</li>
+<li><strong>Is operationeel in maximaal Ã©Ã©n value stream fase</strong></li>
+<li>Heeft twee specialisaties: governance-artefact en richtinggevend artefact</li>
+</ul>
+<h3 id="wat-het-niet-is-a_7">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen beschrijving van huidige situatie</li>
+<li>Geen advies of aanbeveling</li>
+<li>Geen implementatie of uitvoering</li>
+<li>Geen documentatie of uitleg</li>
+</ul>
+<h3 id="voorbeelden-y_3">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Constitutie</li>
+<li>Doctrines</li>
+<li>Beleid</li>
+<li>Architectuurprincipes</li>
+<li>Standaarden en richtlijnen</li>
+</ul>
+<h3 id="synoniemen-yi_7">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Normatief artefact</li>
+<li>Prescriptief artefact</li>
+<li>Regel-artefact</li>
+</ul>
+<h3 id="analogiean-y_7">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met wetgeving, standaarden (zoals ISO), policies</li>
+<li>In enterprise architectuur: principles, standards, guidelines</li>
+<li>In softwareontwikkeling: coding standards, architectural decision records (bindende variant)</li>
+</ul>
+<h3 id="toelichting-y_7">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_7" title="Permanent link">&para;</a></h3>
+<p><strong>Normerende artefacten</strong> hebben de hoogste autoriteit en zijn bindend. Zij vormen het fundament waarop alle andere artefacten voortbouwen. Normerende artefacten zijn primair (niet afgeleid) en stabiel in de tijd.</p>
+<hr />
+<h2 id="governance-artefact">Governance-artefact<a class="headerlink" href="#governance-artefact" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_8">Definitie ðŸ“<a class="headerlink" href="#definitie-y_8" title="Permanent link">&para;</a></h3>
+<p>Een <strong>governance-artefact</strong> is een specialisatie van een <strong>normerend artefact</strong> dat het functioneren, de besturing en de continuÃ¯teit van het <strong>Mandaryn-ecosysteem</strong> mogelijk maakt. Governance-artefacten worden <strong>alleen en alleen</strong> aangemaakt in de value stream "mandaryn-agent Ecosysteem Ontwikkeling"**.</p>
+<h3 id="kenmerken-a_8">Kenmerken â­<a class="headerlink" href="#kenmerken-a_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is een <strong>specialisatie van normerend artefact</strong></li>
+<li>Ontstaat uitsluitend in value stream "<strong>mandaryn-agent</strong> Ecosysteem Ontwikkeling" (value stream 0)</li>
+<li>Maakt governance en besturing van het ecosysteem mogelijk</li>
+<li>Is operationeel en faciliterend voor het ecosysteem</li>
+<li>Is normerend voor het ecosysteem zelf</li>
+<li>Is randvoorwaardelijk voor alle andere value streams</li>
+<li>Levert geen directe waarde in waarde value streams (1-n)</li>
+<li>Erft alle kenmerken van normerend artefact (bindend, prescriptief, versieerbaar)</li>
+</ul>
+<h3 id="wat-het-niet-is-a_8">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen algemeen normerend artefact (is specifiek voor ecosysteem-governance)</li>
+<li>Geen bedrijfs-artefact (ontstaat niet in waarde value streams)</li>
+<li>Geen beschrijvend of documenterend artefact</li>
+<li>Geen artefact buiten value stream "<strong>mandaryn-agent</strong> Ecosysteem Ontwikkeling"</li>
+</ul>
+<h3 id="voorbeelden-y_4">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>agent-charter</strong></li>
+<li><strong>agent-contract</strong> </li>
+<li>Prompt (.prompt.md)</li>
+<li>Templates</li>
+<li>Workspace-state</li>
+<li>Handoff-documenten</li>
+</ul>
+<h3 id="synoniemen-yi_8">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Systeem-artefact</li>
+<li>Ecosysteem-artefact</li>
+<li>Faciliterend artefact</li>
+</ul>
+<h3 id="analogiean-y_8">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met <strong>API contracts</strong>, <strong>infrastructuurdefinities</strong>, <strong>configuration files</strong> in DevOps</li>
+<li>In SOA: <strong>WSDL's</strong>, <strong>service agreements</strong>, <strong>orchestration definitions</strong></li>
+<li>In projectmanagement: <strong>charter</strong>, <strong>governance framework</strong></li>
+</ul>
+<h3 id="toelichting-y_8">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_8" title="Permanent link">&para;</a></h3>
+<p><strong>Governance-artefacten</strong> zijn normerend voor het ecosysteem en ontstaan uitsluitend in value stream "<strong>mandaryn-agent</strong> Ecosysteem Ontwikkeling". Zij maken het mogelijk dat <strong>mandaryn-agents</strong>, workspaces en value streams gecontroleerd en consistent kunnen functioneren. Als specialisatie van normerend artefact zijn governance-artefacten bindend en prescriptief, en operationeel in specifieke fasen (Grondslagvorming of Ecosysteeminrichting) van value stream 0.</p>
+<hr />
+<h2 id="richtinggevend-artefact">Richtinggevend artefact<a class="headerlink" href="#richtinggevend-artefact" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_9">Definitie ðŸ“<a class="headerlink" href="#definitie-y_9" title="Permanent link">&para;</a></h3>
+<p>Een <strong>richtinggevend artefact</strong> (synoniem: <strong>value-stream-artefact</strong>) is een specialisatie van een <strong>normerend artefact</strong> dat expliciet de gewenste inhoud, structuur of randvoorwaarden van een <strong>value stream fase</strong> in een <strong>waarde value stream</strong> (value streams 1-n) vastlegt en daarmee richting geeft aan realisatie en verdere uitwerking.</p>
+<h3 id="kenmerken-a_9">Kenmerken â­<a class="headerlink" href="#kenmerken-a_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is een <strong>specialisatie van normerend artefact</strong></li>
+<li>Ontstaat binnen een value stream fase in waarde value streams (value streams 1-n, niet in value stream 0)</li>
+<li>Vertegenwoordigt inhoudelijke keuzes, richting en gewenste resultaten</li>
+<li>Is input voor volgende fasen en voor realiserende artefacten</li>
+<li>Wordt geleverd door uitvoerende <strong>mandaryn-agents</strong> met inhoudelijke verantwoordelijkheid</li>
+<li>Is primair artefact (niet afgeleid uit andere artefacten)</li>
+<li>Erft alle kenmerken van normerend artefact (bindend, prescriptief, versieerbaar, operationeel in maximaal Ã©Ã©n value stream fase)</li>
+</ul>
+<h3 id="wat-het-niet-is-a_9">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen algemeen normerend artefact (is specifiek voor waarde value streams)</li>
+<li>Geen governance-artefact (ontstaat niet in value stream "<strong>mandaryn-agent</strong> Ecosysteem Ontwikkeling")</li>
+<li>Geen realiserend artefact (legt niet de feitelijke implementatie vast)</li>
+<li>Geen afgeleid artefact (is niet primair afgeleid uit andere artefacten)</li>
+<li>Geen interne notitie</li>
+</ul>
+<h3 id="voorbeelden-y_5">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Requirements en specifieke eisenpakketten</li>
+<li>Ontwerpdocumenten en solution outlines</li>
+<li>Logische datamodellen (primair, richtinggevend)</li>
+<li>Richtlijnen voor API-contracten of berichtenstructuren</li>
+</ul>
+<h3 id="synoniemen-yi_9">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Value-stream-artefact</li>
+<li>Waarde-artefact</li>
+<li>Richtinggevend normatief artefact</li>
+</ul>
+<h3 id="analogiean-y_9">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met business requirements, solution outlines, logical data models</li>
+<li>In DDD: ontwerp- en specificatie-artefacten die implementatie sturen</li>
+</ul>
+<h3 id="toelichting-y_9">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_9" title="Permanent link">&para;</a></h3>
+<p><strong>Richtinggevende artefacten</strong> leggen vast wat er inhoudelijk moet gelden in een waarde value stream (1-n), zonder te bepalen <em>hoe</em> dit technisch precies wordt gerealiseerd. Zij sturen daarmee de creatie van <strong>realiserende artefacten</strong> (zoals code en DDL) en vormen het primaire, normerende referentiepunt voor afgeleide modellen en documentatie.</p>
+<hr />
+<h2 id="realiserend-artefact">Realiserend artefact<a class="headerlink" href="#realiserend-artefact" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_10">Definitie ðŸ“<a class="headerlink" href="#definitie-y_10" title="Permanent link">&para;</a></h3>
+<p>Een <strong>realiserend artefact</strong> is een <strong>Mandaryn-artefact</strong> dat direct gedrag, structuur of configuratie in een werkend systeem realiseert op basis van richtinggevende artefacten.</p>
+<h3 id="kenmerken-a_10">Kenmerken â­<a class="headerlink" href="#kenmerken-a_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is uitvoerbaar, interpreteerbaar of direct toepasbaar door tooling of runtime-omgevingen</li>
+<li>Realiseert beslissingen en structuren die eerder in richtinggevende artefacten zijn vastgelegd</li>
+<li>Is meestal niet zelf normerend, maar volgt normerende artefacten</li>
+<li>Wijzigingen hebben direct effect op systeemgedrag of data</li>
+<li>Kan gegenereerd zijn uit andere artefacten of handmatig gemaakt</li>
+</ul>
+<h3 id="wat-het-niet-is-a_10">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen richtinggevend artefact (legt geen norm of intentie vast)</li>
+<li>Geen puur beschrijvend of documenterend artefact</li>
+<li>Geen afgeleid artefact dat alleen structuur uitlegt zonder iets te realiseren</li>
+</ul>
+<h3 id="voorbeelden-y_6">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PostgreSQL- of andere database-DDL (CREATE TABLE, CONSTRAINTS, etc.)</li>
+<li>Angularâ€‘ of andere frontend/backendâ€‘code die functionaliteit realiseert</li>
+<li>Scripts om een database initieel te vullen met data (seed-scripts)</li>
+<li>Infrastructuur-als-code bestanden (bijv. Terraform, Ansible, Kubernetes manifests)</li>
+</ul>
+<h3 id="synoniemen-yi_10">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implementatie-artefact</li>
+<li>Uitvoerbaar artefact</li>
+</ul>
+<h3 id="analogiean-y_10">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In softwareontwikkeling: gecompileerde of interpreteerbare artefacten die in productie draaien</li>
+<li>In DevOps: deployment- en configuratiebestanden die gedrag bepalen</li>
+</ul>
+<h3 id="toelichting-y_10">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_10" title="Permanent link">&para;</a></h3>
+<p><strong>Realiserende artefacten</strong> vormen de brug tussen richtinggevende artefacten en het werkende systeem. Zij maken de bedoelde structuur en het gewenste gedrag feitelijk waar in code, data en configuratie.</p>
+<hr />
+<h2 id="structurerend-artefact">Structurerend artefact<a class="headerlink" href="#structurerend-artefact" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_11">Definitie ðŸ“<a class="headerlink" href="#definitie-y_11" title="Permanent link">&para;</a></h3>
+<p>Een <strong>structurerend artefact</strong> is een <strong>Mandaryn-artefact</strong> dat een coherent geheel van architectuurelementen en hun onderlinge relaties representeert, geordend volgens een metamodel of kader, met als doel de structuur van een systeem expliciet en beredeneerbaar te maken.</p>
+<h3 id="kenmerken-a_11">Kenmerken â­<a class="headerlink" href="#kenmerken-a_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Representeert architectuurelementen en hun onderlinge relaties</li>
+<li>Volgt een expliciet metamodel of ordeningskader</li>
+<li>Maakt systeemstructuur expliciet en beredeneerbaar</li>
+<li>Is coherent en intern consistent</li>
+<li>Biedt structurele ordening zonder directe realisering</li>
+<li>Kan normerend of beschrijvend zijn, afhankelijk van de intentie</li>
+</ul>
+<h3 id="wat-het-niet-is-a_11">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen direct realiserende structuur (zoals database-schema's)</li>
+<li>Geen losse beschrijving zonder coherent kader</li>
+<li>Geen ad-hoc visualisatie zonder metamodel</li>
+<li>Geen implementatie of uitvoering</li>
+</ul>
+<h3 id="voorbeelden-y_7">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ArchiMate-modellen met bedrijfsarchitectuur</li>
+<li>UML-klassendiagrammen (structureel)</li>
+<li>Enterprise architectuurmodellen</li>
+<li>Domeinmodellen met relaties en constraints</li>
+<li>Metamodellen</li>
+<li>C4-modellen (container- en componentniveau)</li>
+</ul>
+<h3 id="synoniemen-yi_11">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Architectuurmodel</li>
+<li>Structuurmodel</li>
+<li>Metamodel-conform artefact</li>
+</ul>
+<h3 id="analogiean-y_11">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met blueprints in de bouw (tonen structuur, niet het gebouw zelf)</li>
+<li>In enterprise architectuur: architectural models, viewpoints</li>
+<li>In softwareontwikkeling: UML class diagrams, domain models</li>
+</ul>
+<h3 id="toelichting-y_11">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_11" title="Permanent link">&para;</a></h3>
+<p><strong>Structurerende artefacten</strong> maken de architectonische structuur van systemen expliciet door elementen en hun relaties te ordenen volgens een coherent kader. Zij verschillen van <strong>beschrijvende artefacten</strong> door hun focus op structurele coherentie en metamodel-conformiteit, en van <strong>realiserende artefacten</strong> omdat zij structuur representeren maar niet direct uitvoeren.</p>
+<hr />
+<h2 id="beschrijvend-artefact">Beschrijvend artefact<a class="headerlink" href="#beschrijvend-artefact" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_12">Definitie ðŸ“<a class="headerlink" href="#definitie-y_12" title="Permanent link">&para;</a></h3>
+<p>Een <strong>beschrijvend artefact</strong> is een <strong>Mandaryn-artefact</strong> dat inzicht, uitleg of overzicht biedt over bestaande structuren, besluiten of situaties, zonder zelf normerend, governerend of waardevol in een value stream fase te zijn.</p>
+<h3 id="kenmerken-a_12">Kenmerken â­<a class="headerlink" href="#kenmerken-a_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Biedt inzicht en uitleg</li>
+<li>Is descriptief (beschrijft wat is)</li>
+<li>Is niet bindend of prescriptief</li>
+<li>Kan afgeleid zijn uit andere artefacten</li>
+<li>Ondersteunt begripsvorming en communicatie</li>
+</ul>
+<h3 id="wat-het-niet-is-a_12">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen normerend artefact (schrijft niets voor)</li>
+<li>Geen governance-artefact (maakt geen besturing mogelijk)</li>
+<li>Geen richtinggevend artefact (geen normerend output van value stream fase)</li>
+<li>Geen formele documentatie</li>
+</ul>
+<h3 id="voorbeelden-y_8">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Overzichtsdocumenten</li>
+<li>Analyse-rapporten</li>
+<li>Conceptuele modellen (ter uitleg)</li>
+<li>Architectuurvisies</li>
+<li>Rationale-documenten (waarom-uitleg)</li>
+<li>Kennisbankartikelen</li>
+</ul>
+<h3 id="synoniemen-yi_12">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Descriptief artefact</li>
+<li>Uitleg-artefact</li>
+<li>Inzicht-artefact</li>
+</ul>
+<h3 id="analogiean-y_12">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met white papers, explanatory documents, vision documents</li>
+<li>In enterprise architectuur: viewpoints, perspectives</li>
+<li>In softwareontwikkeling: architectural decision records (beschrijvende variant), design rationale</li>
+</ul>
+<h3 id="toelichting-y_12">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_12" title="Permanent link">&para;</a></h3>
+<p><strong>Beschrijvende artefacten</strong> helpen mensen het ecosysteem te begrijpen. Zij zijn vaak afgeleid uit normerende, governance- of richtinggevende artefacten. Beschrijvende artefacten zijn ondersteunend en niet bindend.</p>
+<hr />
+<h2 id="documenterend-artefact">Documenterend artefact<a class="headerlink" href="#documenterend-artefact" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_13">Definitie ðŸ“<a class="headerlink" href="#definitie-y_13" title="Permanent link">&para;</a></h3>
+<p>Een <strong>documenterend artefact</strong> is een <strong>Mandaryn-artefact</strong> dat kennis, structuren of besluiten vastlegt in een formele, toegankelijke vorm (inclusief model-gebaseerde beschrijvingen zoals ArchiMate), bedoeld voor duurzame raadpleegbaarheid en kennisoverdracht.</p>
+<h3 id="kenmerken-a_13">Kenmerken â­<a class="headerlink" href="#kenmerken-a_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Legt kennis en structuren formeel vast</li>
+<li>Bedoeld voor duurzame raadpleegbaarheid</li>
+<li>Kan model-gebaseerd zijn (bijv. ArchiMate, UML)</li>
+<li>Kan afgeleid of gegenereerd zijn uit andere artefacten</li>
+<li>Ondersteunt kennisoverdracht en onderhoud</li>
+</ul>
+<h3 id="wat-het-niet-is-a_13">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen normerend artefact (legt geen regels vast)</li>
+<li>Geen governance-artefact (maakt geen besturing mogelijk)</li>
+<li>Geen richtinggevend artefact (geen normerend output van value stream fase)</li>
+<li>Geen informele notitie of tijdelijk document</li>
+</ul>
+<h3 id="voorbeelden-y_9">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Technische documentatie</li>
+<li>Gebruikershandleidingen</li>
+<li>ArchiMate-modellen (documenterende variant)</li>
+<li>UML-diagrammen (documenterende variant)</li>
+<li>API-documentatie (gegenereerd)</li>
+<li>Release notes</li>
+<li>GeÃ«xporteerde visualisaties</li>
+</ul>
+<h3 id="synoniemen-yi_13">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Documentatie-artefact</li>
+<li>Formeel document</li>
+<li>Model-artefact (als het model documenteert)</li>
+</ul>
+<h3 id="analogiean-y_13">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met technical documentation, reference manuals, generated docs</li>
+<li>In enterprise architectuur: repository exports, model documentation</li>
+<li>In softwareontwikkeling: Javadoc, Swagger/OpenAPI specs, architecture diagrams</li>
+</ul>
+<h3 id="toelichting-y_13">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_13" title="Permanent link">&para;</a></h3>
+<p><strong>Documenterende artefacten</strong> maken kennis toegankelijk en duurzaam. Zij zijn vaak afgeleid of gegenereerd uit primaire artefacten. <strong>Model-gebaseerde beschrijvingen</strong> (zoals ArchiMate) worden gezien als documenterende artefacten: zij leggen structuur vast, maar zijn uitleg, niet waarheid. Deze indeling scheidt betekenis van vorm en maakt tooling verwisselbaar.</p>
+<hr />
+<h2 id="representatievorm">Representatievorm<a class="headerlink" href="#representatievorm" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_14">Definitie ðŸ“<a class="headerlink" href="#definitie-y_14" title="Permanent link">&para;</a></h3>
+<p>Een <strong>representatievorm</strong> is de specifieke manier waarop een artefact of betekenis wordt vastgelegd, weergegeven of uitgewisseld, zonder de onderliggende betekenis zelf te bepalen.</p>
+<h3 id="toelichting-y_14">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_14" title="Permanent link">&para;</a></h3>
+<p>Een <strong>representatievorm</strong> beschrijft <em>hoe</em> iets wordt uitgedrukt, niet <em>wat</em> het betekent.</p>
+<p>Dezelfde inhoud kan in meerdere representatievormen bestaan, bijvoorbeeld:
+- tekstueel
+- gestructureerd
+- visueel
+- machine-leesbaar</p>
+<p>Deze representaties zijn inhoudelijk equivalent, maar functioneel verschillend: zij dienen andere doelen en doelgroepen.</p>
+<h3 id="kenmerken-a_14">Kenmerken â­<a class="headerlink" href="#kenmerken-a_14" title="Permanent link">&para;</a></h3>
+<p>Een representatievorm:
+- is afgeleid van een onderliggende betekenis of structuur
+- heeft geen eigen normatieve kracht
+- kan worden vertaald naar andere representatievormen
+- is context- en doelafhankelijk (mens, machine, visualisatie)
+- verandert niet de betekenis, alleen de toegankelijkheid of bruikbaarheid</p>
+<h3 id="wat-het-niet-is-a_14">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen artefact op zichzelf</li>
+<li>Geen normering of besluit</li>
+<li>Geen inhoudelijke structuur</li>
+<li>Geen model van de werkelijkheid</li>
+</ul>
+<p>Een representatievorm draagt betekenis, maar bepaalt haar niet.</p>
+<h3 id="voorbeelden-y_10">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Markdown, XML, JSON, YAML</li>
+<li>Diagram, visualisatie, schema</li>
+<li>Tabel, lijst, tekstuele beschrijving</li>
+</ul>
+<p>In al deze gevallen blijft de onderliggende betekenis gelijk, terwijl de vorm verschilt.</p>
+<hr />
+<h2 id="representatie">Representatie<a class="headerlink" href="#representatie" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_15">Definitie ðŸ“<a class="headerlink" href="#definitie-y_15" title="Permanent link">&para;</a></h3>
+<p>Een <strong>representatie</strong> is een concrete uitdrukking van een onderliggende betekenis, structuur of inhoud, vastgelegd in een specifieke representatievorm.</p>
+<h3 id="toelichting-y_15">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_15" title="Permanent link">&para;</a></h3>
+<p>Een <strong>representatie</strong> is de manifestatie van iets dat betekenis heeft.
+Zij maakt betekenis waarneembaar, deelbaar of verwerkbaar, maar is niet die betekenis zelf.</p>
+<p>Dezelfde betekenis kan meerdere representaties hebben, bijvoorbeeld:</p>
+<ul>
+<li>een tekstuele beschrijving</li>
+<li>een model</li>
+<li>een schema</li>
+<li>een visualisatie</li>
+</ul>
+<p>Elke representatie drukt dezelfde onderliggende inhoud uit, maar op een andere manier.</p>
+<h3 id="kenmerken-a_15">Kenmerken â­<a class="headerlink" href="#kenmerken-a_15" title="Permanent link">&para;</a></h3>
+<p>Een representatie:
+- is afgeleid van betekenis, niet andersom
+- bestaat altijd in een representatievorm
+- is concreet en observeerbaar
+- kan worden vertaald naar andere representaties
+- kan verouderen of wijzigen zonder dat de betekenis verandert</p>
+<h3 id="wat-het-niet-is-a_15">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Niet de betekenis zelf</li>
+<li>Niet het besluit of de norm</li>
+<li>Niet per definitie het artefact</li>
+<li>Niet de waarheid, maar een uitdrukking daarvan</li>
+</ul>
+<p>Een representatie toont betekenis, maar definieert haar niet.</p>
+<h3 id="relatie-tussen-betekenis-representatie-en-representatievorm-y">Relatie tussen betekenis, representatie en representatievorm ðŸ”„<a class="headerlink" href="#relatie-tussen-betekenis-representatie-en-representatievorm-y" title="Permanent link">&para;</a></h3>
+<p>Canoniek onderscheid:</p>
+<ul>
+<li><strong>Betekenis</strong> â€“ datgene wat inhoudelijk geldt of bedoeld is</li>
+<li><strong>Representatie</strong> â€“ de concrete uitdrukking van die betekenis</li>
+<li><strong>Representatievorm</strong> â€“ de manier waarop die representatie is vastgelegd</li>
+</ul>
+<p>In relatie:</p>
+<blockquote>
+<p>Betekenis â†’ wordt uitgedrukt in â†’ representatie â†’ heeft een â†’ representatievorm</p>
+</blockquote>
+<h3 id="voorbeelden-y_11">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Een architectuurbesluit (betekenis)
+  â†’ vastgelegd als een ADR (representatie)
+  â†’ geschreven in Markdown (representatievorm)</p>
+</li>
+<li>
+<p>Een logisch datamodel (betekenis/structuur)
+  â†’ vastgelegd als een ER-diagram (representatie)
+  â†’ weergegeven als afbeelding of XML (representatievorm)</p>
+</li>
+</ul>
+<h3 id="relatie-tot-mandaryn-agents-y">Relatie tot <strong>mandaryn-agents</strong> ðŸ¤<a class="headerlink" href="#relatie-tot-mandaryn-agents-y" title="Permanent link">&para;</a></h3>
+<p><strong>Inhoudelijke **mandaryn-agents**</strong>
+- Werken op betekenis en creÃ«ren of wijzigen representaties.</p>
+<p><strong>Representatieomvormende **mandaryn-agents**</strong>
+- Werken uitsluitend op representaties en hun representatievormen, zonder begrip van betekenis.</p>
+<p>Een representatieomvormende <strong>mandaryn-agent</strong> verandert de uitdrukking, niet de inhoud.</p>
+<h3 id="canonieke-zin-kort-y">Canonieke zin (kort) ðŸ§­<a class="headerlink" href="#canonieke-zin-kort-y" title="Permanent link">&para;</a></h3>
+<p>Een representatie is de concrete uitdrukking van betekenis; zij maakt betekenis zichtbaar zonder haar te bepalen.</p>
+<hr />
+<h2 id="representatiestatus">Representatiestatus<a class="headerlink" href="#representatiestatus" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_16">Definitie ðŸ“<a class="headerlink" href="#definitie-y_16" title="Permanent link">&para;</a></h3>
+<p><strong>Representatiestatus</strong> is het meta-concept dat vastlegt of een <strong>representatie</strong> geldt als bron van betekenis, dan wel is afgeleid van een andere representatie, zonder de onderliggende betekenis zelf te wijzigen.</p>
+<p>De representatiestatus zegt niets over de inhoud, maar alles over de positie van een representatie in de keten van afleiding.</p>
+<h3 id="categoriean-binnen-representatiestatus-y">CategorieÃ«n binnen representatiestatus ðŸ’«<a class="headerlink" href="#categoriean-binnen-representatiestatus-y" title="Permanent link">&para;</a></h3>
+<h4 id="1-bronrepresentatie">1. Bronrepresentatie<a class="headerlink" href="#1-bronrepresentatie" title="Permanent link">&para;</a></h4>
+<h5 id="definitie-y_17">Definitie ðŸ“<a class="headerlink" href="#definitie-y_17" title="Permanent link">&para;</a></h5>
+<p>Een <strong>bronrepresentatie</strong> is een representatie die geldt als het primaire vastleggingspunt van betekenis binnen een context.</p>
+<p>Dit is de representatie:
+- waar betekenis formeel aan wordt ontleend
+- die leidend is bij interpretatie
+- die niet afhankelijk is van een andere representatie voor haar geldigheid</p>
+<h5 id="kenmerken-a_16">Kenmerken â­<a class="headerlink" href="#kenmerken-a_16" title="Permanent link">&para;</a></h5>
+<p>Een bronrepresentatie:
+- is autoritatief binnen haar domein of scope
+- fungeert als referentie voor afgeleide representaties
+- kan door mensen worden vastgesteld, beoordeeld of gewijzigd
+- heeft wijzigingen die doorwerken naar afgeleiden
+- is vaak expliciet aangewezen (door governance of afspraak)</p>
+<h5 id="wat-een-bronrepresentatie-niet-is-a">Wat een bronrepresentatie niet is âŒ<a class="headerlink" href="#wat-een-bronrepresentatie-niet-is-a" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Geen â€œeerste bestandâ€ per se</li>
+<li>Geen technisch origineel</li>
+<li>Geen onveranderlijke waarheid</li>
+</ul>
+<p>Een bronrepresentatie is leidend bij verschil van interpretatie, niet per definitie ouder of technischer.</p>
+<hr />
+<h2 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Datum</th>
+<th>Versie</th>
+<th>Wijziging</th>
+<th>Auteur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-02-15</td>
+<td>1.9.0</td>
+<td>Toegevoegd: Architectuur-structurerend als positie op inhoudelijke as voor mandaryn-agents</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-15</td>
+<td>1.8.0</td>
+<td>Toegevoegd: Structurerend artefact als positie op artefact-functie-as</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-02</td>
+<td>1.7.0</td>
+<td>Toegevoegd: Artefact-functie-as als expliciete ordenings-as voor Mandaryn-artefacten, gekoppeld aan Artefactclassificatie</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-02</td>
+<td>1.6.0</td>
+<td>Herziening Artefactclassificatie: expliciete tweedimensionale ordening langs artefact-functie-as en representatievorm-as, voorbeelden uitgebreid</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.5.0</td>
+<td>Bedrijfs-artefact hernoemd naar Richtinggevend artefact; toegevoegd: Realiserend artefact en Afgeleid artefact als aanvullende ordeningsconcepten</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.4.0</td>
+<td>Toegevoegd: meta-concept Representatiestatus met categorie Bronrepresentatie</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.3.0</td>
+<td>Toegevoegd: meta-concept Representatie als concrete uitdrukking van betekenis in een representatievorm</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.2.0</td>
+<td>Toegevoegd: meta-concept Representatievorm als onderscheid tussen betekenis en vorm van artefacten</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.1.0</td>
+<td>Toegevoegd: meta-concept Artefactclassificatie als ordeningskader voor Mandaryn-artefacten en hun typen</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.0.0</td>
+<td>InitiÃ«le versie â€” <strong>ordenings-concepten</strong> afgesplitst van concepten-en-architectonische-grondslagen.md v1.6.0; bevat classificatie-concepten (mandaryn-agent-classificatie, As, 4 assen) en artefact-structuur (Mandaryn-artefact met specialisaties)</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Einde document</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Maxia Consultancy. Alle rechten voorbehouden.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "content.code.copy", "content.code.annotate", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

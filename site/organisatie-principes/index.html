@@ -1,0 +1,1436 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentatie van het Mandaryn Architecture ecosysteem">
+      
+      
+        <meta name="author" content="Mandaryn Team">
+      
+      
+        <link rel="canonical" href="https://hans-blok.github.io/mandarin-architecture/organisatie-principes/">
+      
+      
+        <link rel="prev" href="../axioma-van-gezag/">
+      
+      
+        <link rel="next" href="../toelichting-mandaryn/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/mandarin-logo-m.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Organisatieprincipes - Mandaryn Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:300,300i,400,400i,700,700i%7CConsolas:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Segoe UI";--md-code-font:"Consolas"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#organisatie-principes-ondernemingsvorming" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mandaryn Architecture" class="md-header__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mandaryn Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Organisatieprincipes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../axioma-van-gezag/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Axioma van gezag (root)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Organisatieprincipes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../toelichting-mandaryn/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Toelichting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../concepten/conceptuele-grondslagen/" class="md-tabs__link">
+          
+  
+  
+  Concepten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../de%20vastlegging/axioma-van-gezag/" class="md-tabs__link">
+          
+  
+  
+  Vastlegging
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../essays/essay.de-as-bestaat-al/" class="md-tabs__link">
+          
+  
+  
+  Essays
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mandaryn Architecture" class="md-nav__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    Mandaryn Architecture
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag (root)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisatieprincipes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisatieprincipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inleiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inleiding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principe-1-soevereiniteit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principe 1 — Soevereiniteit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principe 1 — Soevereiniteit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rationale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicaties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicaties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principe-2-continuiteit-van-architectuurdenken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principe 2 — Continuïteit van Architectuurdenken
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principe 2 — Continuïteit van Architectuurdenken">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rationale_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rationale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicaties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicaties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principe-3-waarde-voor-schaal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principe 3 — Waarde vóór Schaal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principe 3 — Waarde vóór Schaal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rationale_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rationale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicaties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicaties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#samenhang-en-implementatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Samenhang en Implementatie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Samenhang en Implementatie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conflicten-tussen-principes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conflicten tussen principes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aanbevelingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aanbevelingen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aanbevelingen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#voor-stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voor stakeholders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vervolgstappen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vervolgstappen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-en-onderhoud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review en onderhoud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toelichting-mandaryn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toelichting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepten/conceptuele-grondslagen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptuele grondslagen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepten/mandarin-agents-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepten/mandarin-artefacten-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artefacten in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepten/mandarin-domeinconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domeinconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepten/mandarin-ordeningsconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordeningsconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vastlegging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vastlegging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../de%20vastlegging/axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../de%20vastlegging/constitutie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constitutie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../de%20vastlegging/mandarin-value-streams-en-fasen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Value streams en fasen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essays/essay.de-as-bestaat-al/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De as bestaat al
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essays/essay.speckit-pattern-vs-state-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speckit vs state pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="organisatie-principes-ondernemingsvorming">Organisatie-Principes — Ondernemingsvorming<a class="headerlink" href="#organisatie-principes-ondernemingsvorming" title="Permanent link">&para;</a></h1>
+<p><strong>Versie</strong>: 1.0<br />
+<strong>Datum</strong>: 18 januari 2026<br />
+<strong>Eigenaar</strong>: Mandaryn-EA<br />
+<strong>Review-cyclus</strong>: Jaarlijks of bij significante veranderingen<br />
+<strong>Scope</strong>: Ondernemingsvorming value stream (Mandaryn ontwikkeling)</p>
+<hr />
+<h2 id="inleiding">Inleiding<a class="headerlink" href="#inleiding" title="Permanent link">&para;</a></h2>
+<p>Dit document definieert de organisatie-principes voor de ondernemingsvorming waarin Mandaryn wordt ontwikkeld. Deze principes vormen de fundamentele grondslagen voor hoe we als organisatie opereren, beslissingen nemen en waarde creëren.</p>
+<p>Ze zijn bedoeld als strategische richtlijnen die de lange termijn koers bewaken en operationele besluiten sturen.</p>
+<hr />
+<h2 id="principe-1-soevereiniteit">Principe 1 — Soevereiniteit<a class="headerlink" href="#principe-1-soevereiniteit" title="Permanent link">&para;</a></h2>
+<p><strong>Korte beschrijving</strong><br />
+Wij zijn soeverein: we nemen onze eigen besluiten en maken ons niet structureel afhankelijk van externe partijen, leveranciers of gesloten ecosystemen.</p>
+<h3 id="rationale">Rationale<a class="headerlink" href="#rationale" title="Permanent link">&para;</a></h3>
+<p>Robert is uitgesproken voorstander van Linux en open source. Dit principe borgt die overtuiging op organisatieniveau en bewaakt onze onafhankelijkheid en autonomie. Door soevereiniteit te kiezen, behouden we controle over onze eigen richting, kennis en ontwikkeling.</p>
+<p>In een wereld waarin vendor lock-in en afhankelijkheid van grote platforms steeds groter worden, beschermt dit principe onze vrijheid om te kiezen wat het beste is voor onze eigen situatie.</p>
+<h3 id="implicaties">Implicaties<a class="headerlink" href="#implicaties" title="Permanent link">&para;</a></h3>
+<p><strong>Voor besluitvorming</strong>:
+- We kiezen bewust voor open standaarden en open source tools
+- Bij leverancierskeuzes weegt lange termijn autonomie zwaarder dan korte termijn gemak
+- We bouwen en beheren kernkennis zelf in plaats van volledig uit te besteden</p>
+<p><strong>Voor architectuur en technologie</strong>:
+- Vendor lock-in wordt actief vermeden
+- We prefereren oplossingen waarbij we data en logica volledig beheren
+- We blijven zelf ontwikkelen en innoveren, ook als dat meer inspanning vraagt
+- We onderzoeken de mogelijkheid om een eigen LLM te ontwikkelen om volledige controle te behouden over onze AI-capabilities</p>
+<p><strong>Voor organisatie en cultuur</strong>:
+- We investeren in eigen kennis en vaardigheden
+- We documenteren en delen kennis intern zodat we niet afhankelijk zijn van individuele personen of externe partijen
+- We nemen verantwoordelijkheid voor onze eigen koers</p>
+<h3 id="voorbeelden">Voorbeelden<a class="headerlink" href="#voorbeelden" title="Permanent link">&para;</a></h3>
+<p><strong>Goed</strong> ✓
+- Gebruik van Linux als besturingssysteem in plaats van proprietary alternatieven
+- Kiezen voor open source databases met sterke community en standaarden
+- Zelf agents ontwikkelen en beheren binnen Mandaryn in plaats van afhankelijk zijn van closed source AI platforms
+- Gebruik van Git met eigen repository-beheer in plaats van volledige afhankelijkheid van één cloud provider</p>
+<p><strong>Slecht</strong> ✗
+- All-in gaan op één cloud provider zonder exit-strategie
+- Kritieke bedrijfslogica volledig outsourcen zonder kennis intern te houden
+- Proprietary formats gebruiken zonder conversie-mogelijkheid naar open standaarden
+- Afhankelijk worden van één leverancier voor alle tooling zonder alternatieven</p>
+<hr />
+<h2 id="principe-2-continuiteit-van-architectuurdenken">Principe 2 — Continuïteit van Architectuurdenken<a class="headerlink" href="#principe-2-continuiteit-van-architectuurdenken" title="Permanent link">&para;</a></h2>
+<p><strong>Korte beschrijving</strong><br />
+Hoewel AI disruptief is voor de IT-markt, blijven wij werken volgens bestaande architectuurprincipes.</p>
+<h3 id="rationale_1">Rationale<a class="headerlink" href="#rationale_1" title="Permanent link">&para;</a></h3>
+<p>Net als eerdere technologische sprongen (bijvoorbeeld van machinetaal naar hogere programmeertalen) maakt AI IT niet eenvoudiger, maar complexer. De fundamentele uitdagingen van software-ontwikkeling—scheiding van verantwoordelijkheden, onderhoudbaarheid, testbaarheid—blijven bestaan en worden zelfs belangrijker.</p>
+<p>Dit principe bewaakt dat we niet in de valkuil stappen van "magische" oplossingen waarbij architectuur wordt vergeten. AI is een krachtige tool, maar geen vervanging voor structureel denken.</p>
+<h3 id="implicaties_1">Implicaties<a class="headerlink" href="#implicaties_1" title="Permanent link">&para;</a></h3>
+<p><strong>Voor systeem-ontwerp</strong>:
+- We blijven denken in concerns en verantwoordelijkheden
+- Scheiding van verantwoordelijkheden blijft leidend (ook bij AI-componenten)
+- Nieuwe technologie verandert tooling en implementatie, niet het architecturele denkraam</p>
+<p><strong>Voor ontwikkeling</strong>:
+- We vermijden "magische" oplossingen zonder duidelijke architectuur
+- Complexiteit wordt beheerst door structuur en helderheid, niet door slimheid
+- We documenteren beslissingen en trade-offs expliciet</p>
+<p><strong>Voor governance</strong>:
+- Architectuurreviews blijven verplicht, ook voor AI-componenten
+- Bestaande quality gates en kwaliteitseisen blijven van kracht
+- We passen beproefde patronen toe voordat we nieuwe patronen introduceren</p>
+<h3 id="voorbeelden_1">Voorbeelden<a class="headerlink" href="#voorbeelden_1" title="Permanent link">&para;</a></h3>
+<p><strong>Goed</strong> ✓
+- Agent capabilities expliciet begrenzen en documenteren in charters
+- Prompts scheiden van business logica en data
+- State management en side effects duidelijk isoleren
+- Agents ontwerpen volgens single responsibility principle</p>
+<p><strong>Slecht</strong> ✗
+- Een groot AI-model inzetten zonder duidelijke capability boundary
+- Prompts mengen met configuratie, data en business rules in één bestand
+- "De AI lost het wel op" zonder architecturele afwegingen
+- Agents met vage, overlappende verantwoordelijkheden en onduidelijke grenzen</p>
+<hr />
+<h2 id="principe-3-waarde-voor-schaal">Principe 3 — Waarde vóór Schaal<a class="headerlink" href="#principe-3-waarde-voor-schaal" title="Permanent link">&para;</a></h2>
+<p><strong>Korte beschrijving</strong><br />
+We bewijzen eerst dat iets waarde heeft, voordat we proberen het groot te maken.</p>
+<h3 id="rationale_2">Rationale<a class="headerlink" href="#rationale_2" title="Permanent link">&para;</a></h3>
+<p>In een vroege fase is schaal vaak een afleiding. Het echte risico is niet dat iets niet schaalt, maar dat het geen betekenisvolle waarde heeft. Door eerst te focussen op waarde, leren we wat echt belangrijk is en voorkomen we verspilling van energie aan schaalbaarheidsproblemen die misschien nooit relevant worden.</p>
+<p>Dit principe bewaakt onze focus en voorkomt over-engineering en premature optimization. Het dwingt ons om met kleine, echte signalen te werken in plaats van met grote aannames.</p>
+<h3 id="implicaties_2">Implicaties<a class="headerlink" href="#implicaties_2" title="Permanent link">&para;</a></h3>
+<p><strong>Voor product-ontwikkeling</strong>:
+- Ideeën worden eerst inhoudelijk getoetst met een klein, concreet publiek
+- We bouwen voor een concrete use case, niet voor "de markt" in het algemeen
+- Kleine, echte signalen (gebruik, feedback) wegen zwaarder dan grote aannames</p>
+<p><strong>Voor architectuur</strong>:
+- Schaalbaarheid volgt uit waarde, niet andersom
+- We bouwen simpel en uitbreidbaar, niet complex en "klaar voor de toekomst"
+- We refactoren naar schaal als dat nodig blijkt, niet bij voorbaat</p>
+<p><strong>Voor besluitvorming</strong>:
+- Beslissingen worden genomen op basis van leren en feedback, niet op basis van ambitie of aannames
+- We investeren in experimenten en prototypes voordat we grote commitments maken
+- We accepteren dat niet elk idee schaalt, en dat is oké</p>
+<h3 id="voorbeelden_2">Voorbeelden<a class="headerlink" href="#voorbeelden_2" title="Permanent link">&para;</a></h3>
+<p><strong>Goed</strong> ✓
+- Een nieuwe agent eerst testen met één concrete use case en iteratief verbeteren
+- Een workflow handmatig doorlopen voordat we automation bouwen
+- Een kennisartikel publiceren en feedback verzamelen voordat we een hele serie maken
+- Een simple file-based implementation voordat we een database introduceren</p>
+<p><strong>Slecht</strong> ✗
+- Meteen een complexe microservices architectuur opzetten voor een eerste prototype
+- Een schaalbare database-oplossing bouwen voordat we weten of iemand het product gebruikt
+- Een algemeen framework ontwikkelen zonder concrete use case
+- Investeren in performance optimization voordat we weten of de feature waarde heeft</p>
+<hr />
+<h2 id="samenhang-en-implementatie">Samenhang en Implementatie<a class="headerlink" href="#samenhang-en-implementatie" title="Permanent link">&para;</a></h2>
+<p>Deze drie principes versterken elkaar:</p>
+<p><strong>Soevereiniteit</strong> bewaakt onze onafhankelijkheid en autonomie.<br />
+<strong>Architectuurdenken</strong> bewaakt onze samenhang en structuur.<br />
+<strong>Waarde vóór schaal</strong> bewaakt onze focus en leren.</p>
+<p>Samen vormen ze een fundament voor hoe we werken: onafhankelijk, gestructureerd en gericht op echte waarde.</p>
+<h3 id="conflicten-tussen-principes">Conflicten tussen principes<a class="headerlink" href="#conflicten-tussen-principes" title="Permanent link">&para;</a></h3>
+<p>In de praktijk kunnen principes soms botsen:
+- Soevereiniteit kan leiden tot meer complexiteit (alles zelf doen vs. kopen)
+- Architectuurdenken kan vertragen (structuur kost tijd)
+- Waarde vóór schaal kan leiden tot technische schuld (snel leren vs. robuust bouwen)</p>
+<p>Bij dergelijke dilemma's:
+1. Maak de trade-off expliciet
+2. Kies bewust welk principe voorrang heeft in deze specifieke situatie
+3. Documenteer de keuze en de rationale
+4. Evalueer achteraf of de keuze juist was</p>
+<hr />
+<h2 id="aanbevelingen">Aanbevelingen<a class="headerlink" href="#aanbevelingen" title="Permanent link">&para;</a></h2>
+<h3 id="voor-stakeholders">Voor stakeholders<a class="headerlink" href="#voor-stakeholders" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Architecten en developers</strong>: Gebruik deze principes als toetssteen bij design reviews en technische beslissingen</li>
+<li><strong>Governance</strong>: Controleer of nieuwe initiatieven en artefacten consistent zijn met deze principes</li>
+<li><strong>Agent Curator</strong>: Zorg dat nieuwe agents en charters deze principes reflecteren in capability boundaries en werkwijze</li>
+</ul>
+<h3 id="vervolgstappen">Vervolgstappen<a class="headerlink" href="#vervolgstappen" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Systeem-principes definiëren</strong>: De Mandaryn-EA moet nu systeem-principes voor Mandaryn platform opstellen die aligned zijn met deze organisatie-principes</li>
+<li><strong>Value stream definitie</strong>: Definieer de ondernemingsvorming value stream expliciet met stakeholders, in/out criteria en agents</li>
+<li><strong>Gap-analyse</strong>: Voer een gap-analyse uit tussen huidige staat en gewenste staat conform deze principes</li>
+<li><strong>Communicatie</strong>: Deel deze principes met alle betrokkenen en organiseer een review-sessie</li>
+</ol>
+<h3 id="review-en-onderhoud">Review en onderhoud<a class="headerlink" href="#review-en-onderhoud" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Jaarlijkse review</strong>: Evalueer of deze principes nog steeds relevant zijn</li>
+<li><strong>Bij grote wijzigingen</strong>: Als er fundamentele veranderingen zijn in context of richting, herzie dan deze principes</li>
+<li><strong>Versioning</strong>: Nieuwe versies krijgen een nieuw versienummer en worden gedocumenteerd in <code>docs/resultaten/mandaryn-ea/</code></li>
+</ul>
+<hr />
+<p><em>Dit document is opgesteld door Mandaryn-EA conform de werkwijze beschreven in <code>charters-agents/charter.mandaryn-ea.md</code>. Voor vragen of feedback, escaleer naar governance.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Maxia Consultancy. Alle rechten voorbehouden.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "content.code.copy", "content.code.annotate", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

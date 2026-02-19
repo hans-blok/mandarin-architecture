@@ -1,5 +1,5 @@
-# Mandarin Architecture
+# Mandaryn Architecture
 
-Welkom bij de documentatie van het Mandarin Architecture project.
+Welkom bij de documentatie van het Mandaryn Architecture project.
 
 Gebruik het menu om te navigeren naar de verschillende concepten en secties.

@@ -1,0 +1,3160 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentatie van het Mandaryn Architecture ecosysteem">
+      
+      
+        <meta name="author" content="Mandaryn Team">
+      
+      
+        <link rel="canonical" href="https://hans-blok.github.io/mandarin-architecture/concepten/mandarin-domeinconcepten/">
+      
+      
+        <link rel="prev" href="../mandarin-artefacten-in-een-notendop/">
+      
+      
+        <link rel="next" href="../mandarin-ordeningsconcepten/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/mandarin-logo-m.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Domeinconcepten - Mandaryn Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:300,300i,400,400i,700,700i%7CConsolas:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Segoe UI";--md-code-font:"Consolas"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#de-mandaryn-concepten" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Mandaryn Architecture" class="md-header__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mandaryn Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Domeinconcepten
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../axioma-van-gezag/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Axioma van gezag (root)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../organisatie-principes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Organisatieprincipes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../toelichting-mandaryn/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Toelichting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../conceptuele-grondslagen/" class="md-tabs__link">
+          
+  
+  
+  Concepten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../de%20vastlegging/axioma-van-gezag/" class="md-tabs__link">
+          
+  
+  
+  Vastlegging
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../essays/essay.de-as-bestaat-al/" class="md-tabs__link">
+          
+  
+  
+  Essays
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Mandaryn Architecture" class="md-nav__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    Mandaryn Architecture
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag (root)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../organisatie-principes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisatieprincipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toelichting-mandaryn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toelichting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conceptuele-grondslagen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptuele grondslagen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandarin-agents-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandarin-artefacten-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artefacten in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domeinconcepten
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domeinconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#herkomstverantwoording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Herkomstverantwoording
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inhoudsopgave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inhoudsopgave
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inhoudsopgave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fundamentele-concepten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fundamentele Concepten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mandaryn-agent-gerelateerde-concepten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mandaryn-agent-gerelateerde Concepten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artefacten-en-value-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artefacten en Value Streams
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inleiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inleiding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inleiding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gebruik-van-synoniemen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gebruik van Synoniemen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mandaryn-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mandaryn-concept
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mandaryn-concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actieve-structuur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actieve structuur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actieve structuur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mandaryn-ecosysteem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mandaryn-ecosysteem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mandaryn-ecosysteem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mandaryn-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mandaryn-capability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mandaryn-capability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#een-mandaryn-capability-is-uniek-in-de-wereld" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Een Mandaryn capability is uniek in de wereld.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mandaryn-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mandaryn-agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mandaryn-agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        agent-boundary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="agent-boundary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#het-expliciet-definiaren-van-de-agent-boundary-voorkomt-dat-mandaryn-agents-samenvallen-met-tooling-of-prompts-verantwoordelijkheden-vervagen-of-contracten-impliciet-worden-alles-binnen-de-boundary-valt-onder-het-agent-charter-de-bijbehorende-agent-contracten-en-de-interne-governance-van-de-mandaryn-agent-alles-buiten-de-boundary-is-alleen-toegankelijk-via-formele-expliciete-contracten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Het expliciet definiÃ«ren van de agent-boundary voorkomt dat mandaryn-agents samenvallen met tooling of prompts, verantwoordelijkheden vervagen of contracten impliciet worden. Alles binnen de boundary valt onder het agent-charter, de bijbehorende agent-contracten en de interne governance van de mandaryn-agent. Alles buiten de boundary is alleen toegankelijk via formele, expliciete contracten.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-charter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        agent-charter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="agent-charter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        agent-capability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="agent-capability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        agent-contract
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="agent-contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mandaryn-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mandaryn-artefact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mandaryn-artefact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value stream
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Value stream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-stream-fase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value stream fase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Value stream fase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workspace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definitie-y_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitie ðŸ“
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken-a_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kenmerken â­
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wat-het-niet-is-a_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wat het niet is âŒ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeelden-y_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voorbeelden ðŸ’¡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synoniemen-yi_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synoniemen ðŸ·ï¸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogiean-y_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AnalogieÃ«n ðŸ”„
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toelichting-y_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toelichting ðŸ’¬
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandarin-ordeningsconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordeningsconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vastlegging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vastlegging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/constitutie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constitutie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/mandarin-value-streams-en-fasen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Value streams en fasen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essays/essay.de-as-bestaat-al/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De as bestaat al
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essays/essay.speckit-pattern-vs-state-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speckit vs state pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="de-mandaryn-concepten">De Mandaryn concepten<a class="headerlink" href="#de-mandaryn-concepten" title="Permanent link">&para;</a></h1>
+<p><strong>Type</strong>: Concepten en Definities 
+<strong>Repository</strong>: mandaryn-canon 
+<strong>Identifier</strong>: mandaryn-canon.concepten.actieve-structuren 
+<strong>Version</strong>: 2.3.0 
+<strong>Status</strong>: Active 
+<strong>Last Updated</strong>: 2026-02-01 
+<strong>Owner</strong>: Hans Blok</p>
+<hr />
+<h2 id="herkomstverantwoording">Herkomstverantwoording<a class="headerlink" href="#herkomstverantwoording" title="Permanent link">&para;</a></h2>
+<p>Dit document is opgesteld door Hans Blok op 31 januari 2026 als definitie van concepten en architectonische grondslagen voor actieve structuren in het Mandaryn-ecosysteem.</p>
+<p><strong>Geraadpleegde bronnen</strong>:</p>
+<p><strong>Opsteller</strong>: Hans Blok 
+<strong>Datum</strong>: 2026-01-31 
+<strong>Laatste wijziging</strong>: 2026-02-01 (Constitutioneel Auteur) 
+<strong>Doel</strong>: Expliciete definitie van operationele concepten (actieve structuren) binnen het Mandaryn-ecosysteem</p>
+<p><strong>Ontwerpkeuze</strong>: De bewuste scheiding tussen operationele concepten (actieve structuren en hun werking) en meta-concepten (classificatie en artefactstructuur) maakt <strong>mandaryn-agents</strong> voorspelbaarder, toetsbaarder en consistenter. Meta-concepten zijn verplaatst naar mandaryn-meta-concepten.md. Concepten over gedrag, werking en sturing worden vastgelegd in een afzonderlijk document.</p>
+<p><strong>Normatief fundament</strong>: Dit document vormt onderdeel van de grondslagen binnen mandaryn-canon en volgt de documentatie-standaarden conform workspace-doctrine en doctrine-agent-charter-normering.</p>
+<hr />
+<h2 id="inhoudsopgave">Inhoudsopgave<a class="headerlink" href="#inhoudsopgave" title="Permanent link">&para;</a></h2>
+<h3 id="fundamentele-concepten">Fundamentele Concepten<a class="headerlink" href="#fundamentele-concepten" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#mandaryn-concept">Mandaryn-concept</a> â€” Expliciet gedefinieerd, herbruikbaar bouwblok</li>
+<li><a href="#actieve-structuur">Actieve structuur</a> â€” Functioneel element dat handelt en output produceert</li>
+<li><a href="#mandaryn-ecosysteem">Mandaryn-ecosysteem</a> â€” Overkoepelende context van alle concepten</li>
+</ul>
+<h3 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#mandaryn-capability">Mandaryn-capability</a> â€” Duurzaam, herbruikbaar vermogen</li>
+</ul>
+<h3 id="mandaryn-agent-gerelateerde-concepten">mandaryn-agent-gerelateerde Concepten<a class="headerlink" href="#mandaryn-agent-gerelateerde-concepten" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#mandaryn-agent">Mandaryn-agent</a> â€” Gecharterd element dat taken uitvoert</li>
+<li><a href="#agent-boundary">agent-boundary</a> â€” Expliciete servicegrens van een <strong>mandaryn-agent</strong></li>
+<li><a href="#agent-charter">agent-charter</a> â€” Missie, verantwoordelijkheid en governance van een <strong>mandaryn-agent</strong></li>
+<li><a href="#agent-capability">agent-capability</a> â€” Aanroepbare functie van een <strong>mandaryn-agent</strong></li>
+<li><a href="#agent-contract">agent-contract</a> â€” Specificatie van intentie, input, output en beleid</li>
+<li><a href="#prompt">Prompt</a> â€” Concreet aanroep- of instructiepatroon richting een <strong>mandaryn-agent</strong></li>
+</ul>
+<h3 id="artefacten-en-value-streams">Artefacten en Value Streams<a class="headerlink" href="#artefacten-en-value-streams" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#mandaryn-artefact">Mandaryn-artefact</a> â€” Duurzame, overdraagbare vastlegging van resultaat</li>
+<li><a href="#template">Template</a> â€” Herbruikbare structuur voor artefacten en prompts</li>
+<li><a href="#value-stream">Value stream</a> â€” Waarde-creÃ«rende keten van stappen</li>
+<li><a href="#value-stream-fase">Value stream fase</a> â€” Waardemoment binnen een value stream</li>
+<li><a href="#workspace">Workspace</a> â€” Afgebakende werkomgeving voor value stream fasen</li>
+</ul>
+<hr />
+<h2 id="inleiding">Inleiding<a class="headerlink" href="#inleiding" title="Permanent link">&para;</a></h2>
+<p>Dit document beschrijft de concepten die betrekking hebben op de <strong>actieve structuren</strong> van het <strong>Mandaryn-ecosysteem</strong>. 
+Onder actieve structuren verstaan we de samenstellende en functionele elementen die het ecosysteem laten handelen, samenwerken en output produceren.</p>
+<p>Naast de actieve structuren bevat dit document ook de meta-concepten <strong>Mandaryn-concept</strong> en <strong>Mandaryn-architectuurprincipe</strong>. Deze hebben een beschrijvend en duidend karakter en ondersteunen menselijke leesbaarheid en begripsvorming van het ecosysteem zelf.</p>
+<p>De expliciete afbakening en structurering van deze concepten is een <strong>bewuste ontwerpkeuze</strong>. Door structurele en gedragsmatige aspecten strikt te scheiden, worden <strong>mandaryn-agents</strong> voorspelbaarder in hun handelen, beter toetsbaar en consistenter in hun output. Dit vergroot de bestuurbaarheid van het ecosysteem en zorgt ervoor dat <strong>mandaryn-agents</strong> aantoonbaar handelen binnen de bedoelde kaders.</p>
+<p>Concepten die betrekking hebben op <strong>gedrag, werking en sturing</strong> van het ecosysteem â€” zoals governance, inferentie, intentie en logging â€” worden daarom vastgelegd in een afzonderlijk document. Deze scheiding voorkomt vermenging van verantwoordelijkheden en draagt bij aan meer grip op wat <strong>mandaryn-agents</strong> doen, waarom zij dat doen en wanneer zij moeten escaleren.</p>
+<h3 id="gebruik-van-synoniemen">Gebruik van Synoniemen<a class="headerlink" href="#gebruik-van-synoniemen" title="Permanent link">&para;</a></h3>
+<p>Bij elk concept worden <strong>synoniemen</strong> vermeld onder de sectie ðŸ·ï¸. Deze synoniemen zijn <strong>uitsluitend bedoeld voor menselijke spreektaal</strong> en <strong>NIET toegestaan binnen het Mandaryn-ecosysteem</strong>.</p>
+<p><strong>Strikte regel</strong>: Binnen het ecosysteem (in governance-artefacten, <strong>agent-charter**s, doctrines, **agent-contract**s, **mandaryn-agent</strong>-communicatie) wordt <strong>altijd de volledige, officiÃ«le conceptnaam gebruikt</strong>. Synoniemen zijn verboden in formele context.</p>
+<p><strong>Rationale</strong>: Door consequent de officiÃ«le conceptnamen te gebruiken, wordt spraakverwarring voorkomen en weten <strong>mandaryn-agents</strong> precies wat wordt bedoeld. Synoniemen zijn uitsluitend hulpmiddel voor mensen om het ecosysteem te begrijpen in informele gesprekken.</p>
+<p><strong>Voorbeelden van VERPLICHT gebruik</strong>:
+- âœ… <strong>Agent-contract</strong> (NIET: "contract")
+- âœ… <strong>Mandaryn-artefact</strong> (NIET: "artefact")
+- âœ… <strong>Agent-soort</strong> (NIET: "agent-type" of "agent-classificatie")
+- âœ… <strong>Mandaryn-capability</strong> (NIET: "capability")
+- âœ… <strong>Agent-charter</strong> (NIET: "charter")
+- âœ… <strong>Governance-artefact</strong> (NIET: "governance-document" of "systeemartefact")
+- âœ… <strong>Waarde-artefact</strong> (NIET: "resultaat-artefact" of "value artefact")</p>
+<p><strong>Toegestaan</strong>: In informele menselijke communicatie (gesprekken, notities, brainstorms) mogen synoniemen gebruikt worden voor leesbaarheid. Zodra het ecosysteem wordt geadresseerd (documenten, <strong>mandaryn-agent</strong>-interacties), gelden de officiÃ«le termen.</p>
+<hr />
+<h2 id="mandaryn-concept">Mandaryn-concept<a class="headerlink" href="#mandaryn-concept" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y">Definitie ðŸ“<a class="headerlink" href="#definitie-y" title="Permanent link">&para;</a></h3>
+<p>Een <strong>Mandaryn-concept</strong> is een expliciet gedefinieerd, samenhangend en herbruikbaar bouwblok binnen het <strong>Mandaryn-ecosysteem</strong>, dat een fundamenteel begrip, structuur of mechanisme beschrijft en als referentie dient voor ontwerp, implementatie en governance.</p>
+<ul>
+<li>
+<p>Is onderdeel van het canon van Mandaryn</p>
+</li>
+<li>
+<p>Geen tijdelijke afspraak of conventie</p>
+</li>
+<li>
+<p><strong>mandaryn-agent</strong>, <strong>agent-contract</strong>, artefact, value stream, workspace</p>
+</li>
+<li>
+<p>Governance-artefact, capability, <strong>agent-boundary</strong>
+Kernbegrip, Bouwsteen</p>
+</li>
+<li>
+<p>In Archimate een Concept </p>
+</li>
+</ul>
+<h3 id="toelichting-y">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y" title="Permanent link">&para;</a></h3>
+<p><strong>Mandaryn-concepten</strong> vormen het fundament voor alle verdere uitwerking, structurering en automatisering binnen het <strong>Mandaryn-ecosysteem.</strong></p>
+<hr />
+<h2 id="actieve-structuur">Actieve structuur<a class="headerlink" href="#actieve-structuur" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_1">Definitie ðŸ“<a class="headerlink" href="#definitie-y_1" title="Permanent link">&para;</a></h3>
+<p>Een <strong>actieve structuur</strong> in het <strong>Mandaryn-ecosysteem</strong> is een expliciet gedefinieerd, functioneel element dat zelfstandig of in samenwerking met andere structuren taken uitvoert, interactie aangaat en output produceert, en daarmee het dynamisch functioneren van het ecosysteem mogelijk maakt.</p>
+<h3 id="kenmerken-a">Kenmerken â­<a class="headerlink" href="#kenmerken-a" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Heeft een expliciete, afgebakende rol of functie binnen het ecosysteem</li>
+<li>Is in staat tot handelen, samenwerken en output genereren</li>
+<li>Is structureel en functioneel onderscheiden van passieve of beschrijvende elementen</li>
+<li>Kan zelfstandig of in samenhang met andere actieve structuren opereren</li>
+<li>Is toetsbaar op gedrag en output</li>
+</ul>
+<h3 id="wat-het-niet-is-a">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen passief, beschrijvend of uitsluitend informatief element</li>
+<li>Geen tijdelijke of impliciete structuur</li>
+<li>Geen abstracte regel, principe of conventie</li>
+<li>Geen gedrag</li>
+</ul>
+<h3 id="voorbeelden-y">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mandaryn-agent</li>
+<li>Workspace</li>
+<li>Value stream</li>
+</ul>
+<h3 id="synoniemen-yi">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi" title="Permanent link">&para;</a></h3>
+<p>Functioneel element, Dynamische component</p>
+<h3 id="analogiean-y">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met actieve structuren in ArchiMate (bijv. component, actor, device)</li>
+<li>In softwareontwikkeling: service, proces, actor</li>
+</ul>
+<h3 id="toelichting-y_1">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_1" title="Permanent link">&para;</a></h3>
+<p>Actieve structuren vormen het handelende en uitvoerende deel van het <strong>Mandaryn-ecosysteem</strong>. Zij maken samenwerking, automatisering en waardecreatie mogelijk door expliciet gedrag en output te leveren binnen de afgesproken kaders.</p>
+<hr />
+<h2 id="mandaryn-ecosysteem">Mandaryn-ecosysteem<a class="headerlink" href="#mandaryn-ecosysteem" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_2">Definitie ðŸ“<a class="headerlink" href="#definitie-y_2" title="Permanent link">&para;</a></h3>
+<p>Het <strong>Mandaryn-ecosysteem</strong> is de overkoepelende, samenhangende verzameling van alle <strong>Mandaryn-concepten</strong>, <strong>actieve structuren</strong>, <strong>artefacten</strong>, governance-mechanismen en hun onderlinge relaties, die samen een expliciet, adaptief en bestuurbaar geheel vormen voor het realiseren van waarde binnen gedefinieerde <strong>value streams</strong>.</p>
+<h3 id="kenmerken-a_1">Kenmerken â­<a class="headerlink" href="#kenmerken-a_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Omvat alle Mandaryn-concepten en hun relaties</li>
+<li>Is uitbreidbaar en aanpasbaar zonder verlies van samenhang</li>
+<li>Waarborgt expliciete contracten en governance</li>
+<li>Biedt een coherent kader voor <strong>mandaryn-agents</strong>, artefacten en value streams</li>
+<li>Maakt automatisering, samenwerking en waardecreatie mogelijk</li>
+<li>Is adaptief en zelfbeschrijvend (meta-concepten zijn onderdeel van het ecosysteem)</li>
+</ul>
+<h3 id="wat-het-niet-is-a_1">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen statisch systeem of vaste architectuur</li>
+<li>Geen enkelvoudige applicatie of tool</li>
+<li>Geen organisatie of bedrijfseenheid</li>
+<li>Geen tijdelijke samenwerkingsvorm</li>
+</ul>
+<h3 id="voorbeelden-y_1">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De combinatie van alle <strong>mandaryn-agents</strong>, **Agent-charter**s, doctrines, workspaces en value streams die samen het Mandaryn-systeem vormen</li>
+<li>Het geheel van governance-artefacten en waarde-artefacten in samenhang</li>
+</ul>
+<h3 id="synoniemen-yi_1">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mandaryn-systeem, Mandaryn-omgeving</li>
+</ul>
+<h3 id="analogiean-y_1">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een platform-ecosysteem in software (zoals een cloud platform met services, API's en governance)</li>
+<li>In enterprise architectuur: een capability-gebaseerd operating model</li>
+<li>In biologie: een ecosysteem met verschillende soorten en hun interacties</li>
+</ul>
+<h3 id="toelichting-y_2">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_2" title="Permanent link">&para;</a></h3>
+<p>Het <strong>Mandaryn-ecosysteem</strong> vormt de overkoepelende context waarbinnen alle Mandaryn-concepten samenkomen en waarde leveren. Het is ontworpen om adaptief, expliciet en samenhangend te zijn. Het ecosysteem is zelfbeschrijvend: de concepten die het ecosysteem beschrijven (zoals <strong>Mandaryn-concept</strong> en <strong>Mandaryn-architectuurprincipe</strong>) maken zelf deel uit van het ecosysteem.</p>
+<hr />
+<h2 id="mandaryn-capability">Mandaryn-capability<a class="headerlink" href="#mandaryn-capability" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_3">Definitie ðŸ“<a class="headerlink" href="#definitie-y_3" title="Permanent link">&para;</a></h3>
+<p>Een <strong>Mandaryn-capability</strong> is een duurzaam, herbruikbaar vermogen van het <strong>Mandaryn-ecosysteem</strong> om een bepaald type waarde te realiseren, onafhankelijk van specifieke <strong>agents</strong>, tooling of uitvoering, en inzetbaar binnen Ã©Ã©n of meer <strong>value stream fasen</strong>.</p>
+<h3 id="kenmerken-a_2">Kenmerken â­<a class="headerlink" href="#kenmerken-a_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Beschrijft wat het ecosysteem kan</li>
+<li>Is stabiel in de tijd</li>
+<li>Is niet aan Ã©Ã©n <strong>mandaryn-agent</strong> gekoppeld</li>
+<li>Kan door meerdere <strong>mandaryn-agents</strong> gerealiseerd worden</li>
+<li>Wordt ingezet door value stream fasen, maar hoort daar niet bij</li>
+<li>Bestaat ook als er (tijdelijk) geen <strong>mandaryn-agent</strong> actief is</li>
+</ul>
+<h3 id="voorbeelden-y_2">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Veranderhypotheses formuleren</p>
+</li>
+<li>
+<p><strong>Artefact</strong></p>
+</li>
+</ul>
+<h3 id="analogiean-y_2">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een capability in enterprise architectuur</li>
+<li>In softwareontwikkeling: een herbruikbare service of functie</li>
+</ul>
+<h3 id="toelichting-y_3">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_3" title="Permanent link">&para;</a></h3>
+<h2 id="een-mandaryn-capability-is-uniek-in-de-wereld">Een Mandaryn capability is uniek in de wereld.<a class="headerlink" href="#een-mandaryn-capability-is-uniek-in-de-wereld" title="Permanent link">&para;</a></h2>
+<h2 id="mandaryn-agent">Mandaryn-agent<a class="headerlink" href="#mandaryn-agent" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_4">Definitie ðŸ“<a class="headerlink" href="#definitie-y_4" title="Permanent link">&para;</a></h3>
+<p>Een <strong>mandaryn-agent</strong> is een expliciet gedefinieerde, autonome software-entiteit binnen het <strong>Mandaryn-ecosysteem</strong> die, op basis van een formeel <strong>agent-charter</strong> en <strong>agent-contract</strong>, specifieke taken uitvoert, Mandaryn-artefacten produceert of informatie levert, en daarbij altijd opereert binnen een afgebakende <strong>agent-boundary</strong> en volgens de geldende governance.</p>
+<h3 id="kenmerken-a_3">Kenmerken â­<a class="headerlink" href="#kenmerken-a_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Heeft een expliciet <strong>agent-charter</strong> en <strong>agent-contract</strong></li>
+<li>Is autonoom en verantwoordelijk voor eigen uitvoering binnen boundary</li>
+<li>Voert Ã©Ã©n of meer <strong>mandaryn-agent</strong>-capabilities uit</li>
+<li>Produceert Mandaryn-artefacten of levert informatie</li>
+<li>Is herbruikbaar en vervangbaar binnen het ecosysteem</li>
+<li>Werkt altijd volgens expliciete input/output-afspraken</li>
+</ul>
+<h3 id="wat-het-niet-is-a_2">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen impliciete of ad-hoc softwarecomponent</li>
+<li>Geen menselijke actor</li>
+<li>Geen <strong>mandaryn-agent</strong> zonder expliciet <strong>agent-contract</strong> of <strong>agent-charter</strong></li>
+<li>Geen monolithische applicatie</li>
+</ul>
+<h3 id="voorbeelden-y_3">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mandaryn architect, Logisch datamodelleur, Technisch datamodelleur, <strong>mandaryn-agent</strong> smeder</li>
+</ul>
+<h3 id="synoniemen-yi_2">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>mandaryn-agent</strong>, Software-agent</li>
+</ul>
+<h3 id="analogiean-y_3">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een microservice, bot of autonome service in softwareontwikkeling</li>
+<li>In enterprise architectuur: een performer of actor met expliciete verantwoordelijkheden</li>
+</ul>
+<h3 id="toelichting-y_4">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_4" title="Permanent link">&para;</a></h3>
+<p>Een <strong>mandaryn-agent</strong> is altijd expliciet ontworpen, beschreven en begrensd. De <strong>mandaryn-agent</strong> ontleent zijn legitimiteit aan het <strong>agent-charter</strong> en het <strong>agent-contract</strong>, en is alleen via formele interfaces aanspreekbaar. Dit waarborgt consistentie, vervangbaarheid en governance binnen het <strong>Mandaryn-ecosysteem</strong>.</p>
+<hr />
+<h2 id="agent-boundary">agent-boundary<a class="headerlink" href="#agent-boundary" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_5">Definitie ðŸ“<a class="headerlink" href="#definitie-y_5" title="Permanent link">&para;</a></h3>
+<p>Een <strong>agent-boundary</strong> is de expliciet vastgelegde servicegrens waarbinnen een <strong>mandaryn-agent</strong> zijn interne werking, governance en <strong>agent-capabilities</strong> organiseert, en waarbuiten interactie uitsluitend plaatsvindt via formele <strong>agent-contracts</strong>.</p>
+<h3 id="kenmerken-a_4">Kenmerken â­<a class="headerlink" href="#kenmerken-a_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bepaalt wat tot de <strong>mandaryn-agent</strong> behoort en wat daarbuiten ligt</li>
+<li>Scheidt interne werking van externe interactie</li>
+<li>Is leidend voor governance en autonomie van de <strong>mandaryn-agent</strong></li>
+<li>Waarborgt dat alleen via contracten interactie mogelijk is</li>
+<li>Is de eerste en verplichte stap in mandaryn-agent-ontwerp</li>
+</ul>
+<h3 id="wat-het-niet-is-a_3">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen impliciete grens</li>
+<li>Geen technische implementatiegrens</li>
+<li>Geen optionele ontwerpkeuze</li>
+</ul>
+<h3 id="voorbeelden-y_4">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>{bedenk betere voorbeelden} </li>
+</ul>
+<h3 id="synoniemen-yi_3">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Agent-grens</li>
+<li>Service boundary</li>
+</ul>
+<h3 id="analogiean-y_4">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een bounded context in DDD, een microservice boundary, of een package boundary in OOP</li>
+<li>In SOA: service boundary waarbinnen interne details verborgen blijven</li>
+<li>Workspace als project workspace, repository, of solution folder</li>
+<li>In DevOps: deployment workspace of CI/CD pipeline context</li>
+</ul>
+<h3 id="toelichting-y_5">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_5" title="Permanent link">&para;</a></h3>
+<h2 id="het-expliciet-definiaren-van-de-agent-boundary-voorkomt-dat-mandaryn-agents-samenvallen-met-tooling-of-prompts-verantwoordelijkheden-vervagen-of-contracten-impliciet-worden-alles-binnen-de-boundary-valt-onder-het-agent-charter-de-bijbehorende-agent-contracten-en-de-interne-governance-van-de-mandaryn-agent-alles-buiten-de-boundary-is-alleen-toegankelijk-via-formele-expliciete-contracten">Het expliciet definiÃ«ren van de <strong>agent-boundary</strong> voorkomt dat <strong>mandaryn-agents</strong> samenvallen met tooling of prompts, verantwoordelijkheden vervagen of contracten impliciet worden. Alles binnen de boundary valt onder het <strong>agent-charter</strong>, de bijbehorende <strong>agent-contracten</strong> en de interne governance van de <strong>mandaryn-agent</strong>. Alles buiten de boundary is alleen toegankelijk via formele, expliciete contracten.<a class="headerlink" href="#het-expliciet-definiaren-van-de-agent-boundary-voorkomt-dat-mandaryn-agents-samenvallen-met-tooling-of-prompts-verantwoordelijkheden-vervagen-of-contracten-impliciet-worden-alles-binnen-de-boundary-valt-onder-het-agent-charter-de-bijbehorende-agent-contracten-en-de-interne-governance-van-de-mandaryn-agent-alles-buiten-de-boundary-is-alleen-toegankelijk-via-formele-expliciete-contracten" title="Permanent link">&para;</a></h2>
+<h2 id="agent-charter">agent-charter<a class="headerlink" href="#agent-charter" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_6">Definitie ðŸ“<a class="headerlink" href="#definitie-y_6" title="Permanent link">&para;</a></h3>
+<p>Een <strong>agent-charter</strong> is een formeel, expliciet document dat de missie, verantwoordelijkheden, grenzen en governance van een specifieke <strong>mandaryn-agent</strong> vastlegt, en daarmee de legitimiteit, autonomie en het bestaansrecht van de <strong>mandaryn-agent</strong> binnen het <strong>Mandaryn-ecosysteem</strong> waarborgt.</p>
+<h3 id="kenmerken-a_5">Kenmerken â­<a class="headerlink" href="#kenmerken-a_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Legt de missie en het bestaansrecht van de <strong>mandaryn-agent</strong> vast</li>
+<li>Bepaalt de grenzen (boundary) en verantwoordelijkheden</li>
+<li>Beschrijft de governance, policies en randvoorwaarden</li>
+<li>Is expliciet, versieerbaar en bindend</li>
+<li>Is leidend voor ontwerp, implementatie en evaluatie van de <strong>mandaryn-agent</strong></li>
+<li>Vormt de basis voor het <strong>agent-contract</strong></li>
+</ul>
+<h3 id="wat-het-niet-is-a_4">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen impliciete afspraak of mondelinge instructie</li>
+<li>Geen technische specificatie of implementatiedocument</li>
+<li>Geen <strong>agent-contract</strong> (maar vormt wel de basis daarvoor)</li>
+<li>Geen tijdelijke of informele notitie</li>
+</ul>
+<h3 id="voorbeelden-y_5">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Agent-charter</strong> van een publicatie-agent waarin missie, scope en governance zijn vastgelegd</li>
+<li><strong>Agent-charter</strong> van een beheeragent met expliciete operationele grenzen</li>
+</ul>
+<h3 id="synoniemen-yi_4">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mandaat, rolbeschrijving</li>
+</ul>
+<h3 id="analogiean-y_5">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een projectcharter, mandaat of mission statement in projectmanagement</li>
+<li>In enterprise architectuur: purpose statement of governance <strong>Agent-charter</strong></li>
+</ul>
+<h3 id="toelichting-y_6">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_6" title="Permanent link">&para;</a></h3>
+<p>Het <strong>agent-charter</strong> is het fundament voor de legitimiteit en autonomie van een <strong>mandaryn-agent</strong>. Zonder <strong>Agent-charter</strong> bestaat een <strong>mandaryn-agent</strong> niet formeel binnen het <strong>Mandaryn-ecosysteem</strong>. Het <strong>agent-charter</strong> is leidend voor alle ontwerp- en governancekeuzes rondom de <strong>mandaryn-agent</strong>.</p>
+<hr />
+<h2 id="agent-capability">agent-capability<a class="headerlink" href="#agent-capability" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_7">Definitie ðŸ“<a class="headerlink" href="#definitie-y_7" title="Permanent link">&para;</a></h3>
+<p>Een <strong>agent-capability</strong> is een expliciet aanroepbare functie van een <strong>mandaryn-agent</strong>, vastgelegd in een <strong>agent-contract</strong>.</p>
+<h3 id="kenmerken-a_6">Kenmerken â­<a class="headerlink" href="#kenmerken-a_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>EÃ©n capability = Ã©Ã©n intent / operation</li>
+<li>Capability bestaat alleen in het <strong>agent-contract</strong></li>
+<li>Capability is aanroepbaar (uitvoerbaar), niet beschrijvend</li>
+</ul>
+<h3 id="wat-het-niet-is-a_5">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen beschrijvende eigenschap</li>
+<li>Geen interne implementatie</li>
+<li>Geen losstaande functie buiten contract</li>
+</ul>
+<h3 id="voorbeelden-y_6">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>workflow-architect.1-ontwerp.workflow</li>
+<li>vertaler.vertaal</li>
+</ul>
+<h3 id="synoniemen-yi_5">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Intent, Intentie</li>
+</ul>
+<h3 id="analogiean-y_6">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een operation in een API</li>
+<li>In softwareontwikkeling: een expliciete functie of methode</li>
+</ul>
+<h3 id="toelichting-y_7">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_7" title="Permanent link">&para;</a></h3>
+<p>Soms wordt dit de prompt genoemd. In Mandaryn noemen we dit niet de prompt!</p>
+<hr />
+<h2 id="agent-contract">agent-contract<a class="headerlink" href="#agent-contract" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_8">Definitie ðŸ“<a class="headerlink" href="#definitie-y_8" title="Permanent link">&para;</a></h3>
+<p>Een <strong>agent-contract</strong> definieert formeel de intent (<strong>agent-capability</strong>) van de <strong>mandaryn-agent</strong>, de input die het verwacht en de output (<strong>artefact</strong>) die hij creÃ«ert of antwoorden die hij geeft, evenals de beleidsregels en beperkingen waaronder die mogelijkheden toegankelijk zijn.</p>
+<p>### Wat het niet is âŒ
+ - Geen beschrijving van interne werking
+ - Geen implementatiedetails
+ - Geen impliciet <strong>agent-contract</strong></p>
+<h3 id="voorbeelden-y_7">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Zie mandaryn-architect.schrijf-concept.agent.md</li>
+<li>Zie workflow-architect.1-ontwerp-workflow.agent.md</li>
+</ul>
+<h3 id="synoniemen-yi_6">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_6" title="Permanent link">&para;</a></h3>
+<p>Service contract, Interface contract</p>
+<h3 id="analogiean-y_7">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een API-agent-contract in softwareontwikkeling</li>
+<li>In SOA: WSDL of service agreement</li>
+</ul>
+<h3 id="toelichting-y_8">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_8" title="Permanent link">&para;</a></h3>
+<p>Totdat <strong>agent-charter</strong> en <strong>agent-contract</strong> bestaan, is dit gÃ©Ã©n <strong>mandaryn-agent</strong>, maar een agent-capability-voornemen.</p>
+<hr />
+<h2 id="prompt">Prompt<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_9">Definitie ðŸ“<a class="headerlink" href="#definitie-y_9" title="Permanent link">&para;</a></h3>
+<p>Een <strong>prompt</strong> is een concrete, tekstuele of gestructureerde uitdrukking van een aanroep of instructie aan een <strong>mandaryn-agent</strong>, die in natuurlijke taal of een andere representatievorm is geformuleerd, maar zelf <strong>geen</strong> canoniek onderdeel vormt van het <strong>agent-contract</strong>.</p>
+<h3 id="kenmerken-a_7">Kenmerken â­<a class="headerlink" href="#kenmerken-a_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is gericht aan Ã©Ã©n specifieke <strong>mandaryn-agent</strong> (of een groep) in een gegeven context</li>
+<li>Bestaat uit tekst, voorbeelden, constraints en eventueel contextfragmenten</li>
+<li>Is een <strong>representatie</strong> van een beoogde aanroep, geen formele capability-definitie</li>
+<li>Is tijdelijk en situationeel: kan per gebruik of sessie verschillen</li>
+<li>Is tooling- en implementatiegebonden (UI, CLI, editor, API)</li>
+</ul>
+<h3 id="wat-het-niet-is-a_6">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen <strong>agent-capability</strong> (die wordt formeel gedefinieerd in het <strong>agent-contract</strong>)</li>
+<li>Geen <strong>agent-contract</strong> of formele interfacebeschrijving</li>
+<li>Geen <strong>agent-charter</strong> of bron van legitimiteit</li>
+<li>Geen normerend artefact of canoniek vastgelegde definitie</li>
+</ul>
+<h3 id="voorbeelden-y_8">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Een tekstblok in een editor waarin een gebruiker een opdracht voor een specifieke <strong>mandaryn-agent</strong> formuleert</li>
+<li>Een HTTP-body of CLI-parameter die een aanroep naar een <strong>mandaryn-agent</strong> beschrijft</li>
+<li>Een tijdelijke instructie in een REPL of chat-venster gericht aan een <strong>mandaryn-agent</strong></li>
+</ul>
+<h3 id="synoniemen-yi_7">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Aanroeptekst (alleen in spreektaal)</li>
+<li>Instructieprompt</li>
+</ul>
+<h3 id="analogiean-y_8">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In LLM-systemen: de prompt waarmee een model wordt aangestuurd</li>
+<li>In klassieke software: de combinatie van command-line parameters en input die een proces start</li>
+</ul>
+<h3 id="toelichting-y_9">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_9" title="Permanent link">&para;</a></h3>
+<p>Binnen Mandaryn is <strong>prompt</strong> nadrukkelijk gÃ©Ã©n canoniek alternatief voor <strong>agent-capability</strong> of <strong>agent-contract</strong>. Een prompt is een <em>concrete uitdrukking</em> van een aanroep naar een bestaande capability, maar de formele waarheid ligt altijd in het <strong>agent-contract</strong>. Prompt-vormen kunnen veranderen met tooling of interface, terwijl capabilities en contracten stabiel en toetsbaar blijven.</p>
+<p>Bestanden in de <code>.github</code>-map met namen van de vorm <code>{agent-naam}.prompt</code> worden uitsluitend gebruikt om VS Code Copilot te voeden; ondanks deze naamgeving worden zij in de Mandaryn-concepten niet als <strong>prompt</strong> beschouwd, maar als tooling-specifieke representaties van concrete aanroepen.</p>
+<hr />
+<h2 id="mandaryn-artefact">Mandaryn-artefact<a class="headerlink" href="#mandaryn-artefact" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_10">Definitie ðŸ“<a class="headerlink" href="#definitie-y_10" title="Permanent link">&para;</a></h3>
+<p>Een <strong>Mandaryn-artefact</strong> is een duurzame, expliciete en overdraagbare vastlegging van resultaat of besluitvorming, die binnen een <strong>value stream fase</strong> waarde representeert en als input kan dienen voor vervolgwerk.</p>
+<h3 id="kenmerken-a_8">Kenmerken â­<a class="headerlink" href="#kenmerken-a_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Duurzaam (blijft bestaan)</li>
+<li>Expliciet (leesbaar, inspecteerbaar)</li>
+<li>Overdraagbaar (kan door anderen of <strong>mandaryn-agents</strong> gebruikt worden)</li>
+<li>Waarde-dragend (vertegenwoordigt gerealiseerde waarde)</li>
+</ul>
+<h3 id="wat-het-niet-is-a_7">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen tijdelijke notitie</li>
+<li>Geen impliciete kennis</li>
+<li>Geen niet-overdraagbaar resultaat</li>
+</ul>
+<h3 id="voorbeelden-y_9">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Governance-artefacten (bijv. constitutie, doctrines, agent-charters)</li>
+<li>Richtinggevende artefacten (bijv. requirements, oplossingsontwerpen)</li>
+<li>Realiserende artefacten (bijv. code, DDL, infrastructuur-als-code)</li>
+<li>Beschrijvende en documenterende artefacten (bijv. handleidingen, modellen)</li>
+</ul>
+<h3 id="synoniemen-yi_8">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Artefact</strong></li>
+</ul>
+<h3 id="analogiean-y_9">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een <strong>artefact</strong> in softwareontwikkeling (build-artifact, document)</li>
+<li>In projectmanagement: <strong>deliverable</strong></li>
+<li>In DDD: <strong>Aggregate Result</strong> of <strong>Documented Outcome</strong></li>
+</ul>
+<h3 id="toelichting-y_10">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_10" title="Permanent link">&para;</a></h3>
+<p>De <strong>Mandaryn-artefacten</strong> worden geordend in hoofdklassen. Deze zijn vastegelegd in mandaryn-ordeningsconcepten.md.
+Deze indeling scheidt <strong>betekenis van vorm</strong>, maakt tooling verwisselbaar, houdt governance scherp en klein, en erkent modellen als uitleg (niet als waarheid).</p>
+<hr />
+<h2 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_11">Definitie ðŸ“<a class="headerlink" href="#definitie-y_11" title="Permanent link">&para;</a></h3>
+<p>Een <strong>template</strong> is een herbruikbare, gestructureerde opzet voor een <strong>Mandaryn-artefact</strong> of prompt, die de minimale inhoud, secties en structuur voorschrijft, zodat <strong>value-stream-specifieke</strong> (inzet-as) <strong>mandaryn-agents</strong> binnen een value stream fase consistente en toetsbare output leveren.</p>
+<h3 id="kenmerken-a_9">Kenmerken â­<a class="headerlink" href="#kenmerken-a_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Legt structuur en verplichte onderdelen van een artefact of prompt vast</li>
+<li>Wordt gebruikt als startpunt voor concrete artefacten binnen een <strong>value stream fase</strong></li>
+<li>Ondersteunt vooral <strong>mandaryn-agents</strong> die op de <strong>inzet-as</strong> als <em>value-stream-specifiek</em> zijn gepositioneerd</li>
+<li>Verhoogt voorspelbaarheid, vergelijkbaarheid en herbruikbaarheid van resultaten</li>
+<li>Is zelf geen normerend artefact, maar kan verwijzen naar normerende artefacten</li>
+<li>Wordt beheerd in de <code>templates/</code>-folder van een workspace</li>
+</ul>
+<h3 id="wat-het-niet-is-a_8">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen vervanging van het onderliggende <strong>Mandaryn-artefact</strong> of <strong>agent-contract</strong></li>
+<li>Geen volledige beschrijving van gedrag of governance</li>
+<li>Geen tijdelijke notitie of ad-hoc sjabloon</li>
+<li>Geen tooling-specifieke prompt op zichzelf</li>
+</ul>
+<h3 id="voorbeelden-y_10">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>templates/agent.charter.template.md</code> â€” opzet voor een <strong>agent-charter</strong></li>
+<li><code>templates/phase.charter.template.md</code> â€” opzet voor een fase-charter binnen een <strong>value stream fase</strong></li>
+<li>Prompt-templates die vaste secties bieden voor context, opdracht en constraints richting een <strong>mandaryn-agent</strong></li>
+</ul>
+<h3 id="synoniemen-yi_9">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sjabloon (alleen in spreektaal)</li>
+</ul>
+<h3 id="analogiean-y_10">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met document- of code-templates in ontwikkelomgevingen</li>
+<li>In enterprise architectuur: standaardformats voor architectuurdocumenten en besluiten</li>
+</ul>
+<h3 id="toelichting-y_11">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_11" title="Permanent link">&para;</a></h3>
+<p><strong>Templates</strong> verbinden de ordeningslaag (structuur en classificatie) met de operationele laag waarin <strong>mandaryn-agents</strong> daadwerkelijk artefacten produceren. Door templates expliciet te definiÃ«ren en centraal op te slaan, kunnen vooral <strong>value-stream-specifieke</strong> <strong>mandaryn-agents</strong> binnen een bepaalde <strong>value stream fase</strong> snel, consistent en toetsbaar werken, zonder dat de normatieve waarheid verschuift van normerende artefacten naar de template zelf.</p>
+<hr />
+<h2 id="value-stream">Value stream<a class="headerlink" href="#value-stream" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_12">Definitie ðŸ“<a class="headerlink" href="#definitie-y_12" title="Permanent link">&para;</a></h3>
+<p>Een <strong>value stream</strong> is een expliciet gedefinieerde keten van waarde-creÃ«rende stappen die samen leiden tot een herkenbaar resultaat, en die richting geeft aan welke <strong>artefacten</strong>, <strong>mandaryn-agents</strong> en beslissingen bijdragen aan die waarde.</p>
+<h3 id="kenmerken-a_10">Kenmerken â­<a class="headerlink" href="#kenmerken-a_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Definieert stappen, geen taken</li>
+<li>Is artefact-gericht</li>
+<li>Is <strong>mandaryn-agent</strong>-agnostisch, maar <strong>mandaryn-agent</strong>-sturend</li>
+<li>Meerdere value streams per ecosysteem mogelijk</li>
+</ul>
+<h3 id="wat-het-niet-is-a_9">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen workflow of proces</li>
+<li>Geen lijst van taken</li>
+<li>Geen beschrijving van implementatie</li>
+</ul>
+<h3 id="voorbeelden-y_11">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>IT-development value stream</li>
+<li>Kennispublicatie value stream</li>
+<li>Werkvoorbereiding value stream</li>
+</ul>
+<h3 id="synoniemen-yi_10">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Waardestroom</li>
+</ul>
+<h3 id="analogiean-y_11">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een waardeketen in Lean of een pipeline in DevOps</li>
+</ul>
+<h3 id="toelichting-y_12">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_12" title="Permanent link">&para;</a></h3>
+<p>Value streams structureren het werk en maken waardecreatie inzichtelijk via expliciete stappen en artefacten.</p>
+<hr />
+<h2 id="value-stream-fase">Value stream fase<a class="headerlink" href="#value-stream-fase" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_13">Definitie ðŸ“<a class="headerlink" href="#definitie-y_13" title="Permanent link">&para;</a></h3>
+<p>Een <strong>value stream fase</strong> is een logisch afgebakende, waarde-creÃ«rende eenheid binnen een <strong>value stream</strong>, waarin een specifiek type waarde tot stand komt, herkenbaar via expliciete <strong>artefacten</strong> en kwaliteitscriteria, onafhankelijk van de wijze van uitvoering.</p>
+<h3 id="kenmerken-a_11">Kenmerken â­<a class="headerlink" href="#kenmerken-a_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is een waardemoment, geen handeling</li>
+<li>Beschrijft wat voor waarde ontstaat, niet hoe</li>
+<li>Heeft een helder doel binnen de value stream</li>
+<li>Wordt zichtbaar via expliciete artefacttypen en bijbehorende kwaliteitsverwachtingen</li>
+<li>Vormt context voor <strong>mandaryn-agents</strong> die daarin opereren</li>
+<li>Produceert geen taken en stuurt geen workflow</li>
+</ul>
+<h3 id="wat-het-niet-is-a_10">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen proces</li>
+<li>Geen stappenplan</li>
+<li>Geen activiteit of taak</li>
+<li>Geen <strong>mandaryn-agent</strong> of rol</li>
+<li>Geen implementatiefase</li>
+</ul>
+<h3 id="voorbeelden-y_12">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Analyse-fase</li>
+<li>Ontwerpfase</li>
+<li>Realisatie-fase</li>
+</ul>
+<h3 id="synoniemen-yi_11">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Waardemoment</li>
+<li>Fase</li>
+</ul>
+<h3 id="analogiean-y_12">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een stage in een pipeline</li>
+<li>In Lean: een waardemoment in de waardestroom</li>
+</ul>
+<h3 id="toelichting-y_13">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_13" title="Permanent link">&para;</a></h3>
+<p><strong>Value stream fasen</strong> structureren het werk en maken expliciet welke waarde in elke stap ontstaat. <strong>Artefacten</strong> zijn herleidbaar van <strong>mandaryn-agent</strong> â†’ <strong>value stream fase</strong> â†’ <strong>value stream</strong>.</p>
+<hr />
+<h2 id="workspace">Workspace<a class="headerlink" href="#workspace" title="Permanent link">&para;</a></h2>
+<h3 id="definitie-y_14">Definitie ðŸ“<a class="headerlink" href="#definitie-y_14" title="Permanent link">&para;</a></h3>
+<p>Een <strong>workspace</strong> is een afgebakende werkomgeving die wordt ingericht om Ã©Ã©n of meer <strong>value stream fasen</strong> uit te werken, met bijbehorende <strong>artefacten</strong>, governance en ondersteunende <strong>agents</strong>.</p>
+<h3 id="kenmerken-a_12">Kenmerken â­<a class="headerlink" href="#kenmerken-a_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Activeert <strong>mandaryn-agents</strong></li>
+<li>Contextualiseert werk tot specifieke fasen</li>
+<li>Kan Ã©Ã©n of meerdere fasen ondersteunen</li>
+<li><strong>mandaryn-agents</strong> worden gefetched uit de Mandaryn workspace</li>
+</ul>
+<h3 id="wat-het-niet-is-a_11">Wat het niet is âŒ<a class="headerlink" href="#wat-het-niet-is-a_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen <strong>value stream</strong></li>
+<li>Geen <strong>mandaryn-agent</strong></li>
+<li>Geen <strong>artefact</strong></li>
+</ul>
+<h3 id="voorbeelden-y_13">Voorbeelden ðŸ’¡<a class="headerlink" href="#voorbeelden-y_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Workspace</strong> voor alleen Veranderverkenning</li>
+<li><strong>Workspace</strong> voor Werkvoorbereiding + Specificatie</li>
+</ul>
+<h3 id="synoniemen-yi_12">Synoniemen ðŸ·ï¸<a class="headerlink" href="#synoniemen-yi_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Werkomgeving</li>
+</ul>
+<h3 id="analogiean-y_13">AnalogieÃ«n ðŸ”„<a class="headerlink" href="#analogiean-y_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vergelijkbaar met een project workspace, repository of solution folder</li>
+</ul>
+<h3 id="toelichting-y_14">Toelichting ðŸ’¬<a class="headerlink" href="#toelichting-y_14" title="Permanent link">&para;</a></h3>
+<p>In de eerste fase van ontwikkeling worden <strong>mandaryn-agents</strong> gefetched uit de Mandaryn workspace. De workspaces bevatten dus wel <strong>mandaryn-agents</strong>, maar deze worden hier niet aangepast. In die zin 'bevatten' deze workspaces geen <strong>mandaryn-agents</strong>.</p>
+<hr />
+<h2 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Datum</th>
+<th>Versie</th>
+<th>Wijziging</th>
+<th>Auteur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-02-01</td>
+<td>2.3.0</td>
+<td>Toegevoegd: domeinconcept Template als herbruikbare structuur voor artefacten en prompts, met nadruk op gebruik door value-stream-specifieke mandaryn-agents</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>2.2.0</td>
+<td>Verduidelijking: <code>.github/{agent-naam}.prompt</code>-bestanden zijn tooling-specifieke representaties voor VS Code Copilot en geen canonieke prompts binnen Mandaryn</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>2.1.0</td>
+<td>Toegevoegd: concept Prompt als concrete, niet-canonieke representatie van een aanroep naar een mandaryn-agent</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>2.0.0</td>
+<td>Scheiding meta-concepten: Mandaryn-architectuurprincipe, <strong>agent-boundary</strong>, **mandaryn-agent**classificatie (inclusief As en 4 assen), en Mandaryn-artefact (inclusief alle specialisaties) verplaatst naar mandaryn-meta-concepten.md; document bevat nu alleen operationele concepten (actieve structuren)</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.6.0</td>
+<td>Herijking <strong>mandaryn-agent</strong>-classificatie: vervanging <strong>mandaryn-agent</strong>-soort door <strong>mandaryn-agent**classificatie met 4 orthogonale assen (Inhoudelijke as, Inzet-as, Vorm-as, Werkingsas); alle oude **mandaryn-agent</strong>-soorten verwijderd (Adviserende <strong>mandaryn-agent</strong>, Uitvoerende <strong>mandaryn-agent</strong>, Beheeragent, Ecosysteem uitvoerende <strong>mandaryn-agent</strong>, Waarde uitvoerende <strong>mandaryn-agent</strong>); <strong>mandaryn-agents</strong> niet langer als "soort" maar als posities op assen</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.5.0</td>
+<td>Herziening artefacten-hiÃ«rarchie: Governance-artefact en Bedrijfs-artefact zijn nu specialisaties van Normerend artefact; Governance-artefacten ontstaan alleen in value stream "Agent Ecosysteem Ontwikkeling"; Normerende artefacten operationeel in maximaal Ã©Ã©n value stream fase</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.4.0</td>
+<td>Herijking artefacten-indeling: Mandaryn-artefacten nu ingedeeld in 5 hoofdklassen (Normerend, Governance, Bedrijfs-, Beschrijvend, Documenterend) i.p.v. 2 (Governance, Waarde); scheidt betekenis van vorm, maakt tooling verwisselbaar</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-01-31</td>
+<td>1.3.0</td>
+<td>Toevoeging concepten Value stream <strong>mandaryn-agent</strong> en value-stream-overstijgende <strong>mandaryn-agent</strong>; verduidelijking fase-toekenning per <strong>mandaryn-agent</strong>-soort: adviserende/uitvoerende <strong>mandaryn-agents</strong> aan fasen, beheeragents in alle fasen, value-stream-overstijgende <strong>mandaryn-agents</strong> orthogonaal</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-01-31</td>
+<td>1.2.1</td>
+<td>Aanscherping "Gebruik van Synoniemen" â€” Synoniemen VERBODEN binnen ecosysteem, uitsluitend toegestaan in menselijke spreektaal; voorbeelden toegevoegd</td>
+<td>Canon Curator</td>
+</tr>
+<tr>
+<td>2026-01-31</td>
+<td>1.2.0</td>
+<td>Subsectie toegevoegd in Inleiding: "Gebruik van Synoniemen" â€” Verduidelijkt dat synoniemen spreektaal zijn en niet erkend binnen ecosysteem</td>
+<td>Canon Curator</td>
+</tr>
+<tr>
+<td>2026-01-31</td>
+<td>1.1.1</td>
+<td>Herstel Mandaryn-ecosysteem definitie â€” Ontbrekende definitie-sectie toegevoegd</td>
+<td>Canon Curator</td>
+</tr>
+<tr>
+<td>2026-01-31</td>
+<td>1.1.0</td>
+<td>Toevoeging definitie <strong>mandaryn-agent</strong>-soort â€” Expliciete classificatie toegevoegd</td>
+<td>Canon Curator</td>
+</tr>
+<tr>
+<td>2026-01-31</td>
+<td>1.0.0</td>
+<td>InitiÃ«le versie â€” Concepten en definities voor actieve structuren opgesteld</td>
+<td>Hans Blok</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Einde document</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Maxia Consultancy. Alle rechten voorbehouden.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "content.code.copy", "content.code.annotate", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

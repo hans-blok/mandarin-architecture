@@ -1,0 +1,1526 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentatie van het Mandaryn Architecture ecosysteem">
+      
+      
+        <meta name="author" content="Mandaryn Team">
+      
+      
+        <link rel="canonical" href="https://hans-blok.github.io/mandarin-architecture/concepten/mandarin-artefacten-in-een-notendop/">
+      
+      
+        <link rel="prev" href="../mandarin-agents-in-een-notendop/">
+      
+      
+        <link rel="next" href="../mandarin-domeinconcepten/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/mandarin-logo-m.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Artefacten in een notendop - Mandaryn Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:300,300i,400,400i,700,700i%7CConsolas:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Segoe UI";--md-code-font:"Consolas"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mandaryn-artefacten-in-een-notendop" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Mandaryn Architecture" class="md-header__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mandaryn Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Artefacten in een notendop
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../axioma-van-gezag/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Axioma van gezag (root)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../organisatie-principes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Organisatieprincipes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../toelichting-mandaryn/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Toelichting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../conceptuele-grondslagen/" class="md-tabs__link">
+          
+  
+  
+  Concepten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../de%20vastlegging/axioma-van-gezag/" class="md-tabs__link">
+          
+  
+  
+  Vastlegging
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../essays/essay.de-as-bestaat-al/" class="md-tabs__link">
+          
+  
+  
+  Essays
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Mandaryn Architecture" class="md-nav__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    Mandaryn Architecture
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag (root)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../organisatie-principes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisatieprincipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toelichting-mandaryn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toelichting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conceptuele-grondslagen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptuele grondslagen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandarin-agents-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artefacten in een notendop
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artefacten in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tweedimensionale-artefactclassificatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tweedimensionale artefactclassificatie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tweedimensionale artefactclassificatie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-artefact-functie-as-welke-functie-vervult-het-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Artefact-functie-as: Welke functie vervult het artefact?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-representatievorm-as-hoe-wordt-de-betekenis-uitgedrukt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Representatievorm-as: Hoe wordt de betekenis uitgedrukt?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normerende-artefacten-governance-vs-richtinggevend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normerende artefacten: governance vs richtinggevend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structurerend-vs-beschrijvend-vs-documenterend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structurerend vs Beschrijvend vs Documenterend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tweedimensionale-positionering-voorbeelden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tweedimensionale positionering: voorbeelden
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#waarom-tweedimensionale-classificatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waarom tweedimensionale classificatie?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leidende-vragen-bij-classificatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leidende vragen bij classificatie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leidende vragen bij classificatie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onderscheidingsregels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onderscheidingsregels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandarin-domeinconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domeinconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandarin-ordeningsconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordeningsconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vastlegging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vastlegging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/constitutie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constitutie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de%20vastlegging/mandarin-value-streams-en-fasen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Value streams en fasen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essays/essay.de-as-bestaat-al/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De as bestaat al
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essays/essay.speckit-pattern-vs-state-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speckit vs state pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mandaryn-artefacten-in-een-notendop">Mandaryn-artefacten in een notendop<a class="headerlink" href="#mandaryn-artefacten-in-een-notendop" title="Permanent link">&para;</a></h1>
+<p><strong>Mandaryn-artefacten</strong> zijn duurzame, expliciete en overdraagbare vastleggingen van resultaat of besluitvorming die waarde vertegenwoordigen binnen het Mandaryn-ecosysteem.</p>
+<h2 id="tweedimensionale-artefactclassificatie">Tweedimensionale artefactclassificatie<a class="headerlink" href="#tweedimensionale-artefactclassificatie" title="Permanent link">&para;</a></h2>
+<p>Artefacten worden geordend langs <strong>twee orthogonale assen</strong>:</p>
+<h3 id="1-artefact-functie-as-welke-functie-vervult-het-artefact">1. Artefact-functie-as: <em>Welke functie vervult het artefact?</em><a class="headerlink" href="#1-artefact-functie-as-welke-functie-vervult-het-artefact" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Positie</th>
+<th>Bindend</th>
+<th>Primair</th>
+<th>Ontstaat in</th>
+<th>Functie</th>
+<th>Voorbeelden</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normerend</strong></td>
+<td>âœ“</td>
+<td>âœ“</td>
+<td>Max. 1 VS-fase</td>
+<td>Normen vastleggen</td>
+<td>Zie specialisaties â†“</td>
+</tr>
+<tr>
+<td>â†’ <strong>Governance</strong></td>
+<td>âœ“</td>
+<td>âœ“</td>
+<td>VS 0</td>
+<td>Ecosysteem-besturing</td>
+<td>Agent-charter, prompt, template, workspace-state</td>
+</tr>
+<tr>
+<td>â†’ <strong>Richtinggevend</strong></td>
+<td>âœ“</td>
+<td>âœ“</td>
+<td>VS 1-n</td>
+<td>Value Stream-richting geven</td>
+<td>Requirements, ontwerp, logische modellen, API-richtlijnen</td>
+</tr>
+<tr>
+<td><strong>Realiserend</strong></td>
+<td>â€“</td>
+<td>âœ“</td>
+<td>N.v.t.</td>
+<td>Gedrag realiseren</td>
+<td>DDL, code, IaC, seed-scripts</td>
+</tr>
+<tr>
+<td><strong>Structurerend</strong></td>
+<td>â€“</td>
+<td>âœ“</td>
+<td>N.v.t.</td>
+<td>Coherente architectuurstructuur</td>
+<td>ArchiMate-modellen, UML-modellen, C4-modellen, domeinmodellen</td>
+</tr>
+<tr>
+<td><strong>Beschrijvend</strong></td>
+<td>â€“</td>
+<td>âœ“</td>
+<td>N.v.t.</td>
+<td>Inzicht bieden</td>
+<td>Analyse-rapporten, architectuurvisies, rationale</td>
+</tr>
+<tr>
+<td><strong>Documenterend</strong></td>
+<td>â€“</td>
+<td>Vaak afgeleid</td>
+<td>N.v.t.</td>
+<td>Kennis vastleggen</td>
+<td>Technische docs, handleidingen, API-docs</td>
+</tr>
+<tr>
+<td><strong>Afgeleid</strong></td>
+<td>â€“</td>
+<td>â€“</td>
+<td>N.v.t.</td>
+<td>Afgeleid van andere artefacten</td>
+<td>Gegenereerde API-docs, views, samenvattingen</td>
+</tr>
+</tbody>
+</table>
+<p><strong>VS</strong> = Value stream</p>
+<h3 id="2-representatievorm-as-hoe-wordt-de-betekenis-uitgedrukt">2. Representatievorm-as: <em>Hoe wordt de betekenis uitgedrukt?</em><a class="headerlink" href="#2-representatievorm-as-hoe-wordt-de-betekenis-uitgedrukt" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Representatievorm</th>
+<th>Kenmerken</th>
+<th>Voorbeelden</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tekstueel</strong></td>
+<td>Natuurlijke taal, lineair</td>
+<td>Markdown, docx, txt</td>
+</tr>
+<tr>
+<td><strong>Gestructureerd</strong></td>
+<td>Schema-gebaseerd, parseerbaar</td>
+<td>JSON, YAML, XML</td>
+</tr>
+<tr>
+<td><strong>Visueel</strong></td>
+<td>Grafisch, diagrammatisch</td>
+<td>PNG, SVG, draw.io</td>
+</tr>
+<tr>
+<td><strong>Machine-leesbaar</strong></td>
+<td>Direct interpreteerbaar door tooling</td>
+<td>SQL DDL, Terraform, code</td>
+</tr>
+<tr>
+<td><strong>Model-gebaseerd</strong></td>
+<td>Formele metamodel-structuur</td>
+<td>ArchiMate, UML, C4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Principe</strong>: Dezelfde functie kan in verschillende representatievormen bestaan zonder dat de positie op de artefact-functie-as verandert.</p>
+<h2 id="normerende-artefacten-governance-vs-richtinggevend">Normerende artefacten: governance vs richtinggevend<a class="headerlink" href="#normerende-artefacten-governance-vs-richtinggevend" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Governance-artefact</th>
+<th>Richtinggevend artefact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ontstaat in</strong></td>
+<td>Value stream 0 (Ecosysteem)</td>
+<td>Value streams 1-n (Waarde)</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>Ecosysteem-breed</td>
+<td>Value stream fase</td>
+</tr>
+<tr>
+<td><strong>Normerend voor</strong></td>
+<td>Het ecosysteem zelf</td>
+<td>Value stream inhoud</td>
+</tr>
+<tr>
+<td><strong>Functie</strong></td>
+<td>Besturing en continuÃ¯teit</td>
+<td>Richting en randvoorwaarden</td>
+</tr>
+<tr>
+<td><strong>Faciliterend</strong></td>
+<td>Ja (randvoorwaardelijk)</td>
+<td>Nee (waardevol)</td>
+</tr>
+<tr>
+<td><strong>Afgeleid</strong></td>
+<td>Nee (primair)</td>
+<td>Nee (primair)</td>
+</tr>
+<tr>
+<td><strong>Voorbeelden</strong></td>
+<td>Agent-charter, prompts, templates</td>
+<td>Requirements-spec, logische modellen, ontwerpdocumenten</td>
+</tr>
+</tbody>
+</table>
+<h2 id="structurerend-vs-beschrijvend-vs-documenterend">Structurerend vs Beschrijvend vs Documenterend<a class="headerlink" href="#structurerend-vs-beschrijvend-vs-documenterend" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Structurerend</th>
+<th>Beschrijvend</th>
+<th>Documenterend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Focus</strong></td>
+<td>Coherente architectuurstructuur</td>
+<td>Inzicht en uitleg</td>
+<td>Formele kennisoverdracht</td>
+</tr>
+<tr>
+<td><strong>Metamodel</strong></td>
+<td>Volgt expliciet metamodel</td>
+<td>Geen vereist metamodel</td>
+<td>Kan model-gebaseerd zijn</td>
+</tr>
+<tr>
+<td><strong>Coherentie</strong></td>
+<td>Intern consistent geheel</td>
+<td>Losse uitleg mogelijk</td>
+<td>Gestructureerde kennisbasis</td>
+</tr>
+<tr>
+<td><strong>Doel</strong></td>
+<td>Architectuur expliciet maken</td>
+<td>Begrip ondersteunen</td>
+<td>Duurzame raadpleegbaarheid</td>
+</tr>
+<tr>
+<td><strong>Voorbeelden</strong></td>
+<td>ArchiMate-modellen, UML-klassendiagrammen, C4-modellen</td>
+<td>Analyse-rapporten, conceptuele uitleg</td>
+<td>Handleidingen, API-docs, geÃ«xporteerde modellen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tweedimensionale-positionering-voorbeelden">Tweedimensionale positionering: voorbeelden<a class="headerlink" href="#tweedimensionale-positionering-voorbeelden" title="Permanent link">&para;</a></h2>
+<p>Een artefact heeft <strong>twee dimensies</strong>: functie Ã©n representatievorm.</p>
+<table>
+<thead>
+<tr>
+<th>Artefact</th>
+<th>Artefact-functie-as</th>
+<th>Representatievorm-as</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constitutie</td>
+<td>Normerend (Governance)</td>
+<td>Tekstueel</td>
+<td>Ecosysteem-norm in natuurlijke taal (Markdown)</td>
+</tr>
+<tr>
+<td>Agent-charter</td>
+<td>Normerend (Governance)</td>
+<td>Gestructureerd</td>
+<td>Ecosysteem-besturing in parseerbaar formaat (YAML)</td>
+</tr>
+<tr>
+<td>Requirements-spec</td>
+<td>Normerend (Richtinggevend)</td>
+<td>Gestructureerd</td>
+<td>VS-norm in parseerbaar formaat (JSON/YAML)</td>
+</tr>
+<tr>
+<td>PostgreSQL-DDL</td>
+<td>Realiserend</td>
+<td>Machine-leesbaar</td>
+<td>Implementeert structuur, direct uitvoerbaar</td>
+</tr>
+<tr>
+<td>ArchiMate-model</td>
+<td>Structurerend</td>
+<td>Model-gebaseerd + Visueel</td>
+<td>Coherente architectuurstructuur volgens metamodel</td>
+</tr>
+<tr>
+<td>Domeinmodel (UML)</td>
+<td>Structurerend</td>
+<td>Model-gebaseerd</td>
+<td>Intern consistente structuur met relaties</td>
+</tr>
+<tr>
+<td>C4-componentmodel</td>
+<td>Structurerend</td>
+<td>Visueel + Gestructureerd</td>
+<td>Architectuurstructuur volgens C4-metamodel</td>
+</tr>
+<tr>
+<td>Analyse-rapport</td>
+<td>Beschrijvend</td>
+<td>Tekstueel</td>
+<td>Biedt inzicht zonder te normeren</td>
+</tr>
+<tr>
+<td>API-documentatie</td>
+<td>Documenterend (vaak Afgeleid)</td>
+<td>Tekstueel + Gestructureerd</td>
+<td>Formele kennisoverdracht, vaak gegenereerd</td>
+</tr>
+<tr>
+<td>Gegenereerde modeldoc</td>
+<td>Afgeleid + Documenterend</td>
+<td>Tekstueel</td>
+<td>Expliciet afgeleid uit andere artefacten</td>
+</tr>
+</tbody>
+</table>
+<h2 id="waarom-tweedimensionale-classificatie">Waarom tweedimensionale classificatie?<a class="headerlink" href="#waarom-tweedimensionale-classificatie" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Voordeel</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scheidt betekenis van vorm</strong></td>
+<td>Functie (betekenis) blijft constant, ongeacht representatievorm</td>
+</tr>
+<tr>
+<td><strong>Houdt governance scherp</strong></td>
+<td>Governance-artefacten ontstaan alleen in VS 0, richtinggevend in VS 1-n</td>
+</tr>
+<tr>
+<td><strong>Onderscheidt structuurtypen</strong></td>
+<td>Structurerend (metamodel-conform) vs beschrijvend (uitleg) vs documenterend (formeel)</td>
+</tr>
+<tr>
+<td><strong>Erkent modellen als uitleg of structuur</strong></td>
+<td>ArchiMate kan structurerend OF documenterend zijn, afhankelijk van intentie</td>
+</tr>
+<tr>
+<td><strong>Maakt tooling verwisselbaar</strong></td>
+<td>Classificatie onafhankelijk van formaat of implementatie</td>
+</tr>
+<tr>
+<td><strong>Verbindt met value streams</strong></td>
+<td>Helder waar artefacten ontstaan (artefact-functie-as)</td>
+</tr>
+<tr>
+<td><strong>Zichtbaar primair vs afgeleid</strong></td>
+<td>Afgeleid is expliciete positie op artefact-functie-as</td>
+</tr>
+<tr>
+<td><strong>Ondersteunt representatie-transformatie</strong></td>
+<td>Zelfde functie in meerdere vormen (bijv. tekst â†’ diagram)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="leidende-vragen-bij-classificatie">Leidende vragen bij classificatie<a class="headerlink" href="#leidende-vragen-bij-classificatie" title="Permanent link">&para;</a></h2>
+<p>Twee vragen bepalen de positie van een artefact:</p>
+<ol>
+<li><strong>Artefact-functie-as</strong>: <em>Welke normerende, realiserende, structurerende, beschrijvende, documenterende of afgeleide functie heeft dit artefact in het ecosysteem?</em></li>
+<li><strong>Representatievorm-as</strong>: <em>In welke vorm wordt de betekenis uitgedrukt (tekstueel, gestructureerd, visueel, machine-leesbaar, model-gebaseerd)?</em></li>
+</ol>
+<p><strong>Voorbeeld classificatie</strong>:
+- <strong>Constitutie</strong>: Normerend (Governance) Ã— Tekstueel
+- <strong>Agent-charter</strong>: Normerend (Governance) Ã— Gestructureerd<br />
+- <strong>Requirements-spec</strong>: Normerend (Richtinggevend) Ã— Gestructureerd
+- <strong>DDL-script</strong>: Realiserend Ã— Machine-leesbaar
+- <strong>ArchiMate-model</strong>: Structurerend Ã— Model-gebaseerd + Visueel
+- <strong>Analyse-rapport</strong>: Beschrijvend Ã— Tekstueel
+- <strong>API-documentatie</strong>: Documenterend Ã— Tekstueel + Gestructureerd</p>
+<h3 id="onderscheidingsregels">Onderscheidingsregels<a class="headerlink" href="#onderscheidingsregels" title="Permanent link">&para;</a></h3>
+<p><strong>Structurerend vs Beschrijvend:</strong>
+- Structurerend = volgt expliciet metamodel + coherent geheel + architectuurelementen<br />
+- Beschrijvend = geeft uitleg + inzicht + geen vereist metamodel</p>
+<p><strong>Documenterend vs Beschrijvend:</strong><br />
+- Documenterend = formele kennisoverdracht + duurzame raadpleegbaarheid
+- Beschrijvend = begripsvormend + ondersteunend inzicht</p>
+<p><strong>Governance vs Richtinggevend:</strong>
+- Governance = VS 0 (ecosysteem) + besturing + faciliterend
+- Richtinggevend = VS 1-n (waarde) + inhoudelijke richting + waardevol</p>
+<hr />
+<p><strong>Zie ook</strong>: <a href="../mandarin-agents-in-een-notendop/">Mandaryn-agents in een notendop</a> voor relatie tussen agents en artefacten.</p>
+<p><strong>Bronnen</strong>: <a href="../mandarin-ordeningsconcepten/">Mandaryn-ordeningsconcepten</a> â€¢ <a href="../mandarin-domeinconcepten/">Mandaryn-domeinconcepten</a></p>
+<p><strong>Versie</strong>: 3.0.0<br />
+<strong>Laatst bijgewerkt</strong>: 2026-02-15<br />
+<strong>Gebaseerd op</strong>: mandarin-ordeningsconcepten.md v1.9.0</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Maxia Consultancy. Alle rechten voorbehouden.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "content.code.copy", "content.code.annotate", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

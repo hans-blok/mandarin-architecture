@@ -1,53 +1,153 @@
-site_name: Mandarin Architecture
-site_url: https://hans-blok.github.io/mandarin-architecture/
-repo_url: https://github.com/hans-blok/mandarin-architecture
-edit_uri: edit/main/docs/
+# ============================================================
+# MkDocs Configuration — Mandarin Startup
+# Owner: Publicatie Steward
+# Doel: Publicatie van strategische documentatie
+# ============================================================
 
+# ------------------------------------------------------------
+# 1. Site Identiteit
+# ------------------------------------------------------------
+site_name: "Mandaryn Architecture"
+site_description: "Documentatie van het Mandaryn Architecture ecosysteem"
+site_author: "Mandaryn Team"
+site_url: "https://hans-blok.github.io/mandarin-architecture/"
+
+# Optioneel: repository referentie
+# repo_name: "mandarin-startup"
+# repo_url: "https://github.com/username/mandarin-startup"
+# edit_uri: "edit/main/docs/"
+
+# ------------------------------------------------------------
+# 2. Documentatie Bron
+# ------------------------------------------------------------
+docs_dir: "docs"
+site_dir: "site"
+
+# ------------------------------------------------------------
+# 3. Theme & Presentatie
+# Mandarin huisstijl met Material theme
+# ------------------------------------------------------------
 theme:
-  name: material
-  language: nl
-  logo: assets/mandarin-logo-m.png
-  favicon: assets/mandarin-logo-m.png
-  logo_link: /
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
+  name: "material"
+  language: "nl"
   features:
     - navigation.instant
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - content.code.copy
+    - content.code.annotate
     - toc.integrate
+    - search.suggest
+    - search.highlight
+  palette:
+    # Wordt overschreven door custom CSS (Mandarin oranje #e55039)
+    primary: "deep-orange"
+    accent: "orange"
+  font:
+    text: "Segoe UI"
+    code: "Consolas"
+  logo: "assets/mandarin-logo-m.png"
+  favicon: "assets/mandarin-logo-m.png"
 
-# extra_css:
-#   - style/mandarin.css
+# ------------------------------------------------------------
+# 4. Custom Styling - Mandarin Stylesheet
+# Eigendom: Presentatie Architect
+# ------------------------------------------------------------
+extra_css: []
 
+extra_javascript: []
+
+# ------------------------------------------------------------
+# 5. Plugins
+# ------------------------------------------------------------
 plugins:
-  - search
+  - search:
+      lang: nl
 
-nav:
-  - Home: index.md
-  - Organisatie-Principes: organisatie-principes.md
-  - Toelichting Mandarin: toelichting-mandarin.md
-  - Concepten-in-Notendop:
-      - Mandarin Artefacten in een Notendop: mandarin-artefacten-in-een-notendop.md
-      - Mandarin Agents in een Notendop: mandarin-agents-in-een-notendop.md
-  - Concepten:
-      - Domeinconcepten: mandarin-domeinconcepten.md
-      - Ordeningsconcepten: mandarin-ordeningsconcepten.md
-      - Value Streams en Fasen: mandarin-value-streams-en-fasen.md
-      - Conceptuele Grondslagen: conceptuele-grondslagen.md
-  - Essays:
-      - De AS bestaat al: essay.de-as-bestaat-al.md
-      - Speckit pattern vs State pattern: essay.speckit-pattern-vs-state-pattern.md
-  - Canon:
-      - Axioma van gezag: axioma-van-gezag.md
-      - Constitutie: constitutie.md
-  
+# ------------------------------------------------------------
+# 6. Markdown Extensies
+# ------------------------------------------------------------
 markdown_extensions:
+  # Python Markdown
+  - abbr
   - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
   - toc:
       permalink: true
-  - pymdownx.highlight
+      toc_depth: 3
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# ------------------------------------------------------------
+# 7. Navigatiestructuur
+# Primaire verantwoordelijkheid: Publicatie Steward
+# ------------------------------------------------------------
+nav:
+  - Home: index.md
+  - Axioma van gezag (root): axioma-van-gezag.md
+  - Organisatieprincipes: organisatie-principes.md
+  - Toelichting: toelichting-mandaryn.md
+  - Concepten:
+    - Conceptuele grondslagen: concepten/conceptuele-grondslagen.md
+    - Agents in een notendop: concepten/mandarin-agents-in-een-notendop.md
+    - Artefacten in een notendop: concepten/mandarin-artefacten-in-een-notendop.md
+    - Domeinconcepten: concepten/mandarin-domeinconcepten.md
+    - Ordeningsconcepten: concepten/mandarin-ordeningsconcepten.md
+  - Vastlegging:
+    - Axioma van gezag: de vastlegging/axioma-van-gezag.md
+    - Constitutie: de vastlegging/constitutie.md
+    - Value streams en fasen: de vastlegging/mandarin-value-streams-en-fasen.md
+  - Essays:
+    - De as bestaat al: essays/essay.de-as-bestaat-al.md
+    - Speckit vs state pattern: essays/essay.speckit-pattern-vs-state-pattern.md
+
+# ------------------------------------------------------------
+# 8. Extra Configuratie
+# ------------------------------------------------------------
+extra:
+  social: []
+  generator: false  # Verberg "Made with Material for MkDocs"
+
+# ------------------------------------------------------------
+# 9. Copyright
+# ------------------------------------------------------------
+copyright: "Copyright &copy; 2026 Maxia Consultancy. Alle rechten voorbehouden."
+
+# ------------------------------------------------------------
+# Metadata
+# ------------------------------------------------------------
+# Gegenereerd door: Publicatie Steward
+# Template: publicatie-steward.mkdocs.template.md
+# Stylesheet: docs/styles/mandarin.css (Presentatie Architect)
+# Datum: 2026-02-06
+# Versie: 1.0

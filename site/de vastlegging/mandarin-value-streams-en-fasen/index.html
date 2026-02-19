@@ -1,0 +1,1453 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentatie van het Mandaryn Architecture ecosysteem">
+      
+      
+        <meta name="author" content="Mandaryn Team">
+      
+      
+        <link rel="canonical" href="https://hans-blok.github.io/mandarin-architecture/de%20vastlegging/mandarin-value-streams-en-fasen/">
+      
+      
+        <link rel="prev" href="../constitutie/">
+      
+      
+        <link rel="next" href="../../essays/essay.de-as-bestaat-al/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/mandarin-logo-m.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Value streams en fasen - Mandaryn Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:300,300i,400,400i,700,700i%7CConsolas:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Segoe UI";--md-code-font:"Consolas"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mandaryn-value-streams-en-fasen" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Mandaryn Architecture" class="md-header__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mandaryn Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Value streams en fasen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../axioma-van-gezag/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Axioma van gezag (root)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../organisatie-principes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Organisatieprincipes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../toelichting-mandaryn/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Toelichting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepten/conceptuele-grondslagen/" class="md-tabs__link">
+          
+  
+  
+  Concepten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../axioma-van-gezag/" class="md-tabs__link">
+          
+  
+  
+  Vastlegging
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../essays/essay.de-as-bestaat-al/" class="md-tabs__link">
+          
+  
+  
+  Essays
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Mandaryn Architecture" class="md-nav__button md-logo" aria-label="Mandaryn Architecture" data-md-component="logo">
+      
+  <img src="../../assets/mandarin-logo-m.png" alt="logo">
+
+    </a>
+    Mandaryn Architecture
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag (root)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../organisatie-principes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisatieprincipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toelichting-mandaryn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toelichting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/conceptuele-grondslagen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptuele grondslagen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/mandarin-agents-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/mandarin-artefacten-in-een-notendop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artefacten in een notendop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/mandarin-domeinconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domeinconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepten/mandarin-ordeningsconcepten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordeningsconcepten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vastlegging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vastlegging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../axioma-van-gezag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axioma van gezag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constitutie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constitutie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Value streams en fasen
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Value streams en fasen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#herkomstverantwoording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Herkomstverantwoording
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-inleiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Inleiding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Inleiding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-doel-van-dit-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Doel van dit document
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-overzicht-value-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overzicht Value Streams
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-value-stream-definities-en-fasen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Value Stream Definities en Fasen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Value Stream Definities en Fasen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#30-agent-ecosysteem-ontwikkeling-aeo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.0 Agent Ecosysteem Ontwikkeling (AEO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-softwareontwikkeling-sfw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Softwareontwikkeling (SFW)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-architectuur-en-oplossingsontwerp-aod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Architectuur- en Oplossingsontwerp (AOD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-kennisvastlegging-kvl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Kennisvastlegging (KVL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-ondernemingsvorming-onv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Ondernemingsvorming (ONV)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-wijzigingshistorie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Wijzigingshistorie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-relatie-tot-andere-documenten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Relatie tot andere documenten
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essays/essay.de-as-bestaat-al/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De as bestaat al
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essays/essay.speckit-pattern-vs-state-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speckit vs state pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mandaryn-value-streams-en-fasen">Mandaryn Value Streams en Fasen<a class="headerlink" href="#mandaryn-value-streams-en-fasen" title="Permanent link">&para;</a></h1>
+<p><strong>Versie</strong>: 1.4.0<br />
+<strong>Status</strong>: Actief<br />
+<strong>Datum</strong>: 2026-02-02<br />
+<strong>Auteur</strong>: Constitutioneel Auteur  </p>
+<hr />
+<h2 id="herkomstverantwoording">Herkomstverantwoording<a class="headerlink" href="#herkomstverantwoording" title="Permanent link">&para;</a></h2>
+<p>Dit normatief artefact is afgeleid op basis van de volgende geraadpleegde bronnen:</p>
+<p><strong>Geraadpleegde bronnen</strong>:
+- constitutie.md (versie 1.2.1, als normatief kader voor value stream begrip)
+- concepten-en-architectonische-grondslagen.md (versie 1.5.0, voor definities van Value stream en Value stream fase)</p>
+<p><strong>Toelichting</strong>:
+Dit document legt vast welke value streams binnen het Mandaryn-ecosysteem worden onderkend en welke fasen per value stream bestaan. Value stream specifieke agents worden toegekend aan Ã©Ã©n of meerdere value stream fasen. Daarnaast zijn er value-stream-overstijgende agents. Deze worden in alle workspaces ingezet.</p>
+<hr />
+<h2 id="1-inleiding">1. Inleiding<a class="headerlink" href="#1-inleiding" title="Permanent link">&para;</a></h2>
+<h3 id="11-doel-van-dit-document">1.1 Doel van dit document<a class="headerlink" href="#11-doel-van-dit-document" title="Permanent link">&para;</a></h3>
+<p>Dit document beschrijft de canonieke set van <strong>value streams</strong> die binnen het Mandaryn-ecosysteem worden onderkend, met de bijbehorende <strong>fasen</strong> per value stream. Value streams representeren de verschillende waardestromen waarin agents opereren en waarde-artefacten produceren.</p>
+<hr />
+<h2 id="1-overzicht-value-streams">1. Overzicht Value Streams<a class="headerlink" href="#1-overzicht-value-streams" title="Permanent link">&para;</a></h2>
+<p>Het Mandaryn-ecosysteem onderkent de volgende value streams:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Code</th>
+<th>Value Stream</th>
+<th>Type</th>
+<th>Primaire Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>AEO</td>
+<td>Agent Ecosysteem Ontwikkeling</td>
+<td>Ecosysteem</td>
+<td>Vorming en evolutie van het agent-ecosysteem</td>
+</tr>
+<tr>
+<td>1</td>
+<td>SFW</td>
+<td>Softwareontwikkeling</td>
+<td>Waarde</td>
+<td>Realiseren, wijzigen en onderhouden van software</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AOD</td>
+<td>Architectuur- en Oplossingsontwerp</td>
+<td>Waarde</td>
+<td>Ontwerpen en onderbouwen van oplossingsrichtingen</td>
+</tr>
+<tr>
+<td>3</td>
+<td>KNV</td>
+<td>Kennisvastlegging</td>
+<td>Waarde</td>
+<td>Expliceren, structureren en vastleggen van kennis</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ONV</td>
+<td>Ondernemingsvorming</td>
+<td>Waarde</td>
+<td>Vormgeven en realiseren van een nieuwe onderneming</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-value-stream-definities-en-fasen">3. Value Stream Definities en Fasen<a class="headerlink" href="#3-value-stream-definities-en-fasen" title="Permanent link">&para;</a></h2>
+<h3 id="30-agent-ecosysteem-ontwikkeling-aeo">3.0 Agent Ecosysteem Ontwikkeling (AEO)<a class="headerlink" href="#30-agent-ecosysteem-ontwikkeling-aeo" title="Permanent link">&para;</a></h3>
+<p><strong>Type</strong>: Ecosysteem value stream<br />
+<strong>Omschrijving</strong>: Deze value stream richt zich op het vormen, inrichten en laten evolueren van het agent-ecosysteem zelf. Agents in deze value stream produceren <strong>governance-artefacten</strong> (een specialisatie van normerende artefacten), geen bedrijfs-artefacten. Governance-artefacten worden <strong>alleen en alleen</strong> in deze value stream aangemaakt.</p>
+<p><strong>Fasen</strong>:</p>
+<ol>
+<li>
+<p><strong>Grondslagvorming</strong><br />
+   Het vaststellen van fundamentele principes, concepten, doctrines en architectonische grondslagen waarop het ecosysteem is gebouwd.</p>
+</li>
+<li>
+<p><strong>Ecosysteeminrichting</strong><br />
+   Het operationaliseren van grondslagen door het creÃ«ren van Agent-charters, beleid, workspace-structuren en beheer-instrumenten.</p>
+</li>
+</ol>
+<hr />
+<h3 id="31-softwareontwikkeling-sfw">3.1 Softwareontwikkeling (SFW)<a class="headerlink" href="#31-softwareontwikkeling-sfw" title="Permanent link">&para;</a></h3>
+<p><strong>Type</strong>: Waarde value stream<br />
+<strong>Omschrijving</strong>: De kern value stream voor het realiseren, wijzigen en onderhouden van software. Deze value stream sluit inhoudelijk aan op SAFe (Scaled Agile Framework), maar hanteert Nederlandstalige, architectonisch neutrale terminologie die binnen het Mandaryn-ecosysteem is vastgesteld. Agents in deze value stream produceren <strong>bedrijfs-artefacten</strong> (een specialisatie van normerende artefacten).</p>
+<p><strong>Fasen</strong>:</p>
+<ol>
+<li>
+<p><strong>Veranderverkenning</strong><br />
+   Het verkennen en identificeren van een veranderbehoefte of -trigger in de context van bestaande software of gewenste nieuwe functionaliteit.</p>
+</li>
+<li>
+<p><strong>Werkvoorbereiding</strong><br />
+   Het voorbereiden van het werk door het vaststellen van scope, prioriteiten, randvoorwaarden en eerste verkenning van haalbaarheid en impact.</p>
+</li>
+<li>
+<p><strong>Behoefte- en requirements analyse</strong><br />
+   Het analyseren van eisen, processen en context om een volledig begrip te vormen van wat er moet worden gerealiseerd.</p>
+</li>
+<li>
+<p><strong>Ontwerp</strong><br />
+   Het vormgeven van de technische en functionele oplossing, inclusief architectuur, interfaces en datastructuren.</p>
+</li>
+<li>
+<p><strong>Realisatie</strong><br />
+   Het daadwerkelijk bouwen en coderen van de softwareoplossing volgens het ontwerp.</p>
+</li>
+<li>
+<p><strong>Validatie</strong><br />
+   Het testen en verifiÃ«ren dat de gerealiseerde software voldoet aan de gestelde eisen en kwaliteitsnormen.</p>
+</li>
+<li>
+<p><strong>Vrijgave</strong><br />
+   Het formeel vrijgeven en implementeren van de software in de productieomgeving.</p>
+</li>
+<li>
+<p><strong>Beheer en Evolutie</strong><br />
+   Het onderhouden, monitoren en doorontwikkelen van de software gedurende de operationele levenscyclus.</p>
+</li>
+</ol>
+<hr />
+<h3 id="32-architectuur-en-oplossingsontwerp-aod">3.2 Architectuur- en Oplossingsontwerp (AOD)<a class="headerlink" href="#32-architectuur-en-oplossingsontwerp-aod" title="Permanent link">&para;</a></h3>
+<p><strong>Type</strong>: Waarde value stream<br />
+<strong>Omschrijving</strong>: Deze value stream richt zich op het ontwerpen en onderbouwen van oplossingsrichtingen, los van concrete implementatie. Het betreft strategische en tactische architectuurkeuzes die richting geven aan softwareontwikkeling. Agents in deze value stream produceren <strong>bedrijfs-artefacten</strong> (een specialisatie van normerende artefacten).</p>
+<p><strong>Fasen</strong>:</p>
+<ol>
+<li>
+<p><strong>Vraagverkenning</strong><br />
+   Het verkennen en expliciteren van architectuurvraagstukken, drivers en randvoorwaarden.</p>
+</li>
+<li>
+<p><strong>Architectuurkadering</strong><br />
+   Het vaststellen van architectuurprincipes, standaarden en kaders waarbinnen oplossingen moeten worden ontworpen.</p>
+</li>
+<li>
+<p><strong>Oplossingsontwerp</strong><br />
+   Het uitwerken van concrete oplossingsrichtingen, inclusief afwegingen, varianten en aanbevelingen.</p>
+</li>
+<li>
+<p><strong>Besluitvorming en Borging</strong><br />
+   Het formaliseren van architectuurbeslissingen en het borgen van naleving en traceerbaarheid.</p>
+</li>
+</ol>
+<hr />
+<h3 id="33-kennisvastlegging-kvl">3.3 Kennisvastlegging (KVL)<a class="headerlink" href="#33-kennisvastlegging-kvl" title="Permanent link">&para;</a></h3>
+<p><strong>Type</strong>: Waarde value stream<br />
+<strong>Omschrijving</strong>: Deze value stream richt zich op het expliciet maken, structureren en duurzaam vastleggen van kennis. Het doel is om kennis herbruikbaar, doorzoekbaar en overdraagbaar te maken binnen en buiten het ecosysteem. Agents in deze value stream produceren <strong>bedrijfs-artefacten</strong> (een specialisatie van normerende artefacten).</p>
+<p><strong>Fasen</strong>:</p>
+<ol>
+<li>
+<p><strong>Kennisverkenning</strong><br />
+   Het identificeren van kennisdomeinen, lacunes en bestaande kennisbronnen die geÃ«xpliciteerd moeten worden.</p>
+</li>
+<li>
+<p><strong>Structurering</strong><br />
+   Het ordenen en categoriseren van kennis volgens een herkenbare en toegankelijke structuur.</p>
+</li>
+<li>
+<p><strong>Vastlegging</strong><br />
+   Het daadwerkelijk documenteren en formaliseren van kennis in een geschikt formaat.</p>
+</li>
+<li>
+<p><strong>Publicatie en Onderhoud</strong><br />
+   Het beschikbaar maken van kennis voor gebruikers en het actueel houden ervan gedurende de levenscyclus.</p>
+</li>
+</ol>
+<hr />
+<h3 id="34-ondernemingsvorming-onv">3.4 Ondernemingsvorming (ONV)<a class="headerlink" href="#34-ondernemingsvorming-onv" title="Permanent link">&para;</a></h3>
+<p><strong>Type</strong>: Waarde value stream<br />
+<strong>Omschrijving</strong>: Deze value stream richt zich op het vormgeven, valideren en realiseren van een nieuwe onderneming of initiatief. Het omvat het uitwerken van propositie en businessmodel, het verzamelen van bewijs, en het voorbereiden en geven van pitches aan besluitvormers of investeerders.</p>
+<p><strong>Fasen</strong>:</p>
+<ol>
+<li>
+<p><strong>Kans- en Probleemverkenning</strong><br />
+   Het identificeren en expliciteren van het probleem, de marktkans en de doelgroep waarvoor de onderneming waarde wil creÃ«ren.</p>
+</li>
+<li>
+<p><strong>Propositie- en Businessmodelvorming</strong><br />
+   Het uitwerken van waardepropositie, businessmodel, verdienmodel en positionering, inclusief aannames en risico's.</p>
+</li>
+<li>
+<p><strong>Bewijsvoering en Validatie</strong><br />
+   Het verzamelen van kwalitatieve en kwantitatieve onderbouwing (prototypes, experimenten, klantgesprekken) om de aannames achter de propositie en het businessmodel te toetsen.</p>
+</li>
+<li>
+<p><strong>Pitchvoorbereiding</strong><br />
+   Het structureren van de boodschap, het samenstellen van pitchmateriaal (bijv. pitchdeck) en het afstemmen van verhaal en cijfers op de doelgroep (investeerders, bestuur, directie).</p>
+</li>
+<li>
+<p><strong>Pitch en Besluitvorming</strong><br />
+   Het presenteren van de onderneming of het initiatief aan besluitvormers en investeerders, inclusief beantwoording van vragen en het vastleggen van besluiten en vervolgstappen.</p>
+</li>
+<li>
+<p><strong>Ondernemingsinrichting</strong><br />
+   Het formaliseren en inrichten van de gekozen onderneming (structuur, rollen, governance, financieringsafspraken) op basis van de genomen besluiten.</p>
+</li>
+</ol>
+<hr />
+<h2 id="5-wijzigingshistorie">5. Wijzigingshistorie<a class="headerlink" href="#5-wijzigingshistorie" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Datum</th>
+<th>Versie</th>
+<th>Wijziging</th>
+<th>Auteur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-02-02</td>
+<td>1.4.0</td>
+<td>Toegevoegd: value stream Ondernemingsvorming (ONV) met genormeerde fasering van kansverkenning tot ondernemingsinrichting</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-02</td>
+<td>1.3.0</td>
+<td>Toegevoegd: drie-letterige codes per value stream en genormeerde fasevolgnummers (01, 02, â€¦) per value stream fase</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-02-01</td>
+<td>1.2.0</td>
+<td>Verduidelijking artefacttypes per value stream: governance-artefacten (normerende artefacten) alleen in value stream 0, bedrijfs-artefacten (normerende artefacten) in waarde value streams 1-n</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-01-31</td>
+<td>1.1.0</td>
+<td>Verduidelijking agent-toekenning per agent-soort: value stream agents (adviserende/uitvoerende), beheeragents (alle fasen), value-stream-overstijgende agents (orthogonaal)</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+<tr>
+<td>2026-01-31</td>
+<td>1.0.0</td>
+<td>InitiÃ«le versie â€” canonieke vastlegging van value streams en fasen</td>
+<td>Constitutioneel Auteur</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-relatie-tot-andere-documenten">6. Relatie tot andere documenten<a class="headerlink" href="#6-relatie-tot-andere-documenten" title="Permanent link">&para;</a></h2>
+<p>Dit document is normatief en dient als bron voor:
+- <strong>Agent-charters</strong>: Bij het opstellen van een Agent-charter moet worden aangegeven tot welke value stream fase(n) de agent behoort, of dat de agent value-stream-overstijgend is.
+- <strong>Workspace-beleid</strong>: Workspaces kunnen zich richten op specifieke value streams; dit document biedt de canonieke lijst.
+- <strong>Doctrine-documenten</strong>: Specifieke doctrines kunnen gelden per value stream of fase.</p>
+<p>Dit document verwijst naar:
+- <strong>concepten-en-architectonische-grondslagen.md</strong> (v1.5.0) voor de definitie van "Value stream" en "Value stream fase".
+- <strong>constitutie.md</strong> (v1.2.1) als hoogste normatieve bron.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Maxia Consultancy. Alle rechten voorbehouden.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "content.code.copy", "content.code.annotate", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
